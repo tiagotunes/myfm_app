@@ -1,2 +1,2 @@
-# myfm_app
-Mobile application
+# My FM app
+Your team, your decisions, anytime, anywhere.
