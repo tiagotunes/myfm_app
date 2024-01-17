@@ -15,22 +15,31 @@ ThemeData theme() {
   return ThemeData(
     scaffoldBackgroundColor: kBackgroundColor,
     textTheme: textTheme(),
+    appBarTheme: AppBarTheme(
+        backgroundColor: kBackgroundColor,
+        titleTextStyle: textTheme().titleLarge,
+        iconTheme: const IconThemeData(color: Colors.white)),
   );
 }
 
 TextTheme textTheme() {
   return TextTheme(
-    titleLarge: GoogleFonts.getFont(
-      'Libre Franklin',
-      color: Colors.white,
-      fontSize: getProportionateScreenWidth(40),
-      fontWeight: FontWeight.w900,
-    ),
-    labelLarge: GoogleFonts.getFont(
-      'Libre Franklin',
-      color: Colors.white,
-      fontSize: getProportionateScreenWidth(20),
-      fontWeight: FontWeight.bold,
-    ),
-  );
+      headlineLarge: GoogleFonts.getFont(
+        'Libre Franklin',
+        color: Colors.white,
+        fontSize: getProportionateScreenWidth(40),
+        fontWeight: FontWeight.w900,
+      ),
+      labelLarge: GoogleFonts.getFont(
+        'Libre Franklin',
+        color: Colors.white,
+        fontSize: getProportionateScreenWidth(20),
+        fontWeight: FontWeight.bold,
+      ),
+      titleLarge: GoogleFonts.getFont(
+        'IBM Plex Sans',
+        color: Colors.white,
+        fontSize: getProportionateScreenWidth(18),
+        fontWeight: FontWeight.bold,
+      ));
 }

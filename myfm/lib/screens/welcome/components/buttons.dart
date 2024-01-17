@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/configs/color.dart';
 import 'package:myfm/configs/size.dart';
+import 'package:myfm/screens/sign_in/sign_in_screen.dart';
+import 'package:myfm/screens/sign_up/sign_up_screen.dart';
 
 class Buttons extends StatefulWidget {
   const Buttons({super.key});
@@ -17,16 +19,27 @@ class _ButtonsState extends State<Buttons> {
       children: [
         Column(
           children: [
-            buildButton(context, 'REGISTER', secundary: true),
+            buildButton(context, () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SignUpScreen()),
+              );
+            }, 'SIGN UP', secundary: true),
             SizedBox(height: getProportionateScreenHeight(10)),
-            buildButton(context, 'SIGN IN'),
+            buildButton(context, () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SignInScreen()),
+              );
+            }, 'SIGN IN'),
           ],
         ),
       ],
     );
   }
 
-  Container buildButton(BuildContext context, String text,
+  Container buildButton(
+      BuildContext context, VoidCallback function, String text,
       {bool secundary = false}) {
     return Container(
       height: getProportionateScreenHeight(50),
@@ -38,14 +51,14 @@ class _ButtonsState extends State<Buttons> {
               : null,
           gradient: !secundary ? kGradientColor : null),
       child: TextButton(
-        onPressed: () {},
+        onPressed: function,
         child: Text(
           text,
           style: secundary
               ? Theme.of(context)
                   .textTheme
                   .labelLarge
-                  ?.copyWith(fontSize: getProportionateScreenWidth(17))
+                  ?.copyWith(fontSize: getProportionateScreenWidth(18))
               : Theme.of(context).textTheme.labelLarge,
         ),
       ),
