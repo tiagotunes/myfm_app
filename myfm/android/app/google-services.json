@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "331526207893",
+    "project_id": "myfm-60ca6",
+    "storage_bucket": "myfm-60ca6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331526207893:android:2995c9b0d80b41e88c5e9c",
+        "android_client_info": {
+          "package_name": "com.example.myfm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmoD5g7UfShKc3pGtOPxW7hFryO6pvQFk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
