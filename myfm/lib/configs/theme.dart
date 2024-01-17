@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myfm/configs/color.dart';
+import 'package:myfm/configs/size.dart';
 
 const systemUiOverlayStyle = SystemUiOverlayStyle(
   // Status bar color set to transperent
@@ -22,8 +23,14 @@ TextTheme textTheme() {
     titleLarge: GoogleFonts.getFont(
       'Libre Franklin',
       color: Colors.white,
-      fontSize: 40,
+      fontSize: getProportionateScreenWidth(40),
       fontWeight: FontWeight.w900,
+    ),
+    labelLarge: GoogleFonts.getFont(
+      'Libre Franklin',
+      color: Colors.white,
+      fontSize: getProportionateScreenWidth(20),
+      fontWeight: FontWeight.bold,
     ),
   );
 }

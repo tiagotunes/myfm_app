@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/configs/size.dart';
+import 'package:myfm/screens/welcome/components/body.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -6,10 +8,10 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(
-          'WELCOME\nCOACH',
-          style: Theme.of(context).textTheme.titleLarge,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(getProportionateScreenWidth(12)),
+          child: const Body(),
         ),
       ),
     );

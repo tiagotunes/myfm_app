@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:myfm/configs/size.dart';
 import 'package:myfm/configs/theme.dart';
 import 'package:myfm/screens/welcome/welcome_screen.dart';
 
@@ -14,9 +15,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+    SizeConfig().init(context);
 
     return MaterialApp(
-      // debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       title: 'My FM',
       theme: theme(),
       home: const WelcomeScreen(),
