@@ -18,6 +18,7 @@ dependencies:
   intl: ^0.19.0
   logger: ^2.0.2+1
   url_launcher: ^6.2.4
+  flutter_native_splash: ^2.3.10
 
   # Icons
   iconsax: ^0.0.8
@@ -65,19 +66,19 @@ flutter:
           weight: 700
     - family: Libre Franklin
       fonts:
-        - asset: assets/fonts/IBM_Plex_Sans/LibreFranklin-Light.ttf
+        - asset: assets/fonts/Libre_Franklin/LibreFranklin-Light.ttf
           weight: 300
-        - asset: assets/fonts/IBM_Plex_Sans/LibreFranklin-Regular.ttf
+        - asset: assets/fonts/Libre_Franklin/LibreFranklin-Regular.ttf
           weight: 400
-        - asset: assets/fonts/IBM_Plex_Sans/LibreFranklin-Italic.ttf
+        - asset: assets/fonts/Libre_Franklin/LibreFranklin-Italic.ttf
           style: italic
-        - asset: assets/fonts/IBM_Plex_Sans/LibreFranklin-Medium.ttf
+        - asset: assets/fonts/Libre_Franklin/LibreFranklin-Medium.ttf
           weight: 500
-        - asset: assets/fonts/IBM_Plex_Sans/LibreFranklin-SemiBold.ttf
+        - asset: assets/fonts/Libre_Franklin/LibreFranklin-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/IBM_Plex_Sans/LibreFranklin-Bold.ttf
+        - asset: assets/fonts/Libre_Franklin/LibreFranklin-Bold.ttf
           weight: 700
-        - asset: assets/fonts/IBM_Plex_Sans/LibreFranklin-ExtraBold.ttf
+        - asset: assets/fonts/Libre_Franklin/LibreFranklin-ExtraBold.ttf
           weight: 800
-        - asset: assets/fonts/IBM_Plex_Sans/LibreFranklin-Black.ttf
+        - asset: assets/fonts/Libre_Franklin/LibreFranklin-Black.ttf
           weight: 900
