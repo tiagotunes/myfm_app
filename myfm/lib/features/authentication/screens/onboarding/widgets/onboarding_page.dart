@@ -29,32 +29,46 @@ class OnBoardingPage extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            Positioned(
-              top: TDeviceUtils.getScreenHeight() * 0.12,
-              child: Column(
-                children: [
-                  Text(
-                    title,
-                    style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                          color: Colors.white,
-                          shadows: shadows,
-                        ),
-                    textAlign: TextAlign.center,
-                  ),
-                  Text(
-                    subtitle,
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          color: Colors.white,
-                          shadows: shadows,
-                        ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
+            buildText(context),
           ],
         ),
       ),
+    );
+  }
+
+  Positioned buildText(BuildContext context) {
+    return Positioned(
+      top: TDeviceUtils.getScreenHeight() * 0.12,
+      child: Column(
+        children: [
+          buildTitle(context),
+          buildSubtitle(context),
+        ],
+      ),
+    );
+  }
+
+  Text buildTitle(BuildContext context) {
+    return Text(
+      title,
+      style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+            fontFamily: 'IBM Plex Sans',
+            color: Colors.white,
+            shadows: shadows,
+          ),
+      textAlign: TextAlign.center,
+    );
+  }
+
+  Text buildSubtitle(BuildContext context) {
+    return Text(
+      subtitle,
+      style: Theme.of(context).textTheme.titleLarge!.copyWith(
+            fontFamily: 'IBM Plex Sans',
+            color: Colors.white,
+            shadows: shadows,
+          ),
+      textAlign: TextAlign.center,
     );
   }
 }
