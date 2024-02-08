@@ -2,18 +2,19 @@ class TTexts {
   // Global Texts
 
   // OnBoarding Texts
-  static const String onBoardingTitle1 = "Choose you product";
-  static const String onBoardingTitle2 = "Select Payment Method";
-  static const String onBoardingTitle3 = "Deliver at your door step";
+  static const List<String> onBoardingTitle = [
+    "CREATE YOUR PROFILE",
+    "BUILD YOUR TEAM",
+    "SHARE YOUR PROGRESS",
+    "ROAD TO GLORY"
+  ];
 
-  static const String onBoardingSubTitle1 =
-      "Welcome to a World of Limitless Choices - Your Perfect Product Awaits!";
-  static const String onBoardingSubTitle2 =
-      "For Seamless transactions, Choose your Payment Path - Your Convenience, Our priority!";
-  static const String onBoardingSubTitle3 =
-      "From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!";
+  static const List<String> onBoardingSubTitle = [
+    "...", // "Welcome to My FM, let's get started!"
+    "...", // "Build your team and manage it from your pocket."
+    "...",
+    "THE BEAUTIFUL GAME IT'S IN YOUR HANDS" // "The beautiful game it's in your hands!"
+  ];
 
   // Home
-  static const String homeAppBarTitle = "Good day for shopping";
-  static const String homeAppBarSubTitle = "Taimoor Sikander";
 }
