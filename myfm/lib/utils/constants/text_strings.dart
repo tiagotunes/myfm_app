@@ -16,5 +16,7 @@ class TTexts {
     "THE BEAUTIFUL GAME IT'S IN YOUR HANDS" // "The beautiful game it's in your hands!"
   ];
 
-  // Home
+  // Login
+  static const String loginTitle = "Welcome back,";
+  static const String loginSubTitle = "Welcome back";
 }
