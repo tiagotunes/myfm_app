@@ -11,21 +11,7 @@ import 'package:myfm/utils/theme/custom_themes/text_theme.dart';
 class TAppTheme {
   TAppTheme._();
 
-  static ThemeData lightTheme = ThemeData(
-    useMaterial3: true,
-    fontFamily: 'Libre Franklin',
-    brightness: Brightness.light,
-    primaryColor: Colors.blue,
-    textTheme: TTextTheme.lightTextTheme,
-    scaffoldBackgroundColor: Colors.white,
-    appBarTheme: TAppBarTheme.lightAppBarTheme,
-    bottomSheetTheme: TBottomSheetTheme.lightBottomSheetTheme,
-    checkboxTheme: TCheckboxTheme.lightCheckboxTheme,
-    chipTheme: TChipTheme.lightChipTheme,
-    elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
-    outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
-    inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
-  );
+  // static ThemeData lightTheme = ThemeData();
 
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
