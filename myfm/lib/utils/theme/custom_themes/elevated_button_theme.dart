@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/utils/constants/sizes.dart';
 
 class TElevatedButtonTheme {
   TElevatedButtonTheme._();
@@ -20,7 +21,9 @@ class TElevatedButtonTheme {
         color: Colors.white,
         fontWeight: FontWeight.w600,
       ),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
+      ),
     ),
   );
 }

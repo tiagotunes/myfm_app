@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/theme/custom_themes/appbar_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/bottom_sheet_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/checkbox_theme.dart';
@@ -15,11 +16,11 @@ class TAppTheme {
 
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: 'Libre Franklin',
+    fontFamily: TTextTheme.fontFamilyLF,
     brightness: Brightness.dark,
-    primaryColor: Colors.blue,
+    primaryColor: TColors.primary,
     textTheme: TTextTheme.darkTextTheme,
-    scaffoldBackgroundColor: const Color(0xFF191919),
+    scaffoldBackgroundColor: TColors.dark,
     appBarTheme: TAppBarTheme.darkAppBarTheme,
     bottomSheetTheme: TBottomSheetTheme.darkBottomSheetTheme,
     checkboxTheme: TCheckboxTheme.darkCheckboxTheme,

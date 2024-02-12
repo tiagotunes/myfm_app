@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/sizes.dart';
 
 class TOutlinedButtonTheme {
   TOutlinedButtonTheme._();
@@ -17,7 +18,9 @@ class TOutlinedButtonTheme {
         fontWeight: FontWeight.w600,
       ),
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
+      ),
     ),
   );
 }

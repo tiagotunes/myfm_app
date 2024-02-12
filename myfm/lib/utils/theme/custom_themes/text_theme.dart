@@ -29,15 +29,17 @@ class TTextTheme {
     bodyMedium: const TextStyle().copyWith(
         fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.white),
     bodySmall: const TextStyle().copyWith(
-        fontSize: 14.0,
-        fontWeight: FontWeight.w500,
-        color: Colors.white.withOpacity(0.5)),
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
+      color: Colors.white.withOpacity(0.5),
+    ),
     // Label
     labelLarge: const TextStyle().copyWith(
         fontSize: 12.0, fontWeight: FontWeight.normal, color: Colors.white),
     labelMedium: const TextStyle().copyWith(
-        fontSize: 12.0,
-        fontWeight: FontWeight.normal,
-        color: Colors.white.withOpacity(0.5)),
+      fontSize: 12.0,
+      fontWeight: FontWeight.normal,
+      color: Colors.white.withOpacity(0.5),
+    ),
   );
 }

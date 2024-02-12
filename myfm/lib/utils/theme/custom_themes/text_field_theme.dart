@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/sizes.dart';
 
 class TTextFormFieldTheme {
   TTextFormFieldTheme._();
@@ -16,25 +18,25 @@ class TTextFormFieldTheme {
       color: Colors.white.withOpacity(0.8),
     ),
     filled: true,
-    fillColor: const Color(0xFF484649),
+    fillColor: TColors.inputFillColor,
     border: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(7),
+      borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 0),
     ),
     enabledBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(7),
+      borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 0),
     ),
     focusedBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 2, color: Colors.grey),
     ),
     errorBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 2, color: Colors.red),
     ),
     focusedErrorBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 2, color: Colors.orange),
     ),
   );

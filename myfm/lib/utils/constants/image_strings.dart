@@ -5,6 +5,12 @@ class TImages {
   static const String darkAppLogo = "assets/logos/myfm-logo-dark-removebg.png";
 
   // Social Logos
+  static const List<String> socialLogos = [
+    "assets/logos/google.png",
+    "assets/logos/facebook.png"
+  ];
+  static const String facebook = "assets/logos/facebook.png";
+  static const String google = "assets/logos/google.png";
 
   // OnBoarding Images
   static const List<String> onBoardingImage = [
