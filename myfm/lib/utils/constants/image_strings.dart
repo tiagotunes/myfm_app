@@ -6,8 +6,8 @@ class TImages {
 
   // Social Logos
   static const List<String> socialLogos = [
-    "assets/logos/google.png",
-    "assets/logos/facebook.png"
+    "assets/logos/google-dark.png",
+    "assets/logos/facebook-dark.png"
   ];
   static const String facebook = "assets/logos/facebook.png";
   static const String google = "assets/logos/google.png";

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myfm/common/widgets/text_form_field.dart';
+import 'package:myfm/features/authentication/screens/signup/signup.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
 
@@ -21,7 +23,7 @@ class TLoginForm extends StatelessWidget {
             const TTextFormField(
               label: TTexts.email,
               isRequired: true,
-              icon: Icons.email_outlined,
+              // icon: Icons.email_outlined,
             ),
             const SizedBox(height: TSizes.spaceBtwInputFields),
 
@@ -29,7 +31,7 @@ class TLoginForm extends StatelessWidget {
             const TTextFormField(
               label: TTexts.password,
               isRequired: true,
-              icon: Icons.password_outlined,
+              // icon: Icons.password_outlined,
             ),
             const SizedBox(height: TSizes.spaceBtwInputFields / 2),
 
@@ -91,7 +93,7 @@ class TLoginForm extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: OutlinedButton(
-        onPressed: () {},
+        onPressed: () => Get.to(() => const SignupScreen()),
         child: const Text(TTexts.createAccount),
       ),
     );

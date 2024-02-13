@@ -7,12 +7,12 @@ class TTextFormField extends StatelessWidget {
     super.key,
     required this.label,
     required this.isRequired,
-    required this.icon,
+    this.icon,
   });
 
   final String label;
   final bool isRequired;
-  final IconData icon;
+  final IconData? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +28,12 @@ class TTextFormField extends StatelessWidget {
         ),
         const SizedBox(height: TSizes.spaceBtwLabelInputField),
         TextFormField(
-            // decoration: InputDecoration(
-            //   prefixIcon: Icon(icon),
-            // ),
-            ),
+          decoration: icon != null
+              ? InputDecoration(
+                  prefixIcon: Icon(icon),
+                )
+              : const InputDecoration(),
+        ),
       ],
     );
   }

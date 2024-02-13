@@ -25,12 +25,15 @@ class TSocialButtons extends StatelessWidget {
               ),
               child: IconButton(
                 onPressed: () {},
-                icon: Image(
-                  image: AssetImage(
-                    TImages.socialLogos[index ~/ 2],
+                icon: Opacity(
+                  opacity: 0.8,
+                  child: Image(
+                    image: AssetImage(
+                      TImages.socialLogos[index ~/ 2],
+                    ),
+                    width: TSizes.iconMd,
+                    height: TSizes.iconMd,
                   ),
-                  width: TSizes.iconMd,
-                  height: TSizes.iconMd,
                 ),
               ),
             );

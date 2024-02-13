@@ -5,6 +5,7 @@ import 'package:myfm/common/widgets/login_signup/social_buttons.dart';
 import 'package:myfm/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:myfm/features/authentication/screens/login/widgets/login_header.dart';
 import 'package:myfm/utils/constants/sizes.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -26,7 +27,7 @@ class LoginScreen extends StatelessWidget {
               const TLoginForm(),
 
               // Divider
-              TFormDivider(dark: dark),
+              const TFormDivider(text: TTexts.orSignInWith),
               const SizedBox(height: TSizes.spaceBtwSections),
 
               // Footer

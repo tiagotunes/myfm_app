@@ -25,16 +25,18 @@ class OnBoardingController extends GetxController {
   // Update Current Index & jump to next page
   void nextPage() {
     if (currentPageIndex.value == nPages - 1) {
-      Get.offAll(const LoginScreen());
+      Get.offAll(() => const LoginScreen());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);
     }
   }
 
-  // Update Current Index & jump to the last page
+  // Jump to the Login Screen
   void skipPage() {
-    currentPageIndex.value = nPages - 1;
-    pageController.jumpToPage(nPages - 1);
+    // Update Current Index & jump to the last page
+    // currentPageIndex.value = nPages - 1;
+    // pageController.jumpToPage(nPages - 1);
+    Get.offAll(() => const LoginScreen());
   }
 }
