@@ -16,15 +16,22 @@ class TTexts {
   ];
 
   // Authentication Headings Text
+  static const String accountCreatedSubTitle =
+      "Welcome to MyFM:\nYour account is created, let's get things started!";
+  static const String accountCreatedTitle = "Your account successfully created";
   static const String createAccountTitle = "Let's create your account";
   static const String forgetPasswordSubTitle =
       "Don't worry sometimes people can forget too, enter your email and we will send you a password reset link.";
   static const String forgetPasswordTitle = "Forget Password";
   static const String loginSubTitle = "...";
   static const String loginTitle = "Welcome back,";
+  static const String verifyEmailSubTitle =
+      "Congratulations! Your account awaits:\nVerify your email to start manage your teams.";
+  static const String verifyEmailTitle = "Verify your email address";
 
   // Authentication Form Text
   static const String and = "and";
+  static const String tContinue = "continue";
   static const String createAccount = "Create Account";
   static const String dob = "Date of Birth";
   static const String email = "E-mail";
@@ -37,6 +44,7 @@ class TTexts {
   static const String password = "Password";
   static const String privacyPolicy = "Privacy Policy";
   static const String remeberMe = "Remember Me";
+  static const String resendEmail = "Resend Email";
   static const String signIn = "Sign In";
   static const String termsOfUse = "Terms of use";
 }

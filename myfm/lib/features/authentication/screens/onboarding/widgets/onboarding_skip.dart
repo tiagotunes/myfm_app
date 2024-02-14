@@ -18,7 +18,7 @@ class OnBoardingSkip extends StatelessWidget {
         child: const Text(
           'Skip',
           style: TextStyle(
-            color: Color(0xFFB10398),
+            color: Color(0xFFB155AA),
             fontSize: 15,
             fontWeight: FontWeight.w600,
           ),
