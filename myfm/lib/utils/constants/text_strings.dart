@@ -25,6 +25,9 @@ class TTexts {
   static const String forgetPasswordTitle = "Forget Password";
   static const String loginSubTitle = "...";
   static const String loginTitle = "Welcome back,";
+  static const String passwordResetSubTitle =
+      "Your account secuirty is our priority. We've sent you a secure link to safety change your password and keep your account proteced.";
+  static const String passwordResetTitle = "Password reset email sent";
   static const String verifyEmailSubTitle =
       "Congratulations! Your account awaits:\nVerify your email to start manage your teams.";
   static const String verifyEmailTitle = "Verify your email address";
@@ -34,6 +37,7 @@ class TTexts {
   static const String tContinue = "continue";
   static const String createAccount = "Create Account";
   static const String dob = "Date of Birth";
+  static const String done = "done";
   static const String email = "E-mail";
   static const String forgetPassword = "Forget Password?";
   static const String iAgreeTo = "I agree to";
