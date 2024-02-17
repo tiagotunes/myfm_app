@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myfm/features/fm/screens/feed/feed.dart';
+import 'package:myfm/features/fm/screens/home/home.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -45,7 +45,7 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
-    const FeedScreen(),
+    const HomeScreen(),
     Container(color: Colors.blue),
     Container(color: Colors.deepPurple),
     Container(color: Colors.orange),
