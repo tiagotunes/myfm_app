@@ -38,7 +38,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () => Get.to(() => const ResetPasswordScreen()),
-                child: const Text('Submit'),
+                child: const Text(TTexts.submit),
               ),
             )
           ],

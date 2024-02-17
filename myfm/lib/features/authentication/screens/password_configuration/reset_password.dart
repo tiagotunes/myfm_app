@@ -58,14 +58,7 @@ class ResetPasswordScreen extends StatelessWidget {
               width: double.infinity,
               child: TextButton(
                 onPressed: () {},
-                child: const Text(
-                  TTexts.resendEmail,
-                  style: TextStyle(
-                    color: Color(0xFFB155AA),
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
+                child: const Text(TTexts.resendEmail),
               ),
             ),
           ],

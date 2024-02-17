@@ -50,5 +50,7 @@ class TTexts {
   static const String remeberMe = "Remember Me";
   static const String resendEmail = "Resend Email";
   static const String signIn = "Sign In";
+  static const String skip = "skip";
+  static const String submit = "Submit";
   static const String termsOfUse = "Terms of use";
 }

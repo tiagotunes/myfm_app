@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myfm/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:myfm/utils/constants/sizes.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 import 'package:myfm/utils/device/device_utility.dart';
 
 class OnBoardingSkip extends StatelessWidget {
@@ -15,14 +17,7 @@ class OnBoardingSkip extends StatelessWidget {
       right: TSizes.defaultSpace,
       child: TextButton(
         onPressed: () => OnBoardingController.instance.skipPage(),
-        child: const Text(
-          'Skip',
-          style: TextStyle(
-            color: Color(0xFFB155AA),
-            fontSize: 15,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
+        child: Text(TTexts.skip.capitalize!),
       ),
     );
   }
