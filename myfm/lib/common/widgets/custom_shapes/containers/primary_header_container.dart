@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myfm/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:myfm/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
+import 'package:myfm/common/widgets/custom_shapes/diagonal_edges/diagonal_rect_widget.dart';
 import 'package:myfm/utils/constants/colors.dart';
 
 class TPrimaryHeaderContainer extends StatelessWidget {
@@ -15,27 +15,15 @@ class TPrimaryHeaderContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return TCurvedEdgeWidget(
       child: Container(
-        color: TColors.primary,
+        color: TColors.black,
         padding: const EdgeInsets.only(bottom: 0),
-        child: SizedBox(
+        child: const SizedBox(
+          width: double.infinity,
           height: 400,
           child: Stack(
             children: [
-              // Background Custom Shapes
-              Positioned(
-                top: -150,
-                right: -250,
-                child: TCircularContainer(
-                  backgroundColor: TColors.textWhite.withOpacity(0.1),
-                ),
-              ),
-              Positioned(
-                top: 100,
-                right: -300,
-                child: TCircularContainer(
-                  backgroundColor: TColors.textWhite.withOpacity(0.1),
-                ),
-              ),
+              Positioned(left: 10, child: TDiagonalRect(color: Colors.red)),
+              Positioned(left: -30, child: TDiagonalRect(color: Colors.orange)),
             ],
           ),
         ),
