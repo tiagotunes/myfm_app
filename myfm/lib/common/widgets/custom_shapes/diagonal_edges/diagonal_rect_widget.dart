@@ -4,22 +4,39 @@ import 'package:myfm/common/widgets/custom_shapes/diagonal_edges/diagonal_edges.
 class TDiagonalRect extends StatelessWidget {
   const TDiagonalRect({
     super.key,
-    this.height = 150,
-    this.width = 75,
-    required this.color,
+    required this.height,
+    required this.width,
+    required this.colors,
+    required this.first,
   });
 
-  final double? height, width;
-  final Color color;
+  final double height, width;
+  final List<Color> colors;
+  final bool first;
+  static int dF = 8, wF = 15;
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(
-      clipper: TDiagonalEdges(),
-      child: Container(
-        color: color,
-        height: height,
-        width: width,
+    int pos = first ? -2 : 2;
+    return Positioned(
+      left: (width * dF / wF) / pos,
+      child: ClipPath(
+        clipper: TDiagonalEdges(
+          diagonalFactor: dF,
+          widthFactor: wF,
+          first: first,
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomRight,
+              colors: colors,
+            ),
+          ),
+          height: height,
+          width: width,
+        ),
       ),
     );
   }

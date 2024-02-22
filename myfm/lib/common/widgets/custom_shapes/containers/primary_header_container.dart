@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:myfm/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 import 'package:myfm/common/widgets/custom_shapes/diagonal_edges/diagonal_rect_widget.dart';
 import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/sizes.dart';
+import 'package:myfm/utils/device/device_utility.dart';
 
 class TPrimaryHeaderContainer extends StatelessWidget {
   const TPrimaryHeaderContainer({
@@ -17,13 +19,29 @@ class TPrimaryHeaderContainer extends StatelessWidget {
       child: Container(
         color: TColors.black,
         padding: const EdgeInsets.only(bottom: 0),
-        child: const SizedBox(
+        child: SizedBox(
           width: double.infinity,
           height: 400,
           child: Stack(
             children: [
-              Positioned(left: 10, child: TDiagonalRect(color: Colors.red)),
-              Positioned(left: -30, child: TDiagonalRect(color: Colors.orange)),
+              TDiagonalRect(
+                height: TDeviceUtils.getAppBarHeight() * 2,
+                width: TSizes.defaultSpace * 3,
+                colors: [
+                  Color(0xFFFF501E).withOpacity(0.7),
+                  Color(0xFFFFA528).withOpacity(0.1),
+                ],
+                first: false,
+              ),
+              TDiagonalRect(
+                height: TDeviceUtils.getAppBarHeight() * 2,
+                width: TSizes.defaultSpace * 3,
+                colors: [
+                  Color(0xFFFF501E),
+                  Color(0xFFFFA528).withOpacity(0.1),
+                ],
+                first: true,
+              ),
             ],
           ),
         ),
