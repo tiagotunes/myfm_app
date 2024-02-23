@@ -9,14 +9,16 @@ class TColors {
   static const Color accent = Colors.blue;
 
   // Gradient Colors
-  static const Gradient linerGradient = LinearGradient(
-    begin: Alignment.centerLeft,
-    end: Alignment.centerRight,
-    colors: [
-      Color(0xFFFF9A9E),
-      Color(0xFFFAD0C4),
-    ],
-  );
+  static const Color beginGradient = Color(0xFFFF501E);
+  static const Color endGradient = Color(0xFFFFA528);
+  // static const Gradient linerGradient = LinearGradient(
+  //   begin: Alignment.centerLeft,
+  //   end: Alignment.centerRight,
+  //   colors: [
+  //     Color(0xFFFF501E),
+  //     Color(0xFFFFA528),
+  //   ],
+  // );
 
   // Text Colors
   static const Color textPrimary = Color(0xFF333333);

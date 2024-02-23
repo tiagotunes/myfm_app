@@ -13,17 +13,18 @@ class TDiagonalRect extends StatelessWidget {
   final double height, width;
   final List<Color> colors;
   final bool first;
-  static int dF = 8, wF = 15;
+  static double diagonalFactor = 0.53;
 
   @override
   Widget build(BuildContext context) {
-    int pos = first ? -2 : 2;
+    double pos = first ? -2 : 2;
     return Positioned(
-      left: (width * dF / wF) / pos,
+      // top: 50,
+      // left: 100 + 15 * pos,
+      left: (width * diagonalFactor).roundToDouble() / pos,
       child: ClipPath(
         clipper: TDiagonalEdges(
-          diagonalFactor: dF,
-          widthFactor: wF,
+          diagonalFactor: diagonalFactor,
           first: first,
         ),
         child: Container(

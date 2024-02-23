@@ -25,20 +25,22 @@ class TPrimaryHeaderContainer extends StatelessWidget {
           child: Stack(
             children: [
               TDiagonalRect(
-                height: TDeviceUtils.getAppBarHeight() * 2,
+                height: TDeviceUtils.getAppBarHeight() * 3,
                 width: TSizes.defaultSpace * 3,
                 colors: [
-                  Color(0xFFFF501E).withOpacity(0.7),
-                  Color(0xFFFFA528).withOpacity(0.1),
+                  TColors.beginGradient.withOpacity(0.5),
+                  TColors.endGradient.withOpacity(0.3),
+                  Colors.transparent,
                 ],
                 first: false,
               ),
               TDiagonalRect(
-                height: TDeviceUtils.getAppBarHeight() * 2,
+                height: TDeviceUtils.getAppBarHeight() * 3,
                 width: TSizes.defaultSpace * 3,
                 colors: [
-                  Color(0xFFFF501E),
-                  Color(0xFFFFA528).withOpacity(0.1),
+                  TColors.beginGradient.withOpacity(0.7),
+                  TColors.endGradient.withOpacity(0.5),
+                  Colors.transparent,
                 ],
                 first: true,
               ),
