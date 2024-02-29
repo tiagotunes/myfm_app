@@ -21,7 +21,7 @@ class TPrimaryHeaderContainer extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 0),
         child: SizedBox(
           width: double.infinity,
-          // height: 400,
+          height: 400,
           child: Stack(
             children: [
               TDiagonalRect(
