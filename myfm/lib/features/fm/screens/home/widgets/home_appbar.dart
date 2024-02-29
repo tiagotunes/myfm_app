@@ -12,10 +12,9 @@ class THomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return TAppBar(
       title: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Title',
+            'Subtitle',
             style: Theme.of(context)
                 .textTheme
                 .labelMedium!
