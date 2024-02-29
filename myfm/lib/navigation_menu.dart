@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myfm/features/fm/screens/home/home.dart';
+import 'package:myfm/utils/constants/colors.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -14,6 +15,7 @@ class NavigationMenu extends StatelessWidget {
         () => NavigationBar(
           height: 80,
           elevation: 0,
+          indicatorColor: TColors.darkGrey.withOpacity(0.3),
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
@@ -28,7 +30,8 @@ class NavigationMenu extends StatelessWidget {
             ),
             NavigationDestination(
               icon: Icon(Icons.handyman_rounded),
-              label: '...',
+              label: ' ',
+              enabled: false,
             ),
             NavigationDestination(
               icon: Icon(Icons.person_rounded),
