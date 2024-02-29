@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myfm/features/fm/screens/home/home.dart';
 import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -22,20 +23,19 @@ class NavigationMenu extends StatelessWidget {
           destinations: const [
             NavigationDestination(
               icon: Icon(Icons.home_rounded),
-              label: 'Home',
+              label: TTexts.home,
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.search_outlined),
+              label: TTexts.search,
             ),
             NavigationDestination(
               icon: Icon(Icons.shield_rounded),
-              label: 'Teams',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.handyman_rounded),
-              label: ' ',
-              enabled: false,
+              label: TTexts.teams,
             ),
             NavigationDestination(
               icon: Icon(Icons.person_rounded),
-              label: 'Profile',
+              label: TTexts.profile,
             ),
           ],
         ),

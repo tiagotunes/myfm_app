@@ -3,6 +3,7 @@ import 'package:myfm/common/widgets/custom_shapes/containers/primary_header_cont
 import 'package:myfm/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:myfm/features/fm/screens/home/widgets/home_appbar.dart';
 import 'package:myfm/utils/constants/sizes.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,7 +22,7 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: TSizes.spaceBtwSections),
 
                   // Search bar
-                  TSearchContainer(text: "Search"),
+                  TSearchContainer(text: TTexts.search),
                   SizedBox(height: TSizes.spaceBtwSections * 1.5),
                 ],
               ),
