@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:myfm/features/fm/screens/home/widgets/banner_slider.dart';
 import 'package:myfm/features/fm/screens/home/widgets/home_appbar.dart';
-import 'package:myfm/features/fm/screens/home/widgets/home_categories.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
 
@@ -27,7 +27,16 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: TSizes.spaceBtwSections),
 
                   // Scrollable categories
-                  THomeCategories()
+                  // THomeCategories()
+
+                  // Banners
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: TSizes.defaultSpace,
+                    ),
+                    child: TBannerSlider(),
+                  ),
+                  SizedBox(height: TSizes.spaceBtwSections * 1.5),
                 ],
               ),
             ),

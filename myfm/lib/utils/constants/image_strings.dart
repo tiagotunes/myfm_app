@@ -19,4 +19,11 @@ class TImages {
     "assets/images/on_boarding_images/KHB05109_SI_FM24_Image_3_r16_simp_rgb_fmfc.jpg",
     "assets/images/on_boarding_images/KHB05109_SI_FM24_Image_1_R19_RGB_2.jpg"
   ];
+
+  // Banner Images
+  static const List<String> bannerImage = [
+    "assets/images/banners/FM24-Light.png",
+    "assets/images/banners/fm_scout.png",
+    "assets/images/banners/sortitoutsi.png",
+  ];
 }
