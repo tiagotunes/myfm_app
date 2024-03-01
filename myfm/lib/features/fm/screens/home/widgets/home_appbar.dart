@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
-import 'package:myfm/common/widgets/message_icon.dart';
+import 'package:myfm/common/widgets/icons/message_icon.dart';
 import 'package:myfm/utils/constants/colors.dart';
 
 class THomeAppBar extends StatelessWidget {

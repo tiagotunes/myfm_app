@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:myfm/common/widgets/layouts/grid_layout.dart';
+import 'package:myfm/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:myfm/features/fm/screens/home/widgets/banner_slider.dart';
 import 'package:myfm/features/fm/screens/home/widgets/home_appbar.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -11,11 +13,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TPrimaryHeaderContainer(
+            // Header
+            const TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   // Appbar
@@ -40,6 +43,19 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+
+            // Body
+            Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                children: [
+                  TGridLayout(
+                    itemCount: 2,
+                    itemBuilder: (_, index) => const TProductCardVertical(),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
