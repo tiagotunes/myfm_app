@@ -75,11 +75,11 @@ class VerifyEmailScreen extends StatelessWidget {
                   onPressed: () {},
                   child: const Text(
                     TTexts.resendEmail,
-                    style: TextStyle(
-                      color: Color(0xFFB155AA),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    // style: TextStyle(
+                    //   color: Color(0xFFB155AA),
+                    //   fontSize: 15,
+                    //   fontWeight: FontWeight.w600,
+                    // ),
                   ),
                 ),
               ),

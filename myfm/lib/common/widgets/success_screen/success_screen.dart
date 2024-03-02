@@ -6,12 +6,13 @@ import 'package:myfm/utils/constants/text_strings.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
 
 class SucessScreen extends StatelessWidget {
-  const SucessScreen(
-      {super.key,
-      required this.icon,
-      required this.title,
-      required this.subtitle,
-      required this.onPressed});
+  const SucessScreen({
+    super.key,
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.onPressed,
+  });
 
   final IconData icon;
   final String title, subtitle;
