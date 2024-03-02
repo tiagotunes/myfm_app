@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
+import 'package:myfm/utils/helpers/helper_functions.dart';
 
 class TLoginHeader extends StatelessWidget {
   const TLoginHeader({
     super.key,
-    required this.dark,
   });
-
-  final bool dark;
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return SizedBox(
       width: double.infinity,
       child: Column(
@@ -31,7 +30,7 @@ class TLoginHeader extends StatelessWidget {
           const SizedBox(height: TSizes.sm),
           Text(
             TTexts.loginSubTitle,
-            style: Theme.of(context).textTheme.headlineSmall,
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
         ],
       ),

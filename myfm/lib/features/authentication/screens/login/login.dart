@@ -6,32 +6,30 @@ import 'package:myfm/features/authentication/screens/login/widgets/login_form.da
 import 'package:myfm/features/authentication/screens/login/widgets/login_header.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
-import 'package:myfm/utils/helpers/helper_functions.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding: TSpacingStyles.paddingWithAppBarHeight,
           child: Column(
             children: [
               // Header -> Logo, Title & Subtitle
-              TLoginHeader(dark: dark),
+              TLoginHeader(),
 
               // Form
-              const TLoginForm(),
+              TLoginForm(),
 
               // Divider
-              const TFormDivider(text: TTexts.orSignInWith),
-              const SizedBox(height: TSizes.spaceBtwSections),
+              TFormDivider(text: TTexts.orSignInWith),
+              SizedBox(height: TSizes.spaceBtwSections),
 
               // Footer
-              const TSocialButtons(),
+              TSocialButtons(),
             ],
           ),
         ),

@@ -19,13 +19,21 @@ class TTextFormFieldTheme {
     floatingLabelStyle: const TextStyle().copyWith(
       color: TColors.white.withOpacity(0.8),
     ),
+    filled: true,
+    fillColor: TColors.inputFieldBackground,
     border: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
-      borderSide: const BorderSide(width: 1, color: TColors.darkGrey),
+      borderSide: const BorderSide(
+        width: 1,
+        color: TColors.inputFieldBackground,
+      ),
     ),
     enabledBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
-      borderSide: const BorderSide(width: 1, color: TColors.darkGrey),
+      borderSide: const BorderSide(
+        width: 1,
+        color: TColors.inputFieldBackground,
+      ),
     ),
     focusedBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
@@ -33,7 +41,7 @@ class TTextFormFieldTheme {
     ),
     errorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
-      borderSide: const BorderSide(width: 1, color: TColors.error),
+      borderSide: const BorderSide(width: 2, color: TColors.error),
     ),
     focusedErrorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
