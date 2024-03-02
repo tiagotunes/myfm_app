@@ -4,21 +4,18 @@ class TColors {
   TColors._();
 
   // App Basic Colors
-  static const Color primary = Colors.blue;
-  static const Color secondary = Colors.blue;
-  static const Color accent = Colors.blue;
+  static const Color primary = Color(0xFFB10398);
+  static const Color secondary = Color(0xFFFFE24B);
+  static const Color accent = Color(0xFFB0C7FF);
 
   // Gradient Colors
+  // static const Gradient linerGradient = LinearGradient(
+  //   begin: Alignment(0, 0),
+  //   end: Alignment(0, 0),
+  //   colors: [],
+  // );
   static const Color beginGradient = Color(0xFFFF501E);
   static const Color endGradient = Color(0xFFFFA528);
-  // static const Gradient linerGradient = LinearGradient(
-  //   begin: Alignment.centerLeft,
-  //   end: Alignment.centerRight,
-  //   colors: [
-  //     Color(0xFFFF501E),
-  //     Color(0xFFFFA528),
-  //   ],
-  // );
 
   // Text Colors
   static const Color textPrimary = Color(0xFF333333);
@@ -27,9 +24,8 @@ class TColors {
 
   // Background Colors
   static const Color light = Color(0xFFF6F6F6);
-  static const Color dark = Color(0xFF191919);
+  static const Color dark = Color(0xFF272727);
   static const Color primarybackground = Color(0xFFF3F5FF);
-  static const Color inputFillColor = Color(0xFF484649);
 
   // Background Container Colors
   static const Color lightContainer = Color(0xFFF6F6F6);

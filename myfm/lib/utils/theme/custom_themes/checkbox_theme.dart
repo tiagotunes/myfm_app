@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/sizes.dart';
 
 class TCheckboxTheme {
   TCheckboxTheme._();
@@ -6,17 +8,19 @@ class TCheckboxTheme {
   // static CheckboxThemeData lightCheckboxTheme = CheckboxThemeData();
 
   static CheckboxThemeData darkCheckboxTheme = CheckboxThemeData(
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(TSizes.borderRadiusSm),
+    ),
     checkColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return Colors.white;
+        return TColors.white;
       } else {
-        return Colors.black;
+        return TColors.black;
       }
     }),
     fillColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return const Color(0xFFB10398);
+        return TColors.primary;
       } else {
         return Colors.transparent;
       }

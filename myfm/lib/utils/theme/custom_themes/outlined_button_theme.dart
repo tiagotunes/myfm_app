@@ -9,17 +9,16 @@ class TOutlinedButtonTheme {
 
   static final darkOutlinedButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
-      elevation: 0,
-      foregroundColor: Colors.white,
+      foregroundColor: TColors.white,
       side: const BorderSide(color: TColors.buttonPrimary, width: 2.0),
       textStyle: const TextStyle(
-        fontSize: 16,
-        color: Colors.white,
+        fontSize: TSizes.fontSizeMd,
+        color: TColors.white,
         fontWeight: FontWeight.w600,
       ),
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
+        borderRadius: BorderRadius.circular(TSizes.buttonRadius),
       ),
     ),
   );

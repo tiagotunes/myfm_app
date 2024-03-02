@@ -15,4 +15,12 @@ class TShadowStyle {
     spreadRadius: 7,
     offset: const Offset(0, 2),
   );
+
+  static List<Shadow> headlineTextShadow = [
+    Shadow(
+      color: TColors.darkerGrey.withOpacity(0.8),
+      offset: const Offset(0, 2),
+      blurRadius: 10,
+    ),
+  ];
 }

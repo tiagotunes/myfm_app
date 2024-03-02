@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myfm/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:myfm/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
 import 'package:myfm/features/authentication/screens/onboarding/widgets/onboarding_next_button.dart';
 import 'package:myfm/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
 import 'package:myfm/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
@@ -23,7 +24,7 @@ class OnBoardingScreen extends StatelessWidget {
             controller: controller.pageController,
             onPageChanged: controller.updatePageIndicator,
             children: List<OnBoardingPage>.generate(
-              4,
+              controller.nPages,
               (index) => OnBoardingPage(
                 image: TImages.onBoardingImage[index],
                 title: TTexts.onBoardingTitle[index],
@@ -33,13 +34,27 @@ class OnBoardingScreen extends StatelessWidget {
           ),
 
           // Dot Navigation SmoothPageIndicator
-          // const OnBoardingNavigation(),
+          const OnBoardingNavigation(),
 
           // Next Button
-          const OnBoardingNextButton(),
+          const OnBoardingNextButton(icon: Icons.arrow_forward_ios_rounded),
+          // Observer to change icon when reach the last page
+          // Obx(
+          //   () => OnBoardingNextButton(
+          //     icon: controller.currentPageIndex.value ==
+          //             controller.nPages - 1
+          //         ? Icons.arrow_forward_rounded
+          //         : Icons.arrow_forward_ios_rounded,
+          //   ),
+          // ),
 
           // Skip Button
-          const OnBoardingSkip(),
+          // Observer to hide the Skip Button when reach the last page
+          Obx(
+            () => controller.currentPageIndex.value == controller.nPages - 1
+                ? const SizedBox()
+                : const OnBoardingSkip(),
+          ),
         ],
       ),
     );

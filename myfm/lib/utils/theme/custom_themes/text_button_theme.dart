@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/sizes.dart';
 
 class TTextButtonTheme {
   TTextButtonTheme._();
@@ -8,15 +9,9 @@ class TTextButtonTheme {
 
   static TextButtonThemeData darkTextButtonTheme = TextButtonThemeData(
     style: TextButton.styleFrom(
-      // elevation: 0,
       foregroundColor: TColors.buttonPrimary,
-      // backgroundColor: const Color(0xFFB10398),
-      // disabledForegroundColor: Colors.grey,
-      // disabledBackgroundColor: Colors.grey,
-      // side: const BorderSide(color: Color(0xFFB10398)),
-      // padding: const EdgeInsets.symmetric(vertical: 18),
       textStyle: const TextStyle(
-        fontSize: 15,
+        fontSize: TSizes.fontSizeSm,
         fontWeight: FontWeight.w600,
       ),
     ),

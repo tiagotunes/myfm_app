@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 
 class TElevatedButtonTheme {
@@ -10,19 +11,19 @@ class TElevatedButtonTheme {
       ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,
-      foregroundColor: Colors.white,
-      backgroundColor: const Color(0xFFB10398),
-      disabledForegroundColor: Colors.grey,
-      disabledBackgroundColor: Colors.grey,
-      side: const BorderSide(color: Color(0xFFB10398)),
+      foregroundColor: TColors.white,
+      backgroundColor: TColors.buttonPrimary,
+      disabledForegroundColor: TColors.darkGrey,
+      disabledBackgroundColor: TColors.darkGrey,
+      side: const BorderSide(color: TColors.buttonPrimary),
       padding: const EdgeInsets.symmetric(vertical: 18),
       textStyle: const TextStyle(
-        fontSize: 16,
-        color: Colors.white,
+        fontSize: TSizes.fontSizeMd,
+        color: TColors.white,
         fontWeight: FontWeight.w600,
       ),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
+        borderRadius: BorderRadius.circular(TSizes.buttonRadius),
       ),
     ),
   );

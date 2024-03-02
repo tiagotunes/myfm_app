@@ -1,66 +1,68 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/sizes.dart';
 
 class TTextTheme {
   TTextTheme._();
 
   static String fontFamilyLF = "Libre Franklin";
   static String fontFamilyIBM = "IBM Plex Sans";
-  static double fontSizeTitle = 18.0;
-  static double fontSizeBody = 16.0;
-  static double fontSizeLabel = 14.0;
 
   // static TextTheme lightTextTheme = TextTheme();
 
   static TextTheme darkTextTheme = TextTheme(
     // Headline
     headlineLarge: const TextStyle().copyWith(
-        fontSize: 32.0, fontWeight: FontWeight.bold, color: Colors.white),
+        fontSize: 32.0, fontWeight: FontWeight.bold, color: TColors.textWhite),
     headlineMedium: const TextStyle().copyWith(
-        fontSize: 28.0, fontWeight: FontWeight.w600, color: Colors.white),
+        fontSize: 24.0, fontWeight: FontWeight.w600, color: TColors.textWhite),
     headlineSmall: const TextStyle().copyWith(
-        fontSize: 20.0, fontWeight: FontWeight.w600, color: Colors.white),
+      fontSize: TSizes.fontSizeLg,
+      fontWeight: FontWeight.w600,
+      color: TColors.textWhite,
+    ),
     // Title
     titleLarge: const TextStyle().copyWith(
-      fontSize: fontSizeTitle,
+      fontSize: TSizes.fontSizeMd,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: TColors.textWhite,
     ),
     titleMedium: const TextStyle().copyWith(
-      fontSize: fontSizeTitle,
+      fontSize: TSizes.fontSizeMd,
       fontWeight: FontWeight.w500,
-      color: Colors.white,
+      color: TColors.textWhite,
     ),
     titleSmall: const TextStyle().copyWith(
-      fontSize: fontSizeTitle,
+      fontSize: TSizes.fontSizeMd,
       fontWeight: FontWeight.w400,
-      color: Colors.white,
+      color: TColors.textWhite,
     ),
     // Body
     bodyLarge: const TextStyle().copyWith(
-      fontSize: fontSizeBody,
+      fontSize: TSizes.fontSizeSm,
       fontWeight: FontWeight.w500,
-      color: Colors.white,
+      color: TColors.textWhite,
     ),
     bodyMedium: const TextStyle().copyWith(
-      fontSize: fontSizeBody,
+      fontSize: TSizes.fontSizeSm,
       fontWeight: FontWeight.normal,
-      color: Colors.white,
+      color: TColors.textWhite,
     ),
     bodySmall: const TextStyle().copyWith(
-      fontSize: fontSizeBody,
+      fontSize: TSizes.fontSizeSm,
       fontWeight: FontWeight.w500,
-      color: Colors.white.withOpacity(0.5),
+      color: TColors.textWhite.withOpacity(0.5),
     ),
     // Label
     labelLarge: const TextStyle().copyWith(
-      fontSize: fontSizeLabel,
+      fontSize: TSizes.fontSizeXs,
       fontWeight: FontWeight.normal,
-      color: Colors.white,
+      color: TColors.textWhite,
     ),
     labelMedium: const TextStyle().copyWith(
-      fontSize: fontSizeLabel,
+      fontSize: TSizes.fontSizeXs,
       fontWeight: FontWeight.normal,
-      color: Colors.white.withOpacity(0.5),
+      color: TColors.textWhite.withOpacity(0.5),
     ),
   );
 }

@@ -4,11 +4,11 @@ import 'package:myfm/features/authentication/screens/login/login.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
-  static int nPages = 4;
 
   // Variables
   final pageController = PageController();
   Rx<int> currentPageIndex = 0.obs;
+  final int nPages = 4;
 
   // Update Curretn Index when Page Scroll
   void updatePageIndicator(index) {

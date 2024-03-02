@@ -6,7 +6,10 @@ import 'package:myfm/utils/device/device_utility.dart';
 class OnBoardingNextButton extends StatelessWidget {
   const OnBoardingNextButton({
     super.key,
+    required this.icon,
   });
+
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,7 @@ class OnBoardingNextButton extends StatelessWidget {
       right: TSizes.defaultSpace,
       child: ElevatedButton(
         onPressed: () => OnBoardingController.instance.nextPage(),
-        child: const Icon(Icons.arrow_forward_ios_rounded),
+        child: Icon(icon),
       ),
     );
   }

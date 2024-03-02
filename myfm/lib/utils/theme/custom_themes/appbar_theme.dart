@@ -16,9 +16,9 @@ class TAppBarTheme {
     iconTheme: IconThemeData(color: TColors.white, size: TSizes.iconMd),
     actionsIconTheme: IconThemeData(color: TColors.white, size: TSizes.iconMd),
     titleTextStyle: TextStyle(
-      fontSize: 18.0,
+      fontSize: TSizes.fontSizeLg,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: TColors.white,
     ),
   );
 }

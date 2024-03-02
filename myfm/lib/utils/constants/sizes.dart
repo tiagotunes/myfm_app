@@ -13,14 +13,15 @@ class TSizes {
   static const double iconLg = 32.0;
 
   // Font sizes
+  static const double fontSizeXs = 12.0;
   static const double fontSizeSm = 14.0;
   static const double fontSizeMd = 16.0;
   static const double fontSizeLg = 18.0;
 
   // Button sizes
-  static const double buttonHeight = 18.0;
-  static const double buttonRadius = 12.0;
   static const double buttonWidth = 120.0;
+  static const double buttonHeight = 18.0;
+  static const double buttonRadius = 5.0;
 
   // AppBar sizes
   static const double appBarHeight = 56.0;
@@ -37,6 +38,9 @@ class TSizes {
   static const double borderRadiusSm = 4.0;
   static const double borderRadiusMd = 8.0;
   static const double borderRadiusLg = 12.0;
+
+  // Bottom Sheet sizes
+  static const double bottomSheetRadius = 16.0;
 
   // Divider height
   static const double dividerHeight = 1.0;

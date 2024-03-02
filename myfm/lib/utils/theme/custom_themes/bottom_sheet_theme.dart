@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/sizes.dart';
 
 class TBottomSheetTheme {
   TBottomSheetTheme._();
@@ -7,9 +9,11 @@ class TBottomSheetTheme {
 
   static BottomSheetThemeData darkBottomSheetTheme = BottomSheetThemeData(
     showDragHandle: true,
-    backgroundColor: Colors.black,
-    modalBackgroundColor: Colors.black,
+    backgroundColor: TColors.black,
+    modalBackgroundColor: TColors.black,
     constraints: const BoxConstraints(minWidth: double.infinity),
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(TSizes.bottomSheetRadius),
+    ),
   );
 }

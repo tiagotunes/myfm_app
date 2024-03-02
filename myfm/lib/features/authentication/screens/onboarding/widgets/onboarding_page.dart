@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/common/styles/shadows.dart';
+import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/device/device_utility.dart';
+import 'package:myfm/utils/theme/custom_themes/text_theme.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({
@@ -10,9 +14,6 @@ class OnBoardingPage extends StatelessWidget {
   });
 
   final String image, title, subtitle;
-  static List<Shadow> shadows = const [
-    Shadow(offset: Offset(0, 1), blurRadius: 5)
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class OnBoardingPage extends StatelessWidget {
 
   Positioned buildText(BuildContext context) {
     return Positioned(
-      top: TDeviceUtils.getScreenHeight() * 0.12,
+      top: TDeviceUtils.getAppBarHeight() + TSizes.defaultSpace * 2,
       child: Column(
         children: [
           buildTitle(context),
@@ -52,9 +53,9 @@ class OnBoardingPage extends StatelessWidget {
     return Text(
       title,
       style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-            fontFamily: 'IBM Plex Sans',
-            color: Colors.white,
-            shadows: shadows,
+            fontFamily: TTextTheme.fontFamilyIBM,
+            color: TColors.textWhite,
+            shadows: TShadowStyle.headlineTextShadow,
           ),
       textAlign: TextAlign.center,
     );
@@ -64,9 +65,9 @@ class OnBoardingPage extends StatelessWidget {
     return Text(
       subtitle,
       style: Theme.of(context).textTheme.titleLarge!.copyWith(
-            fontFamily: 'IBM Plex Sans',
-            color: Colors.white,
-            shadows: shadows,
+            fontFamily: TTextTheme.fontFamilyIBM,
+            color: TColors.textWhite,
+            shadows: TShadowStyle.headlineTextShadow,
           ),
       textAlign: TextAlign.center,
     );

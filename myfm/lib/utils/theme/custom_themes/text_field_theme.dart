@@ -9,35 +9,35 @@ class TTextFormFieldTheme {
 
   static InputDecorationTheme darkInputDecorationTheme = InputDecorationTheme(
     errorMaxLines: 3,
-    prefixIconColor: Colors.grey,
-    suffixIconColor: Colors.grey,
-    labelStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.white),
-    hintStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.white),
+    prefixIconColor: TColors.darkGrey,
+    suffixIconColor: TColors.darkGrey,
+    labelStyle: const TextStyle()
+        .copyWith(fontSize: TSizes.fontSizeSm, color: TColors.white),
+    hintStyle: const TextStyle()
+        .copyWith(fontSize: TSizes.fontSizeSm, color: TColors.white),
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
     floatingLabelStyle: const TextStyle().copyWith(
-      color: Colors.white.withOpacity(0.8),
+      color: TColors.white.withOpacity(0.8),
     ),
-    filled: true,
-    fillColor: TColors.inputFillColor,
     border: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
-      borderSide: const BorderSide(width: 0),
+      borderSide: const BorderSide(width: 1, color: TColors.darkGrey),
     ),
     enabledBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
-      borderSide: const BorderSide(width: 0),
+      borderSide: const BorderSide(width: 1, color: TColors.darkGrey),
     ),
     focusedBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
-      borderSide: const BorderSide(width: 2, color: Colors.grey),
+      borderSide: const BorderSide(width: 1, color: TColors.white),
     ),
     errorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
-      borderSide: const BorderSide(width: 2, color: Colors.red),
+      borderSide: const BorderSide(width: 1, color: TColors.error),
     ),
     focusedErrorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
-      borderSide: const BorderSide(width: 2, color: Colors.orange),
+      borderSide: const BorderSide(width: 2, color: TColors.warning),
     ),
   );
 }
