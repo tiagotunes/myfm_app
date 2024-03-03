@@ -9,9 +9,13 @@ class TPrimaryHeaderContainer extends StatelessWidget {
   const TPrimaryHeaderContainer({
     super.key,
     required this.child,
+    this.wDiagonalRect = false,
+    this.colors,
   });
 
   final Widget child;
+  final bool wDiagonalRect;
+  final List<Color>? colors;
 
   @override
   Widget build(BuildContext context) {
@@ -24,26 +28,30 @@ class TPrimaryHeaderContainer extends StatelessWidget {
           // height: 400,
           child: Stack(
             children: [
-              TDiagonalRect(
-                height: TDeviceUtils.getAppBarHeight() * 3,
-                width: TSizes.defaultSpace * 3,
-                colors: [
-                  TColors.beginGradient.withOpacity(0.5),
-                  TColors.endGradient.withOpacity(0.3),
-                  Colors.transparent,
-                ],
-                first: false,
-              ),
-              TDiagonalRect(
-                height: TDeviceUtils.getAppBarHeight() * 3,
-                width: TSizes.defaultSpace * 3,
-                colors: [
-                  TColors.beginGradient.withOpacity(0.7),
-                  TColors.endGradient.withOpacity(0.5),
-                  Colors.transparent,
-                ],
-                first: true,
-              ),
+              wDiagonalRect
+                  ? TDiagonalRect(
+                      height: TDeviceUtils.getAppBarHeight() * 2.5,
+                      width: TSizes.defaultSpace * 3,
+                      colors: [
+                        colors![0].withOpacity(0.5),
+                        colors![1].withOpacity(0.3),
+                        Colors.transparent,
+                      ],
+                      first: false,
+                    )
+                  : const SizedBox(),
+              wDiagonalRect
+                  ? TDiagonalRect(
+                      height: TDeviceUtils.getAppBarHeight() * 2.5,
+                      width: TSizes.defaultSpace * 3,
+                      colors: [
+                        colors![0].withOpacity(0.7),
+                        colors![1].withOpacity(0.5),
+                        Colors.transparent,
+                      ],
+                      first: true,
+                    )
+                  : const SizedBox(),
               child,
             ],
           ),

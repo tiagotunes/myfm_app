@@ -8,12 +8,13 @@ class TDiagonalRect extends StatelessWidget {
     required this.width,
     required this.colors,
     required this.first,
+    this.diagonalFactor = 0.53,
   });
 
   final double height, width;
   final List<Color> colors;
   final bool first;
-  static double diagonalFactor = 0.53;
+  final double diagonalFactor;
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/common/widgets/icons/message_icon.dart';
 import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 
 class THomeAppBar extends StatelessWidget {
   const THomeAppBar({
@@ -21,7 +22,7 @@ class THomeAppBar extends StatelessWidget {
                 .apply(color: TColors.grey),
           ),
           Text(
-            'Title',
+            TTexts.home,
             style: Theme.of(context)
                 .textTheme
                 .headlineSmall!

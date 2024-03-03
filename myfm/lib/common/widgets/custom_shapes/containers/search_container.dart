@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/device/device_utility.dart';
-import 'package:myfm/utils/helpers/helper_functions.dart';
 
 class TSearchContainer extends StatelessWidget {
   const TSearchContainer({
@@ -21,7 +20,6 @@ class TSearchContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: Padding(
@@ -33,9 +31,7 @@ class TSearchContainer extends StatelessWidget {
           padding: const EdgeInsets.all(TSizes.md),
           decoration: BoxDecoration(
             color: showBackground
-                ? dark
-                    ? TColors.dark
-                    : TColors.light
+                ? TColors.inputFieldBackground
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(TSizes.borderRadiusLg),
             border: showBorder ? Border.all(color: TColors.grey) : null,
@@ -47,10 +43,10 @@ class TSearchContainer extends StatelessWidget {
                 color: TColors.grey,
               ),
               const SizedBox(width: TSizes.spaceBtwItems),
-              Text(
-                text,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
+              // Text(
+              //   text,
+              //   style: Theme.of(context).textTheme.bodySmall,
+              // ),
             ],
           ),
         ),
