@@ -32,7 +32,8 @@ class TBannerSlider extends StatelessWidget {
               TRoundedImage(
                 imageUrl: TImages.bannerImage[0],
                 width: double.infinity,
-                backgroundColor: Colors.black,
+                backgroundColor: TColors.black,
+                border: Border.all(color: TColors.grey, width: 5),
               ),
               TRoundedImage(
                 imageUrl: TImages.bannerImage[1],

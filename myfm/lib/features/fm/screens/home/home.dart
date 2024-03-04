@@ -30,15 +30,14 @@ class HomeScreen extends StatelessWidget {
                   ),
                   SizedBox(height: TSizes.spaceBtwSections),
 
-                  // Scrollable categories
-                  // THomeCategories()
-
                   // Banners
                   TBannerSlider(),
                   SizedBox(height: TSizes.spaceBtwSections * 1.5),
                 ],
               ),
             ),
+
+            // Body
           ],
         ),
       ),
