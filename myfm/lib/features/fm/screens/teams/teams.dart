@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:myfm/common/widgets/cards/team/team_card_vertical.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:myfm/common/widgets/layouts/grid_layout.dart';
 import 'package:myfm/features/fm/screens/teams/widgets/teams_appbar.dart';
+import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
 
@@ -11,12 +13,12 @@ class TeamsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             // Header
-            TPrimaryHeaderContainer(
+            const TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   // Appbar
@@ -35,9 +37,19 @@ class TeamsScreen extends StatelessWidget {
 
             // Body
             Padding(
-              padding: EdgeInsets.all(TSizes.defaultSpace),
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: Column(
-                children: [TTeamCardVertical()],
+                children: [
+                  TGridLayout(
+                    itemCount: 3,
+                    itemBuilder: (_, index) => const TTeamCardVertical(
+                      imageUrl: TImages.scp,
+                      name: 'Sporting CP',
+                      country: 'Portugal',
+                      year: '2024',
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
