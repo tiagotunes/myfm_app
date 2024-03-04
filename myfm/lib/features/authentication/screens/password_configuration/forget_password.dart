@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myfm/common/widgets/text_form_field.dart';
+import 'package:myfm/common/widgets/text/text_form_field.dart';
 import 'package:myfm/features/authentication/screens/password_configuration/reset_password.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';

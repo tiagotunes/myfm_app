@@ -3,6 +3,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/common/widgets/icons/counter_icon.dart';
 import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 
 class THomeAppBar extends StatelessWidget {
   const THomeAppBar({
@@ -17,14 +18,14 @@ class THomeAppBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Subtitle',
+            '${TTexts.home} Subtitle',
             style: Theme.of(context)
                 .textTheme
                 .labelMedium!
                 .apply(color: TColors.grey),
           ),
           Text(
-            'Title',
+            '${TTexts.home} Title',
             style: Theme.of(context)
                 .textTheme
                 .headlineSmall!
