@@ -45,10 +45,10 @@ class TSizes {
   // Divider height
   static const double dividerHeight = 1.0;
 
-  // Product item dimensions
-  static const double productImageSize = 120.0;
-  static const double productImageRadius = 16.0;
-  static const double productImageHeight = 160.0;
+  // Team Card dimensions
+  static const double teamImageSize = 120.0;
+  static const double teamImageRadius = 16.0;
+  static const double teamImageHeight = 160.0;
 
   // Input Field
   static const double inputFieldRadius = 12.0;

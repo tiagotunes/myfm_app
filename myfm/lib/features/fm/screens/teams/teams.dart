@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/common/widgets/cards/team/team_card_vertical.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:myfm/features/fm/screens/teams/widgets/teams_appbar.dart';
@@ -14,6 +15,7 @@ class TeamsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            // Header
             TPrimaryHeaderContainer(
               child: Column(
                 children: [
@@ -29,7 +31,15 @@ class TeamsScreen extends StatelessWidget {
                   SizedBox(height: TSizes.spaceBtwSections * 1.5),
                 ],
               ),
-            )
+            ),
+
+            // Body
+            Padding(
+              padding: EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                children: [TTeamCardVertical()],
+              ),
+            ),
           ],
         ),
       ),

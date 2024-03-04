@@ -26,4 +26,7 @@ class TImages {
     "assets/images/banners/fm_scout.png",
     "assets/images/banners/sortitoutsi.png",
   ];
+
+  // Tmp Images
+  static const String scp = "assets/logos/sportingcp.png";
 }
