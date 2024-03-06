@@ -5,7 +5,7 @@ class TTeamTitleText extends StatelessWidget {
     super.key,
     required this.title,
     this.smallSize = false,
-    this.maxLines = 2,
+    this.maxLines = 1,
     this.textAlign = TextAlign.left,
   });
 

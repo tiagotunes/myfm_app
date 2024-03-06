@@ -23,6 +23,7 @@ class TTeamCardVertical extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
+        // width: 170,
         padding: const EdgeInsets.all(TSizes.xs),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(TSizes.teamImageRadius),
@@ -40,7 +41,6 @@ class TTeamCardVertical extends StatelessWidget {
                   TRoundedImage(
                     imageUrl: imageUrl,
                     applyImageRadius: true,
-                    backgroundColor: Colors.transparent,
                     width: double.infinity,
                     fit: BoxFit.contain,
                   ),
@@ -49,6 +49,7 @@ class TTeamCardVertical extends StatelessWidget {
             ),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
 
+            // Details
             Padding(
               padding: const EdgeInsets.only(left: TSizes.sm),
               child: Column(
@@ -56,7 +57,7 @@ class TTeamCardVertical extends StatelessWidget {
                 children: [
                   // Name
                   TTeamTitleText(title: name),
-                  const SizedBox(height: TSizes.spaceBtwItems / 2.5),
+                  const SizedBox(height: TSizes.spaceBtwItems / 2),
 
                   // Country
                   Row(
@@ -73,7 +74,7 @@ class TTeamCardVertical extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: TSizes.spaceBtwItems / 2.5),
+                  const SizedBox(height: TSizes.spaceBtwItems / 2),
 
                   // Year
                   Text(
@@ -81,10 +82,9 @@ class TTeamCardVertical extends StatelessWidget {
                     maxLines: 1,
                     style: Theme.of(context).textTheme.labelSmall,
                   ),
-                  const SizedBox(height: TSizes.spaceBtwItems / 2),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
