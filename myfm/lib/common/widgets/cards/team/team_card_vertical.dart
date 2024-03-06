@@ -23,8 +23,7 @@ class TTeamCardVertical extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        width: 180,
-        padding: const EdgeInsets.all(4),
+        padding: const EdgeInsets.all(TSizes.xs),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(TSizes.teamImageRadius),
           color: dark ? TColors.darkerGrey : TColors.white,
@@ -33,7 +32,7 @@ class TTeamCardVertical extends StatelessWidget {
           children: [
             // Logo
             TRoundedContainer(
-              height: 180,
+              height: TSizes.teamImageHeight,
               padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
               child: Stack(

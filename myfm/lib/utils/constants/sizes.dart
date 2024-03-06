@@ -48,7 +48,7 @@ class TSizes {
   // Team Card dimensions
   static const double teamImageSize = 120.0;
   static const double teamImageRadius = 16.0;
-  static const double teamImageHeight = 160.0;
+  static const double teamImageHeight = 170.0;
 
   // Input Field
   static const double inputFieldRadius = 12.0;

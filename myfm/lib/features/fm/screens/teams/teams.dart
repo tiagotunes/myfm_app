@@ -37,7 +37,8 @@ class TeamsScreen extends StatelessWidget {
 
             // Body
             Padding(
-              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
               child: Column(
                 children: [
                   TGridLayout(
