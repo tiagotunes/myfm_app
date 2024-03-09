@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TTeamTitleText extends StatelessWidget {
-  const TTeamTitleText({
+class TCardTeamTitleText extends StatelessWidget {
+  const TCardTeamTitleText({
     super.key,
     required this.title,
     this.smallSize = false,

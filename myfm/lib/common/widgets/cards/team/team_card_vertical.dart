@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:myfm/common/widgets/images/rounded_images.dart';
-import 'package:myfm/common/widgets/text/team_title_text.dart';
+import 'package:myfm/common/widgets/text/card_team_title_text.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
@@ -56,7 +56,7 @@ class TTeamCardVertical extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Name
-                  TTeamTitleText(title: name),
+                  TCardTeamTitleText(title: name),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
 
                   // Country

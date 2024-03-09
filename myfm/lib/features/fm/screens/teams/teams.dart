@@ -6,7 +6,6 @@ import 'package:myfm/common/widgets/layouts/grid_layout.dart';
 import 'package:myfm/features/fm/screens/teams/widgets/teams_appbar.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
-import 'package:myfm/utils/constants/text_strings.dart';
 
 class TeamsScreen extends StatelessWidget {
   const TeamsScreen({super.key});
@@ -27,7 +26,7 @@ class TeamsScreen extends StatelessWidget {
 
                   // Search bar
                   TSearchContainer(
-                    text: TTexts.search,
+                    text: '',
                     showBorder: false,
                   ),
                   SizedBox(height: TSizes.spaceBtwSections * 1.5),
