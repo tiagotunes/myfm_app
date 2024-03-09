@@ -59,4 +59,9 @@ class TTexts {
   static const String profile = 'Profile';
   static const String search = 'Search';
   static const String teams = 'Teams';
+
+  // Tabbar Text
+  static const String all = 'All';
+  static const String posts = 'Posts';
+  static const String users = 'Users';
 }
