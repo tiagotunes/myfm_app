@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myfm/features/fm/screens/home/home.dart';
+import 'package:myfm/features/fm/screens/search/search.dart';
 import 'package:myfm/features/fm/screens/teams/teams.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
@@ -50,7 +51,7 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = const [
     HomeScreen(),
-    Scaffold(),
+    SearchScreen(),
     TeamsScreen(),
     Scaffold(),
   ];
