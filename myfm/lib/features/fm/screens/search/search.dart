@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/common/widgets/appbar/tabbar.dart';
-import 'package:myfm/common/widgets/cards/user/user_card.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:myfm/common/widgets/layouts/grid_layout.dart';
 import 'package:myfm/common/widgets/text/appbar_title_text.dart';
-import 'package:myfm/common/widgets/text/section_heading.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
@@ -36,35 +33,35 @@ class SearchScreen extends StatelessWidget {
                 backgroundColor: THelperFunctions.isDarkMode(context)
                     ? TColors.dark
                     : TColors.light,
-                expandedHeight: 320,
+                expandedHeight: 150,
                 flexibleSpace: Padding(
                   padding: const EdgeInsets.all(TSizes.defaultSpace),
                   child: ListView(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    children: [
+                    children: const [
                       // Search bar
-                      const TSearchContainer(
+                      TSearchContainer(
                         text: '',
                         showBackground: false,
                         padding: EdgeInsets.zero,
                       ),
-                      const SizedBox(height: TSizes.spaceBtwSections),
+                      SizedBox(height: TSizes.spaceBtwSections),
 
-                      TSectionHeading(
-                        title: 'Featured Users',
-                        showActionButton: true,
-                        onPressed: () {},
-                      ),
-                      const SizedBox(height: TSizes.spaceBtwItems / 1.5),
+                      // TSectionHeading(
+                      //   title: 'Featured Users',
+                      //   showActionButton: true,
+                      //   onPressed: () {},
+                      // ),
+                      // const SizedBox(height: TSizes.spaceBtwItems / 1.5),
 
-                      TGridLayout(
-                        itemCount: 2,
-                        mainAxisExtent: 70,
-                        itemBuilder: (_, index) {
-                          return const TUserCard();
-                        },
-                      )
+                      // TGridLayout(
+                      //   itemCount: 2,
+                      //   mainAxisExtent: 70,
+                      //   itemBuilder: (_, index) {
+                      //     return const TUserCard();
+                      //   },
+                      // )
                     ],
                   ),
                 ),
