@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:myfm/common/widgets/images/rounded_images.dart';
+import 'package:myfm/common/widgets/images/rounded_image.dart';
 import 'package:myfm/common/widgets/text/card_team_title_text.dart';
+import 'package:myfm/common/widgets/text/flag_label_text_with_icon.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
@@ -60,20 +61,7 @@ class TTeamCardVertical extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
 
                   // Country
-                  Row(
-                    children: [
-                      Text(
-                        country,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(width: TSizes.xs),
-                      const Icon(
-                        Icons.flag,
-                        size: TSizes.iconXs,
-                      ),
-                    ],
-                  ),
+                  TFlagLabelWithIconText(label: country),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
 
                   // Year

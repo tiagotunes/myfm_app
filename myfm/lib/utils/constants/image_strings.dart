@@ -27,6 +27,9 @@ class TImages {
     "assets/images/banners/sortitoutsi.png",
   ];
 
+  // Default Images
+  static const String user = "assets/images/default/user.png";
+
   // Tmp Images
   static const String scp = "assets/logos/sportingcp.png";
 }
