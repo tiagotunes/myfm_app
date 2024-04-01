@@ -31,6 +31,7 @@ class TTeamCardVertical extends StatelessWidget {
           color: dark ? TColors.darkerGrey : TColors.white,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Logo
             TRoundedContainer(
