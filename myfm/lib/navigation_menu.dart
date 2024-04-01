@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:myfm/features/fm/screens/home/home.dart';
 import 'package:myfm/features/fm/screens/search/search.dart';
 import 'package:myfm/features/fm/screens/teams/teams.dart';
@@ -24,19 +25,19 @@ class NavigationMenu extends StatelessWidget {
               controller.selectedIndex.value = index,
           destinations: const [
             NavigationDestination(
-              icon: Icon(Icons.home_rounded),
+              icon: Icon(Iconsax.home_2),
               label: TTexts.home,
             ),
             NavigationDestination(
-              icon: Icon(Icons.search_outlined),
+              icon: Icon(Iconsax.search_normal_1),
               label: TTexts.search,
             ),
             NavigationDestination(
-              icon: Icon(Icons.shield_rounded),
+              icon: Icon(Iconsax.shield),
               label: TTexts.teams,
             ),
             NavigationDestination(
-              icon: Icon(Icons.person_rounded),
+              icon: Icon(Iconsax.user),
               label: TTexts.profile,
             ),
           ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:myfm/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:myfm/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
 import 'package:myfm/features/authentication/screens/onboarding/widgets/onboarding_next_button.dart';
@@ -37,7 +38,7 @@ class OnBoardingScreen extends StatelessWidget {
           const OnBoardingNavigation(),
 
           // Next Button
-          const OnBoardingNextButton(icon: Icons.arrow_forward_ios_rounded),
+          const OnBoardingNextButton(icon: Iconsax.arrow_right_34),
           // Observer to change icon when reach the last page
           // Obx(
           //   () => OnBoardingNextButton(

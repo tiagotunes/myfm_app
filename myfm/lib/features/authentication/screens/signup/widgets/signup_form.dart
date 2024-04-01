@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/text/text_form_field.dart';
 import 'package:myfm/features/authentication/screens/signup/verify_email.dart';
 import 'package:myfm/features/authentication/screens/signup/widgets/terms_conditions_checkbox.dart';
@@ -20,7 +21,7 @@ class TSignUpForm extends StatelessWidget {
           const TTextFormField(
             label: TTexts.email,
             isRequired: true,
-            icon: Icons.email_outlined,
+            icon: Iconsax.sms,
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
@@ -28,7 +29,7 @@ class TSignUpForm extends StatelessWidget {
           const TTextFormField(
             label: TTexts.password,
             isRequired: true,
-            icon: Icons.password,
+            icon: Iconsax.password_check,
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
@@ -36,7 +37,7 @@ class TSignUpForm extends StatelessWidget {
           const TTextFormField(
             label: TTexts.name,
             isRequired: true,
-            icon: Icons.person_outline_rounded,
+            icon: Iconsax.user,
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
@@ -44,7 +45,7 @@ class TSignUpForm extends StatelessWidget {
           const TTextFormField(
             label: TTexts.nationality,
             isRequired: true,
-            icon: Icons.flag_outlined,
+            icon: Iconsax.flag,
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
@@ -52,7 +53,7 @@ class TSignUpForm extends StatelessWidget {
           const TTextFormField(
             label: TTexts.dob,
             isRequired: false,
-            icon: Icons.calendar_today_outlined,
+            icon: Iconsax.calendar_1,
           ),
           const SizedBox(height: TSizes.spaceBtwSections),
 

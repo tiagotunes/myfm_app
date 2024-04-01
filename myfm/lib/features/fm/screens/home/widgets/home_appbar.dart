@@ -17,7 +17,7 @@ class THomeAppBar extends StatelessWidget {
       centerTitle: false,
       title: const TAppBarTitleText(
         title: TTexts.home,
-        subtitle: '${TTexts.home} Subtitle',
+        // subtitle: '${TTexts.home} Subtitle',
       ),
       actions: [
         TCounterIcon(
