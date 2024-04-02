@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:myfm/common/widgets/images/circular_image.dart';
-import 'package:myfm/common/widgets/text/flag_label_text_with_icon.dart';
+import 'package:myfm/common/widgets/text/flag_label_text.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/enums.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
@@ -12,28 +12,30 @@ class TUserCard extends StatelessWidget {
   const TUserCard({
     super.key,
     this.showBorder = true,
+    this.onTap,
   });
 
   final bool showBorder;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
+    final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: TRoundedContainer(
         padding: const EdgeInsets.all(TSizes.sm),
         showBorder: showBorder,
         backgroundColor: Colors.transparent,
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Image
             Flexible(
               child: TCircularImage(
                 image: TImages.user,
                 backgroundColor: Colors.transparent,
-                overlayColor: THelperFunctions.isDarkMode(context)
-                    ? TColors.white
-                    : TColors.black,
+                overlayColor: isDark ? TColors.white : TColors.black,
               ),
             ),
             const SizedBox(width: TSizes.spaceBtwItems / 2),
@@ -44,12 +46,12 @@ class TUserCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TFlagLabelWithIconText(
+                  const TFlagLabelText(
                     label: 'User',
                     labelSize: TextSizes.large,
                   ),
                   Text(
-                    '123 followers',
+                    '@username',
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.labelMedium,
                   ),

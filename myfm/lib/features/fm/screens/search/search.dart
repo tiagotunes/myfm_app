@@ -3,6 +3,7 @@ import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/common/widgets/appbar/tabbar.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:myfm/common/widgets/text/appbar_title_text.dart';
+import 'package:myfm/features/fm/screens/search/widget/category_tab.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
@@ -82,12 +83,7 @@ class SearchScreen extends StatelessWidget {
           // Body
           body: TabBarView(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Center(
-                  child: Text(TTexts.all.toUpperCase()),
-                ),
-              ),
+              const TCategoryTab(),
               Padding(
                 padding: const EdgeInsets.all(TSizes.defaultSpace),
                 child: Center(
