@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/common/widgets/cards/team/team_card_vertical.dart';
-import 'package:myfm/common/widgets/custom_shapes/containers/primary_header_container.dart';
-import 'package:myfm/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:myfm/common/widgets/icons/counter_icon.dart';
 import 'package:myfm/common/widgets/layouts/grid_layout.dart';
-import 'package:myfm/features/fm/screens/teams/widgets/teams_appbar.dart';
+import 'package:myfm/common/widgets/text/appbar_title_text.dart';
+import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 
 class TeamsScreen extends StatelessWidget {
   const TeamsScreen({super.key});
@@ -13,46 +15,33 @@ class TeamsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: TAppBar(
+        centerTitle: false,
+        title: const TAppBarTitleText(title: TTexts.teams),
+        actions: [
+          TCounterIcon(
+            onPressed: () {},
+            iconColor: TColors.white,
+            icon: Icons.add_rounded,
+          )
+        ],
+      ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // Header
-            const TPrimaryHeaderContainer(
-              child: Column(
-                children: [
-                  // Appbar
-                  TTeamsAppBar(),
-                  SizedBox(height: TSizes.spaceBtwSections),
-
-                  // Search bar
-                  TSearchContainer(
-                    text: '',
-                    showBorder: false,
-                  ),
-                  SizedBox(height: TSizes.spaceBtwSections * 1.5),
-                ],
+        child: Padding(
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          child: Column(
+            children: [
+              TGridLayout(
+                itemCount: 3,
+                itemBuilder: (_, index) => const TTeamCardVertical(
+                  imageUrl: TImages.scp,
+                  name: 'Sporting CP',
+                  country: 'Portugal',
+                  year: '2024',
+                ),
               ),
-            ),
-
-            // Body
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
-              child: Column(
-                children: [
-                  TGridLayout(
-                    itemCount: 3,
-                    itemBuilder: (_, index) => const TTeamCardVertical(
-                      imageUrl: TImages.scp,
-                      name: 'Sporting CP',
-                      country: 'Portugal',
-                      year: '2024',
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

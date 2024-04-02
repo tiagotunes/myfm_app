@@ -23,38 +23,34 @@ class TPrimaryHeaderContainer extends StatelessWidget {
       child: Container(
         color: TColors.black,
         padding: const EdgeInsets.only(bottom: 0),
-        child: SizedBox(
-          width: double.infinity,
-          // height: 400,
-          child: Stack(
-            children: [
-              wDiagonalRect
-                  ? TDiagonalRect(
-                      height: TDeviceUtils.getAppBarHeight() * 2.5,
-                      width: TSizes.defaultSpace * 3,
-                      colors: [
-                        colors![0].withOpacity(0.5),
-                        colors![1].withOpacity(0.3),
-                        Colors.transparent,
-                      ],
-                      first: false,
-                    )
-                  : const SizedBox(),
-              wDiagonalRect
-                  ? TDiagonalRect(
-                      height: TDeviceUtils.getAppBarHeight() * 2.5,
-                      width: TSizes.defaultSpace * 3,
-                      colors: [
-                        colors![0].withOpacity(0.7),
-                        colors![1].withOpacity(0.5),
-                        Colors.transparent,
-                      ],
-                      first: true,
-                    )
-                  : const SizedBox(),
-              child,
-            ],
-          ),
+        child: Stack(
+          children: [
+            wDiagonalRect
+                ? TDiagonalRect(
+                    height: TDeviceUtils.getAppBarHeight() * 2.5,
+                    width: TSizes.defaultSpace * 3,
+                    colors: [
+                      colors![0].withOpacity(0.5),
+                      colors![1].withOpacity(0.3),
+                      Colors.transparent,
+                    ],
+                    first: false,
+                  )
+                : const SizedBox(),
+            wDiagonalRect
+                ? TDiagonalRect(
+                    height: TDeviceUtils.getAppBarHeight() * 2.5,
+                    width: TSizes.defaultSpace * 3,
+                    colors: [
+                      colors![0].withOpacity(0.7),
+                      colors![1].withOpacity(0.5),
+                      Colors.transparent,
+                    ],
+                    first: true,
+                  )
+                : const SizedBox(),
+            child,
+          ],
         ),
       ),
     );

@@ -21,13 +21,6 @@ class HomeScreen extends StatelessWidget {
                   THomeAppBar(),
                   SizedBox(height: TSizes.spaceBtwSections),
 
-                  // Search bar
-                  // TSearchContainer(
-                  //   text: '',
-                  //   showBorder: false,
-                  // ),
-                  // SizedBox(height: TSizes.spaceBtwSections),
-
                   // Banners
                   TBannerSlider(),
                   SizedBox(height: TSizes.spaceBtwSections * 1.5),

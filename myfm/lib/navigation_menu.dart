@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:myfm/features/fm/screens/home/home.dart';
 import 'package:myfm/features/fm/screens/search/search.dart';
 import 'package:myfm/features/fm/screens/teams/teams.dart';
+import 'package:myfm/features/personalization/screens/settings/settings.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
 
@@ -54,6 +55,6 @@ class NavigationController extends GetxController {
     HomeScreen(),
     SearchScreen(),
     TeamsScreen(),
-    Scaffold(),
+    SettingsScreen(),
   ];
 }
