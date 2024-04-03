@@ -6,6 +6,7 @@ import 'package:myfm/utils/theme/custom_themes/checkbox_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/chip_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/elevated_button_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/outlined_button_theme.dart';
+import 'package:myfm/utils/theme/custom_themes/switch_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/text_button_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/text_field_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/text_theme.dart';
@@ -25,6 +26,7 @@ class TAppTheme {
     appBarTheme: TAppBarTheme.darkAppBarTheme,
     bottomSheetTheme: TBottomSheetTheme.darkBottomSheetTheme,
     checkboxTheme: TCheckboxTheme.darkCheckboxTheme,
+    switchTheme: TSwitchTheme.darkTheme,
     chipTheme: TChipTheme.darkChipTheme,
     elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
