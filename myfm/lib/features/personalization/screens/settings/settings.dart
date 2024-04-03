@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:myfm/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:myfm/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:myfm/common/widgets/text/section_heading.dart';
+import 'package:myfm/features/personalization/screens/profile/profile.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 
@@ -34,7 +36,8 @@ class SettingsScreen extends StatelessWidget {
                   ),
 
                   // User Profile Card
-                  const TUserProfileTile(),
+                  TUserProfileTile(
+                      onPressed: () => Get.to(() => const ProfileScreen())),
                   const SizedBox(height: TSizes.spaceBtwSections),
                 ],
               ),
@@ -99,7 +102,28 @@ class SettingsScreen extends StatelessWidget {
                       ),
                       child: const Text('Logout'),
                     ),
-                  )
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+
+                  // Close account Button
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton(
+                      onPressed: () {},
+                      style:
+                          Theme.of(context).outlinedButtonTheme.style!.copyWith(
+                        side: MaterialStateProperty.resolveWith<BorderSide?>(
+                          (Set<MaterialState> states) {
+                            return const BorderSide(color: Colors.red);
+                          },
+                        ),
+                      ),
+                      child: const Text(
+                        'Close account',
+                        style: TextStyle(color: Colors.red),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
