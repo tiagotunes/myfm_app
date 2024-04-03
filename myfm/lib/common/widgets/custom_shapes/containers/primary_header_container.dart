@@ -10,12 +10,12 @@ class TPrimaryHeaderContainer extends StatelessWidget {
     super.key,
     required this.child,
     this.wDiagonalRect = false,
-    this.colors,
+    this.colors = const [Color(0xFF008057), Color(0xFF008057)],
   });
 
   final Widget child;
   final bool wDiagonalRect;
-  final List<Color>? colors;
+  final List<Color> colors;
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +30,8 @@ class TPrimaryHeaderContainer extends StatelessWidget {
                     height: TDeviceUtils.getAppBarHeight() * 2.5,
                     width: TSizes.defaultSpace * 3,
                     colors: [
-                      colors![0].withOpacity(0.5),
-                      colors![1].withOpacity(0.3),
+                      colors[0].withOpacity(0.5),
+                      colors[1].withOpacity(0.3),
                       Colors.transparent,
                     ],
                     first: false,
@@ -42,8 +42,8 @@ class TPrimaryHeaderContainer extends StatelessWidget {
                     height: TDeviceUtils.getAppBarHeight() * 2.5,
                     width: TSizes.defaultSpace * 3,
                     colors: [
-                      colors![0].withOpacity(0.7),
-                      colors![1].withOpacity(0.5),
+                      colors[0].withOpacity(0.7),
+                      colors[1].withOpacity(0.5),
                       Colors.transparent,
                     ],
                     first: true,

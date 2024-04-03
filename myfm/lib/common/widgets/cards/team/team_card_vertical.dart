@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:myfm/common/widgets/images/rounded_image.dart';
 import 'package:myfm/common/widgets/text/card_team_title_text.dart';
 import 'package:myfm/common/widgets/text/flag_label_text_with_icon.dart';
+import 'package:myfm/features/fm/screens/team_details/team_detail.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
@@ -22,7 +24,7 @@ class TTeamCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const TeamDetailScreen()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(TSizes.xs),
