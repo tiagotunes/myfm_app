@@ -4,9 +4,14 @@ import 'package:myfm/utils/device/device_utility.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
 
 class TTabBar extends StatelessWidget implements PreferredSizeWidget {
-  const TTabBar({super.key, required this.tabs});
+  const TTabBar({
+    super.key,
+    required this.tabs,
+    this.indicatorColor = TColors.primary,
+  });
 
   final List<Widget> tabs;
+  final Color indicatorColor;
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +19,11 @@ class TTabBar extends StatelessWidget implements PreferredSizeWidget {
     return Material(
       color: dark ? TColors.dark : TColors.light,
       child: TabBar(
+        tabAlignment: TabAlignment.start,
         isScrollable: true,
-        indicatorColor: TColors.primary,
-        labelColor: dark ? TColors.white : TColors.primary,
+        indicatorColor: indicatorColor,
+        indicatorWeight: 4.0,
+        labelColor: dark ? TColors.white : indicatorColor,
         unselectedLabelColor: TColors.darkGrey,
         tabs: tabs,
       ),
