@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:myfm/common/widgets/text/flag_label_text.dart';
+import 'package:myfm/common/widgets/text/label_text.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/enums.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 
-class TFlagLabelWithIconText extends StatelessWidget {
-  const TFlagLabelWithIconText({
+class TLabelWithIconText extends StatelessWidget {
+  const TLabelWithIconText({
     super.key,
     required this.label,
     this.maxLines = 1,
@@ -13,11 +13,13 @@ class TFlagLabelWithIconText extends StatelessWidget {
     this.textAlign = TextAlign.center,
     this.labelSize = TextSizes.small,
     this.iconColor = TColors.primary,
+    this.icon = Icons.flag,
   });
 
   final String label;
   final int maxLines;
   final Color? textColor, iconColor;
+  final IconData icon;
   final TextAlign? textAlign;
   final TextSizes labelSize;
 
@@ -27,7 +29,7 @@ class TFlagLabelWithIconText extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Flexible(
-          child: TFlagLabelText(
+          child: TLabelText(
             label: label,
             color: textColor,
             maxLines: maxLines,
@@ -36,8 +38,8 @@ class TFlagLabelWithIconText extends StatelessWidget {
           ),
         ),
         const SizedBox(width: TSizes.xs),
-        const Icon(
-          Icons.flag,
+        Icon(
+          icon,
           // color: iconColor,
           size: TSizes.iconXs,
         ),

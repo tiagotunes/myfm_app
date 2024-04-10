@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/success_screen/success_screen.dart';
 import 'package:myfm/features/authentication/screens/login/login.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -28,7 +29,7 @@ class VerifyEmailScreen extends StatelessWidget {
             children: [
               // Image
               Icon(
-                Icons.mark_email_read_outlined,
+                Iconsax.direct_inbox,
                 size: THelperFunctions.screenWidth() * 0.5,
               ),
               const SizedBox(height: TSizes.spaceBtwSections),
@@ -54,37 +55,48 @@ class VerifyEmailScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwSections),
 
               // Buttons
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () => Get.to(
-                    () => SucessScreen(
-                      icon: Icons.verified_outlined,
-                      title: TTexts.accountCreatedTitle,
-                      subtitle: TTexts.accountCreatedSubTitle,
-                      onPressed: () => Get.to(() => const LoginScreen()),
-                    ),
-                  ),
-                  child: Text(TTexts.tContinue.capitalize!),
-                ),
-              ),
+              // Continue
+              buildContinueBtn(),
               const SizedBox(height: TSizes.spaceBtwItems),
-              SizedBox(
-                width: double.infinity,
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    TTexts.resendEmail,
-                    // style: TextStyle(
-                    //   color: Color(0xFFB155AA),
-                    //   fontSize: 15,
-                    //   fontWeight: FontWeight.w600,
-                    // ),
-                  ),
-                ),
-              ),
+
+              // Resend Email
+              buildResendEmailBtn(),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  SizedBox buildContinueBtn() {
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: () => Get.to(
+          () => SucessScreen(
+            icon: Iconsax.verify,
+            title: TTexts.accountCreatedTitle,
+            subtitle: TTexts.accountCreatedSubTitle,
+            onPressed: () => Get.to(() => const LoginScreen()),
+          ),
+        ),
+        child: Text(TTexts.tContinue.capitalize!),
+      ),
+    );
+  }
+
+  SizedBox buildResendEmailBtn() {
+    return SizedBox(
+      width: double.infinity,
+      child: TextButton(
+        onPressed: () {},
+        child: const Text(
+          TTexts.resendEmail,
+          // style: TextStyle(
+          //   color: Color(0xFFB155AA),
+          //   fontSize: 15,
+          //   fontWeight: FontWeight.w600,
+          // ),
         ),
       ),
     );

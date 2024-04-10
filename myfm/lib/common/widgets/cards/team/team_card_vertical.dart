@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:myfm/common/widgets/images/rounded_image.dart';
 import 'package:myfm/common/widgets/text/card_team_title_text.dart';
-import 'package:myfm/common/widgets/text/flag_label_text_with_icon.dart';
+import 'package:myfm/common/widgets/text/label_text_with_icon.dart';
 import 'package:myfm/features/fm/screens/team_details/team_detail.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -64,7 +64,7 @@ class TTeamCardVertical extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
 
                   // Country
-                  TFlagLabelWithIconText(label: country),
+                  TLabelWithIconText(label: country),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
 
                   // Year

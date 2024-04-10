@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/utils/constants/enums.dart';
 
-class TFlagLabelText extends StatelessWidget {
-  const TFlagLabelText({
+class TLabelText extends StatelessWidget {
+  const TLabelText({
     super.key,
     required this.label,
     this.maxLines = 1,

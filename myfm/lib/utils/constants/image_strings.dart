@@ -7,10 +7,9 @@ class TImages {
   // Social Logos
   static const List<String> socialLogos = [
     "assets/logos/google-dark.png",
-    "assets/logos/facebook-dark.png"
+    "assets/logos/facebook-dark.png",
+    "assets/logos/x-dark.png"
   ];
-  static const String facebook = "assets/logos/facebook.png";
-  static const String google = "assets/logos/google.png";
 
   // OnBoarding Images
   static const List<String> onBoardingImage = [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:myfm/features/authentication/screens/login/login.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
@@ -26,7 +27,7 @@ class ResetPasswordScreen extends StatelessWidget {
           children: [
             // Image
             Icon(
-              Icons.verified_user_outlined,
+              Iconsax.shield_tick,
               size: THelperFunctions.screenWidth() * 0.5,
             ),
             const SizedBox(height: TSizes.spaceBtwSections),

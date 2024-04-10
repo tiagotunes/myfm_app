@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:myfm/common/widgets/images/circular_image.dart';
-import 'package:myfm/common/widgets/text/flag_label_text.dart';
+import 'package:myfm/common/widgets/text/label_text.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/enums.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
@@ -46,7 +46,7 @@ class TUserCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TFlagLabelText(
+                  const TLabelText(
                     label: 'User',
                     labelSize: TextSizes.large,
                   ),
