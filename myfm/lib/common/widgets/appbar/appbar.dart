@@ -14,13 +14,13 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leadingIcon,
     this.actions,
     this.leadingOnPressed,
-    this.leadingColor = TColors.primary,
+    this.diagonalRectColor = TColors.primary,
     this.wDiagonalRect = false,
   });
 
   final Widget? title;
   final bool showBackArrow, centerTitle, wDiagonalRect;
-  final Color leadingColor;
+  final Color diagonalRectColor;
   final IconData? leadingIcon;
   final List<Widget>? actions;
   final VoidCallback? leadingOnPressed;
@@ -33,11 +33,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
             ? TDiagonalRect(
                 height: TDeviceUtils.getAppBarHeight() * 2.5,
                 width: TSizes.defaultSpace * 3,
-                colors: [
-                  leadingColor.withOpacity(0.5),
-                  leadingColor.withOpacity(0.3),
-                  Colors.transparent,
-                ],
+                color: diagonalRectColor,
                 first: false,
               )
             : const SizedBox(),
@@ -45,11 +41,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
             ? TDiagonalRect(
                 height: TDeviceUtils.getAppBarHeight() * 2.5,
                 width: TSizes.defaultSpace * 3,
-                colors: [
-                  leadingColor.withOpacity(0.7),
-                  leadingColor.withOpacity(0.5),
-                  Colors.transparent,
-                ],
+                color: diagonalRectColor,
                 first: true,
               )
             : const SizedBox(),

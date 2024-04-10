@@ -17,7 +17,7 @@ class TeamDetailScreen extends StatelessWidget {
       child: Scaffold(
         appBar: TAppBar(
           wDiagonalRect: true,
-          leadingColor: const Color(0xFF008057),
+          diagonalRectColor: const Color(0xFF008057),
           showBackArrow: true,
           title: Text(
             'Sporting CP'.toUpperCase(),

@@ -27,19 +27,22 @@ class TTeamImageSlider extends StatelessWidget {
           alignment: AlignmentDirectional.center,
           children: [
             Obx(
-              () => Image(
-                image: AssetImage(
-                  controller.imageCurrentIndex.value == 0
-                      ? teamLogo
-                      : controller.imageCurrentIndex.value == 1
-                          ? teamKit
-                          : teamStadium,
+              () => Padding(
+                padding: const EdgeInsets.only(top: TSizes.sm),
+                child: Image(
+                  image: AssetImage(
+                    controller.imageCurrentIndex.value == 0
+                        ? teamLogo
+                        : controller.imageCurrentIndex.value == 1
+                            ? teamKit
+                            : teamStadium,
+                  ),
+                  height: 200,
                 ),
-                height: 200,
               ),
             ),
             Positioned(
-              top: 0,
+              top: TSizes.sm,
               right: TSizes.md,
               child: GestureDetector(
                 onTap: () => controller
@@ -47,13 +50,13 @@ class TTeamImageSlider extends StatelessWidget {
                 child: TRoundedContainer(
                   radius: 5,
                   padding: const EdgeInsets.all(TSizes.sm),
-                  backgroundColor: TColors.darkerGrey,
+                  backgroundColor: TColors.darkerGrey.withOpacity(0.8),
                   child: Obx(
                     () => controller.imageCurrentIndex.value == 0
-                        ? const Icon(Iconsax.shield)
+                        ? const Icon(Iconsax.shield, size: TSizes.iconSm)
                         : controller.imageCurrentIndex.value == 1
-                            ? const Icon(Icons.abc)
-                            : const Icon(Iconsax.location),
+                            ? const Icon(Iconsax.gallery, size: TSizes.iconSm)
+                            : const Icon(Iconsax.map, size: TSizes.iconSm),
                   ),
                 ),
               ),
