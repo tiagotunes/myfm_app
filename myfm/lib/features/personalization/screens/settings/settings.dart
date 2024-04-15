@@ -91,15 +91,15 @@ class SettingsScreen extends StatelessWidget {
                     title: 'Theme',
                     subtitle: 'Dark',
                   ),
-                  // TSettingsMenuTile(
-                  //   icon: Iconsax.attach_circle,
-                  //   title: 'Title',
-                  //   subtitle: 'Subtitle',
-                  //   trailing: Switch(
-                  //     value: false,
-                  //     onChanged: (value) {},
-                  //   ),
-                  // ),
+                  TSettingsMenuTile(
+                    icon: Iconsax.finger_cricle,
+                    title: 'Biometric Authentication',
+                    subtitle: 'Sign in with your unique identity',
+                    trailing: Switch(
+                      value: false,
+                      onChanged: (value) {},
+                    ),
+                  ),
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   // Logout Button
