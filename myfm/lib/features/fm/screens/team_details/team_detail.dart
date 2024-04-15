@@ -42,14 +42,56 @@ class TeamDetailScreen extends StatelessWidget {
           },
 
           // Body
-          body: const TabBarView(
+          body: TabBarView(
+            physics: NeverScrollableScrollPhysics(),
             children: [
-              TTmpTabBarView(),
-              TTmpTabBarView(),
-              TTmpTabBarView(),
-              TTmpTabBarView(),
-              TTmpTabBarView(),
-              TTmpTabBarView(),
+              const TTmpTabBarView(),
+              DataTable(
+                columns: const [
+                  DataColumn(
+                    label: Text('Name'),
+                  ),
+                  DataColumn(
+                    label: Text('Position'),
+                  ),
+                  DataColumn(
+                    label: Text('Nation'),
+                  ),
+                  DataColumn(
+                    label: Text('Age'),
+                  ),
+                ],
+                rows: const [
+                  DataRow(
+                    cells: [
+                      DataCell(Text('Teste 1')),
+                      DataCell(Center(child: Text('DC'))),
+                      DataCell(Center(child: Text('PT'))),
+                      DataCell(Center(child: Text('21'))),
+                    ],
+                  ),
+                  DataRow(
+                    cells: [
+                      DataCell(Text('Teste 2')),
+                      DataCell(Center(child: Text('DC'))),
+                      DataCell(Center(child: Text('PT'))),
+                      DataCell(Center(child: Text('22'))),
+                    ],
+                  ),
+                  DataRow(
+                    cells: [
+                      DataCell(Text('Teste 3')),
+                      DataCell(Center(child: Text('DC'))),
+                      DataCell(Center(child: Text('PT'))),
+                      DataCell(Center(child: Text('23'))),
+                    ],
+                  ),
+                ],
+              ),
+              const TTmpTabBarView(),
+              const TTmpTabBarView(),
+              const TTmpTabBarView(),
+              const TTmpTabBarView(),
             ],
           ),
         ),
