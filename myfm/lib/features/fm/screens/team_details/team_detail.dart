@@ -47,6 +47,7 @@ class TeamDetailScreen extends StatelessWidget {
             children: [
               const TTmpTabBarView(),
               DataTable(
+                // Change to Table -> https://api.flutter.dev/flutter/widgets/Table-class.html
                 columns: const [
                   DataColumn(
                     label: Text('Name'),
@@ -57,9 +58,7 @@ class TeamDetailScreen extends StatelessWidget {
                   DataColumn(
                     label: Text('Nation'),
                   ),
-                  DataColumn(
-                    label: Text('Age'),
-                  ),
+                  DataColumn(label: Text('Age'), numeric: true),
                 ],
                 rows: const [
                   DataRow(
