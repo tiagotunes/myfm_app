@@ -52,19 +52,19 @@ class SettingsScreen extends StatelessWidget {
                   const TSectionHeading(title: 'Account Settings'),
                   const SizedBox(height: TSizes.spaceBtwItems),
                   const TSettingsMenuTile(
-                    icon: Iconsax.attach_circle,
-                    title: 'Title',
-                    subtitle: 'Subtitle',
+                    icon: Iconsax.bookmark,
+                    title: 'Saved',
+                    subtitle: 'Check your personal colletion',
                   ),
                   const TSettingsMenuTile(
-                    icon: Iconsax.attach_circle,
-                    title: 'Title',
-                    subtitle: 'Subtitle',
+                    icon: Iconsax.notification,
+                    title: 'Notifications',
+                    subtitle: 'Set any kind of notification message',
                   ),
                   const TSettingsMenuTile(
-                    icon: Iconsax.attach_circle,
-                    title: 'Title',
-                    subtitle: 'Subtitle',
+                    icon: Iconsax.security_user,
+                    title: 'Account Privacy',
+                    subtitle: 'Control your account privacy',
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
 
@@ -72,19 +72,34 @@ class SettingsScreen extends StatelessWidget {
                   const TSectionHeading(title: 'App Settings'),
                   const SizedBox(height: TSizes.spaceBtwItems),
                   const TSettingsMenuTile(
-                    icon: Iconsax.attach_circle,
-                    title: 'Title',
-                    subtitle: 'Subtitle',
+                    icon: Iconsax.translate,
+                    title: 'Language',
+                    subtitle: 'English',
                   ),
-                  TSettingsMenuTile(
-                    icon: Iconsax.attach_circle,
-                    title: 'Title',
-                    subtitle: 'Subtitle',
-                    trailing: Switch(
-                      value: false,
-                      onChanged: (value) {},
-                    ),
+                  const TSettingsMenuTile(
+                    icon: Iconsax.dollar_circle,
+                    title: 'Currency',
+                    subtitle: 'Euro',
                   ),
+                  const TSettingsMenuTile(
+                    icon: Iconsax.moneys,
+                    title: 'Wage Display Format',
+                    subtitle: 'Monthly',
+                  ),
+                  const TSettingsMenuTile(
+                    icon: Iconsax.moon,
+                    title: 'Theme',
+                    subtitle: 'Dark',
+                  ),
+                  // TSettingsMenuTile(
+                  //   icon: Iconsax.attach_circle,
+                  //   title: 'Title',
+                  //   subtitle: 'Subtitle',
+                  //   trailing: Switch(
+                  //     value: false,
+                  //     onChanged: (value) {},
+                  //   ),
+                  // ),
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   // Logout Button

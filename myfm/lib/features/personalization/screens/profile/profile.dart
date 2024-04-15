@@ -29,11 +29,12 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    TCircularImage(
+                    const TCircularImage(
                       image: TImages.user,
-                      backgroundColor: TColors.darkerGrey.withOpacity(0.5),
+                      overlayColor: TColors.darkGrey,
                       width: 80,
                       height: 80,
+                      padding: 0,
                     ),
                     TextButton(
                       onPressed: () {},
