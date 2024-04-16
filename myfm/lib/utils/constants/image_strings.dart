@@ -28,6 +28,7 @@ class TImages {
 
   // Default Images
   static const String user = "assets/images/default/user.png";
+  static const String player = "assets/images/default/player.png";
 
   // Tmp Images
   static const String scp = "assets/logos/sportingcp.png";

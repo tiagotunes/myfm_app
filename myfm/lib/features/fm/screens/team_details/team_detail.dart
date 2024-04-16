@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_detail_slider.dart';
+import 'package:myfm/features/fm/screens/team_details/widgets/team_squad_list_view.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -11,7 +12,6 @@ class TeamDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final dark = THelperFunctions.isDarkMode(context);
     return DefaultTabController(
       length: 6,
       child: Scaffold(
@@ -42,56 +42,35 @@ class TeamDetailScreen extends StatelessWidget {
           },
 
           // Body
-          body: TabBarView(
-            physics: NeverScrollableScrollPhysics(),
-            children: [
-              const TTmpTabBarView(),
-              DataTable(
-                // Change to Table -> https://api.flutter.dev/flutter/widgets/Table-class.html
-                columns: const [
-                  DataColumn(
-                    label: Text('Name'),
-                  ),
-                  DataColumn(
-                    label: Text('Position'),
-                  ),
-                  DataColumn(
-                    label: Text('Nation'),
-                  ),
-                  DataColumn(label: Text('Age'), numeric: true),
-                ],
-                rows: const [
-                  DataRow(
-                    cells: [
-                      DataCell(Text('Teste 1')),
-                      DataCell(Center(child: Text('DC'))),
-                      DataCell(Center(child: Text('PT'))),
-                      DataCell(Center(child: Text('21'))),
-                    ],
-                  ),
-                  DataRow(
-                    cells: [
-                      DataCell(Text('Teste 2')),
-                      DataCell(Center(child: Text('DC'))),
-                      DataCell(Center(child: Text('PT'))),
-                      DataCell(Center(child: Text('22'))),
-                    ],
-                  ),
-                  DataRow(
-                    cells: [
-                      DataCell(Text('Teste 3')),
-                      DataCell(Center(child: Text('DC'))),
-                      DataCell(Center(child: Text('PT'))),
-                      DataCell(Center(child: Text('23'))),
-                    ],
-                  ),
-                ],
-              ),
-              const TTmpTabBarView(),
-              const TTmpTabBarView(),
-              const TTmpTabBarView(),
-              const TTmpTabBarView(),
-            ],
+          body: Padding(
+            padding: const EdgeInsets.all(TSizes.defaultSpace),
+            child: TabBarView(
+              physics: const NeverScrollableScrollPhysics(),
+              children: [
+                const TTmpTabBarView(),
+                ListView(
+                  shrinkWrap: true,
+                  // physics: const NeverScrollableScrollPhysics(),
+                  children: const [
+                    Column(
+                      children: [
+                        TTeamSquadListView(position: 'Goalkeepers'),
+                        SizedBox(height: TSizes.spaceBtwSections),
+                        TTeamSquadListView(position: 'Defenders'),
+                        SizedBox(height: TSizes.spaceBtwSections),
+                        TTeamSquadListView(position: 'Midfielders'),
+                        SizedBox(height: TSizes.spaceBtwSections),
+                        TTeamSquadListView(position: 'Forwards'),
+                      ],
+                    ),
+                  ],
+                ),
+                const TTmpTabBarView(),
+                const TTmpTabBarView(),
+                const TTmpTabBarView(),
+                const TTmpTabBarView(),
+              ],
+            ),
           ),
         ),
       ),
