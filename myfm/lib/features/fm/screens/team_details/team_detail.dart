@@ -6,6 +6,7 @@ import 'package:myfm/features/fm/screens/team_details/widgets/team_squad_list_vi
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 
 class TeamDetailScreen extends StatelessWidget {
   const TeamDetailScreen({super.key});
@@ -13,7 +14,7 @@ class TeamDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 6,
+      length: TTexts.teamTabbar.length,
       child: Scaffold(
         appBar: TAppBar(
           wDiagonalRect: true,
@@ -37,7 +38,10 @@ class TeamDetailScreen extends StatelessWidget {
           // Header
           headerSliverBuilder: (context, innerBoxIsScrolled) {
             return [
-              const TTeamDetailSlider(teamLogo: TImages.scp),
+              const TTeamDetailSlider(
+                teamLogo: TImages.scp,
+                indicatorColor: Color(0xFF008057),
+              ),
             ];
           },
 
@@ -54,13 +58,22 @@ class TeamDetailScreen extends StatelessWidget {
                   children: const [
                     Column(
                       children: [
-                        TTeamSquadListView(position: 'Goalkeepers'),
-                        SizedBox(height: TSizes.spaceBtwSections),
-                        TTeamSquadListView(position: 'Defenders'),
-                        SizedBox(height: TSizes.spaceBtwSections),
-                        TTeamSquadListView(position: 'Midfielders'),
-                        SizedBox(height: TSizes.spaceBtwSections),
-                        TTeamSquadListView(position: 'Forwards'),
+                        TTeamSquadListView(
+                          position: 'Goalkeepers',
+                          nPlayers: 2,
+                        ),
+                        TTeamSquadListView(
+                          position: 'Defenders',
+                          nPlayers: 4,
+                        ),
+                        TTeamSquadListView(
+                          position: 'Midfielders',
+                          nPlayers: 6,
+                        ),
+                        TTeamSquadListView(
+                          position: 'Forwards',
+                          nPlayers: 1,
+                        ),
                       ],
                     ),
                   ],

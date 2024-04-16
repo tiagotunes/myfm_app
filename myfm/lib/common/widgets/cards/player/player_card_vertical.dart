@@ -28,7 +28,7 @@ class TPlayerCardVertical extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        width: 150,
+        width: TSizes.playerCardVerticalWidth,
         padding: const EdgeInsets.all(TSizes.xs),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(
@@ -39,9 +39,9 @@ class TPlayerCardVertical extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Logo
+            // Player Image
             TRoundedContainer(
-              height: 125,
+              height: TSizes.playerImageHeight,
               backgroundColor: dark ? TColors.dark : TColors.light,
               child: Stack(
                 children: [
@@ -57,21 +57,25 @@ class TPlayerCardVertical extends StatelessWidget {
                     ),
                     fit: BoxFit.contain,
                   ),
+
+                  // Nation Flag
                   const Positioned(
                     top: TSizes.sm,
                     right: TSizes.sm,
                     child: Icon(
                       Iconsax.flag,
                       color: TColors.darkGrey,
-                      size: 25,
+                      size: TSizes.iconMd,
                     ),
                   ),
+
+                  // Shirt Number
                   Positioned(
                     top: TSizes.sm + TSizes.spaceBtwSections,
                     right: TSizes.sm,
                     child: SizedBox(
-                      height: 25,
-                      width: 25,
+                      height: TSizes.iconMd,
+                      width: TSizes.iconMd,
                       child: Center(
                         child: Text(
                           number == null ? '' : number.toString(),

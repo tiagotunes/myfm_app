@@ -60,8 +60,21 @@ class TTexts {
   static const String search = 'Search';
   static const String teams = 'Teams';
 
-  // Tabbar Text
-  static const String all = 'All';
-  static const String posts = 'Posts';
-  static const String users = 'Users';
+  // Search Tabbar Text
+  static const List<String> searchTabbar = [
+    'All',
+    'Users',
+    'Teams',
+    'Posts',
+  ];
+
+  // Team Tabbar Text
+  static const List<String> teamTabbar = [
+    'Home',
+    'Squad',
+    'Competitions',
+    'Transfers',
+    'Club',
+    'Finances',
+  ];
 }

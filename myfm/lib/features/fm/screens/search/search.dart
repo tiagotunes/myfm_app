@@ -15,7 +15,7 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: TTexts.searchTabbar.length,
       child: Scaffold(
         // Appbar
         appBar: const TAppBar(
@@ -68,43 +68,40 @@ class SearchScreen extends StatelessWidget {
                 ),
 
                 // Tabs
-                bottom: const TTabBar(
-                  tabs: [
-                    Tab(child: Text(TTexts.all)),
-                    Tab(child: Text(TTexts.users)),
-                    Tab(child: Text(TTexts.teams)),
-                    Tab(child: Text(TTexts.posts)),
-                  ],
+                bottom: TTabBar(
+                  tabs: List.generate(TTexts.searchTabbar.length,
+                      (index) => Tab(child: Text(TTexts.searchTabbar[index]))),
                 ),
               ),
             ];
           },
 
           // Body
-          body: TabBarView(
+          body: const TabBarView(
             children: [
-              const TCategoryTab(),
-              Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Center(
-                  child: Text(TTexts.users.toUpperCase()),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Center(
-                  child: Text(TTexts.teams.toUpperCase()),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Center(
-                  child: Text(TTexts.posts.toUpperCase()),
-                ),
-              ),
+              TCategoryTab(),
+              TTmpTabBarView(),
+              TTmpTabBarView(),
+              TTmpTabBarView(),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class TTmpTabBarView extends StatelessWidget {
+  const TTmpTabBarView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.all(TSizes.defaultSpace),
+      child: Center(
+        child: Text('TBD'),
       ),
     );
   }

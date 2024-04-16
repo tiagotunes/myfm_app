@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:myfm/common/widgets/appbar/tabbar.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_image_slider.dart';
 import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
 
 class TTeamDetailSlider extends StatelessWidget {
   const TTeamDetailSlider({
     super.key,
     required this.teamLogo,
+    this.indicatorColor = TColors.primary,
   });
 
   final String teamLogo;
+  final Color indicatorColor;
 
   @override
   Widget build(BuildContext context) {
@@ -28,16 +31,10 @@ class TTeamDetailSlider extends StatelessWidget {
       ),
 
       // Tabs
-      bottom: const TTabBar(
-        indicatorColor: Color(0xFF008057),
-        tabs: [
-          Tab(child: Text('Home')),
-          Tab(child: Text('Squad')),
-          Tab(child: Text('Competitions')),
-          Tab(child: Text('Transfers')),
-          Tab(child: Text('Club')),
-          Tab(child: Text('Finances')),
-        ],
+      bottom: TTabBar(
+        indicatorColor: indicatorColor,
+        tabs: List.generate(TTexts.teamTabbar.length,
+            (index) => Tab(child: Text(TTexts.teamTabbar[index]))),
       ),
     );
   }

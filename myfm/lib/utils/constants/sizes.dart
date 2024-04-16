@@ -49,6 +49,13 @@ class TSizes {
   static const double teamImageSize = 120.0;
   static const double teamImageRadius = 16.0;
   static const double teamImageHeight = 170.0;
+  static const double teamCardVerticalWidth = 180.0;
+
+  // Player Card dimensions
+  static const double playerImageSize = 120.0;
+  static const double playerImageRadius = 16.0;
+  static const double playerImageHeight = 125.0;
+  static const double playerCardVerticalWidth = 150.0;
 
   // Input Field
   static const double inputFieldRadius = 12.0;

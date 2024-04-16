@@ -26,7 +26,7 @@ class TTeamCardVertical extends StatelessWidget {
     return GestureDetector(
       onTap: () => Get.to(() => const TeamDetailScreen()),
       child: Container(
-        width: 180,
+        width: TSizes.teamCardVerticalWidth,
         padding: const EdgeInsets.all(TSizes.xs),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(TSizes.teamImageRadius),
