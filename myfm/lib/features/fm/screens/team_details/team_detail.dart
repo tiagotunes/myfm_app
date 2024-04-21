@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
+import 'package:myfm/common/widgets/text/section_heading.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_detail_slider.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_squad_tab.dart';
 import 'package:myfm/utils/constants/colors.dart';
@@ -60,7 +61,7 @@ class TeamDetailScreen extends StatelessWidget {
                 // Competitions
                 TTmpTabBarView(),
                 // Transfers
-                TTmpTabBarView(),
+                TTeamTransfersTab(),
                 // Club
                 TTmpTabBarView(),
                 // Finances
@@ -70,6 +71,28 @@ class TeamDetailScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class TTeamTransfersTab extends StatelessWidget {
+  const TTeamTransfersTab({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: const [
+        TSectionHeading(
+          title: 'TRANSFERS IN',
+          textColor: Color(0xFF50E250),
+        ),
+        TSectionHeading(
+          title: 'TRANSFERS OUT',
+          textColor: Color(0xFFFF5454),
+        ),
+      ],
     );
   }
 }
