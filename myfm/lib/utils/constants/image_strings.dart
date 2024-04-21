@@ -32,4 +32,6 @@ class TImages {
 
   // Tmp Images
   static const String scp = "assets/logos/sportingcp.png";
+  static const String scpKit = "assets/logos/scp_kit.png";
+  static const String scpStadium = "assets/logos/scp_stadium.jpg";
 }

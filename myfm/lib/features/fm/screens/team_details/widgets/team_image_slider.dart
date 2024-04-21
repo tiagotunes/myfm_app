@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:myfm/common/widgets/images/rounded_image.dart';
 import 'package:myfm/features/fm/controllers/team_image_controller.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -26,21 +27,48 @@ class TTeamImageSlider extends StatelessWidget {
         Stack(
           alignment: AlignmentDirectional.center,
           children: [
+            // Team Images
             Obx(
               () => Padding(
                 padding: const EdgeInsets.only(top: TSizes.sm),
-                child: Image(
-                  image: AssetImage(
-                    controller.imageCurrentIndex.value == 0
-                        ? teamLogo
-                        : controller.imageCurrentIndex.value == 1
-                            ? teamKit
-                            : teamStadium,
-                  ),
-                  height: 200,
+                child: Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: [
+                    TRoundedImage(
+                      height: 200,
+                      width: 300,
+                      fit: BoxFit.fitHeight,
+                      imageUrl: controller.imageCurrentIndex.value == 0
+                          ? teamLogo
+                          : controller.imageCurrentIndex.value == 1
+                              ? teamKit
+                              : teamStadium,
+                    ),
+                    controller.imageCurrentIndex.value == 2
+                        ? Positioned(
+                            bottom: 0,
+                            child: Container(
+                              width: 300,
+                              height: 30,
+                              decoration: BoxDecoration(
+                                  color: TColors.dark.withOpacity(0.6)),
+                              child: const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Iconsax.location),
+                                  SizedBox(width: TSizes.spaceBtwItems / 2),
+                                  Text('Estádio José Alvalade XXI')
+                                ],
+                              ),
+                            ),
+                          )
+                        : const SizedBox(),
+                  ],
                 ),
               ),
             ),
+
+            // Icon button - onTap update image
             Positioned(
               top: TSizes.sm,
               right: TSizes.md,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_detail_slider.dart';
-import 'package:myfm/features/fm/screens/team_details/widgets/team_squad_list_view.dart';
+import 'package:myfm/features/fm/screens/team_details/widgets/team_squad_tab.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -40,48 +40,31 @@ class TeamDetailScreen extends StatelessWidget {
             return [
               const TTeamDetailSlider(
                 teamLogo: TImages.scp,
+                teamKit: TImages.scpKit,
+                teamStadium: TImages.scpStadium,
                 indicatorColor: Color(0xFF008057),
               ),
             ];
           },
 
           // Body
-          body: Padding(
-            padding: const EdgeInsets.all(TSizes.defaultSpace),
+          body: const Padding(
+            padding: EdgeInsets.all(TSizes.defaultSpace),
             child: TabBarView(
-              physics: const NeverScrollableScrollPhysics(),
+              physics: NeverScrollableScrollPhysics(),
               children: [
-                const TTmpTabBarView(),
-                ListView(
-                  shrinkWrap: true,
-                  // physics: const NeverScrollableScrollPhysics(),
-                  children: const [
-                    Column(
-                      children: [
-                        TTeamSquadListView(
-                          position: 'Goalkeepers',
-                          nPlayers: 2,
-                        ),
-                        TTeamSquadListView(
-                          position: 'Defenders',
-                          nPlayers: 4,
-                        ),
-                        TTeamSquadListView(
-                          position: 'Midfielders',
-                          nPlayers: 6,
-                        ),
-                        TTeamSquadListView(
-                          position: 'Forwards',
-                          nPlayers: 1,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                const TTmpTabBarView(),
-                const TTmpTabBarView(),
-                const TTmpTabBarView(),
-                const TTmpTabBarView(),
+                // Home
+                TTmpTabBarView(),
+                // Squad
+                TTeamSquadTab(),
+                // Competitions
+                TTmpTabBarView(),
+                // Transfers
+                TTmpTabBarView(),
+                // Club
+                TTmpTabBarView(),
+                // Finances
+                TTmpTabBarView(),
               ],
             ),
           ),

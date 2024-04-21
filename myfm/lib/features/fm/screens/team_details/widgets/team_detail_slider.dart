@@ -10,9 +10,11 @@ class TTeamDetailSlider extends StatelessWidget {
     super.key,
     required this.teamLogo,
     this.indicatorColor = TColors.primary,
+    required this.teamKit,
+    required this.teamStadium,
   });
 
-  final String teamLogo;
+  final String teamLogo, teamKit, teamStadium;
   final Color indicatorColor;
 
   @override
@@ -26,8 +28,8 @@ class TTeamDetailSlider extends StatelessWidget {
       expandedHeight: 280,
       flexibleSpace: TTeamImageSlider(
         teamLogo: teamLogo,
-        teamKit: teamLogo,
-        teamStadium: teamLogo,
+        teamKit: teamKit,
+        teamStadium: teamStadium,
       ),
 
       // Tabs
