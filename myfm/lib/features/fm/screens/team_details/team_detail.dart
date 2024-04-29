@@ -82,15 +82,67 @@ class TTeamTransfersTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        TSectionHeading(
+    return Column(
+      children: [
+        const TSectionHeading(
           title: 'TRANSFERS IN',
           textColor: Color(0xFF50E250),
         ),
-        TSectionHeading(
+        Container(
+          child: Table(
+            border: TableBorder.all(color: Colors.black),
+            children: List.generate(
+              6,
+              (index) => TableRow(children: [
+                Text('Cell 1'),
+                Text('Cell 2'),
+                Text('Cell 3'),
+              ]),
+            ),
+          ),
+          // [
+          //   TableRow(children: [
+          //     Text('Cell 1'),
+          //     Text('Cell 2'),
+          //     Text('Cell 3'),
+          //   ]),
+          //   TableRow(children: [
+          //     Text('Cell 4'),
+          //     Text('Cell 5'),
+          //     Text('Cell 6'),
+          //   ])
+          // ],
+        ),
+        Row(
+          children: [
+            Text(
+              'Total',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+            const SizedBox(width: TSizes.spaceBtwItems / 2),
+            Text(
+              '€38M',
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+          ],
+        ),
+        const SizedBox(height: TSizes.spaceBtwItems),
+        const TSectionHeading(
           title: 'TRANSFERS OUT',
           textColor: Color(0xFFFF5454),
+        ),
+        Row(
+          children: [
+            Text(
+              'Total',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+            const SizedBox(width: TSizes.spaceBtwItems / 2),
+            Text(
+              '€0',
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+          ],
         ),
       ],
     );
