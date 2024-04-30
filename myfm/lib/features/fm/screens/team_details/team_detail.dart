@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
-import 'package:myfm/common/widgets/text/section_heading.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_detail_slider.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_squad_tab.dart';
+import 'package:myfm/features/fm/screens/team_details/widgets/team_transfers_tab.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -71,80 +71,6 @@ class TeamDetailScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class TTeamTransfersTab extends StatelessWidget {
-  const TTeamTransfersTab({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const TSectionHeading(
-          title: 'TRANSFERS IN',
-          textColor: Color(0xFF50E250),
-        ),
-        Container(
-          child: Table(
-            border: TableBorder.all(color: Colors.black),
-            children: List.generate(
-              6,
-              (index) => TableRow(children: [
-                Text('Cell 1'),
-                Text('Cell 2'),
-                Text('Cell 3'),
-              ]),
-            ),
-          ),
-          // [
-          //   TableRow(children: [
-          //     Text('Cell 1'),
-          //     Text('Cell 2'),
-          //     Text('Cell 3'),
-          //   ]),
-          //   TableRow(children: [
-          //     Text('Cell 4'),
-          //     Text('Cell 5'),
-          //     Text('Cell 6'),
-          //   ])
-          // ],
-        ),
-        Row(
-          children: [
-            Text(
-              'Total',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-            const SizedBox(width: TSizes.spaceBtwItems / 2),
-            Text(
-              '€38M',
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-          ],
-        ),
-        const SizedBox(height: TSizes.spaceBtwItems),
-        const TSectionHeading(
-          title: 'TRANSFERS OUT',
-          textColor: Color(0xFFFF5454),
-        ),
-        Row(
-          children: [
-            Text(
-              'Total',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-            const SizedBox(width: TSizes.spaceBtwItems / 2),
-            Text(
-              '€0',
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-          ],
-        ),
-      ],
     );
   }
 }

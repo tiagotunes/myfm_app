@@ -14,12 +14,14 @@ class TRoundedContainer extends StatelessWidget {
     this.backgroundColor = TColors.white,
     this.padding,
     this.margin,
+    this.radiusLeft = true,
+    this.radiusRight = true,
   });
 
   final double? width, height;
   final double radius;
   final Widget? child;
-  final bool showBorder;
+  final bool showBorder, radiusLeft, radiusRight;
   final Color borderColor, backgroundColor;
   final EdgeInsetsGeometry? padding, margin;
 
@@ -32,7 +34,13 @@ class TRoundedContainer extends StatelessWidget {
       margin: margin,
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: BorderRadius.circular(radius),
+        borderRadius: radiusLeft && radiusRight
+            ? BorderRadius.circular(radius)
+            : radiusLeft
+                ? BorderRadius.horizontal(left: Radius.circular(radius))
+                : radiusRight
+                    ? BorderRadius.horizontal(right: Radius.circular(radius))
+                    : const BorderRadius.all(Radius.zero),
         border: showBorder ? Border.all(color: borderColor) : null,
       ),
       child: child,

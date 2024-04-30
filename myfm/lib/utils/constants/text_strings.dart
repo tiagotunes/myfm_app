@@ -1,5 +1,7 @@
 class TTexts {
   // Global Texts
+  static const String name = "Name";
+  static const String total = 'Total';
 
   // OnBoarding Texts
   static const List<String> onBoardingSubTitle = [
@@ -41,7 +43,6 @@ class TTexts {
   static const String email = "E-mail";
   static const String forgetPassword = "Forget Password?";
   static const String iAgreeTo = "I agree to";
-  static const String name = "Name";
   static const String nationality = "Nationality";
   static const String orSignInWith = "or sign in with";
   static const String orSignUpWith = "or sign up with";
@@ -55,26 +56,34 @@ class TTexts {
   static const String termsOfUse = "Terms of use";
 
   // Navigation Menu Text
-  static const String home = 'Home';
-  static const String profile = 'Profile';
-  static const String search = 'Search';
-  static const String teams = 'Teams';
+  static const String home = "Home";
+  static const String profile = "Profile";
+  static const String search = "Search";
+  static const String teams = "Teams";
 
   // Search Tabbar Text
   static const List<String> searchTabbar = [
-    'All',
-    'Users',
-    'Teams',
-    'Posts',
+    "All",
+    "Users",
+    "Teams",
+    "Posts",
   ];
 
   // Team Tabbar Text
   static const List<String> teamTabbar = [
-    'Home',
-    'Squad',
-    'Competitions',
-    'Transfers',
-    'Club',
-    'Finances',
+    "Home",
+    "Squad",
+    "Competitions",
+    "Transfers",
+    "Club",
+    "Finances",
   ];
+
+  // Team Transfers Tab Text
+  static const String fee = "fee";
+  static const String from = "from";
+  static const String noTransfers = "No transfers to display";
+  static const String to = "to";
+  static const String transfersIn = "transfers in";
+  static const String transfersOut = "transfers out";
 }
