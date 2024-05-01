@@ -20,7 +20,7 @@ class TCounterIcon extends StatelessWidget {
     return Stack(
       children: [
         IconButton(
-          onPressed: () {},
+          onPressed: onPressed,
           icon: Icon(
             icon,
             color: iconColor,

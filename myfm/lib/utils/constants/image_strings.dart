@@ -30,6 +30,9 @@ class TImages {
   static const String user = "assets/images/default/user.png";
   static const String player = "assets/images/default/player.png";
 
+  // Background Images
+  static const String clubOffice = "assets/images/backgrounds/club_office.jpg";
+
   // Tmp Images
   static const String scp = "assets/logos/sportingcp.png";
   static const String scpKit = "assets/logos/scp_kit.png";
