@@ -8,11 +8,16 @@ class TTextFormField extends StatelessWidget {
     required this.label,
     required this.isRequired,
     this.icon,
+    this.readOnly = false,
+    this.hintText,
+    this.icon_,
   });
 
   final String label;
+  final String? hintText;
   final bool isRequired;
-  final IconData? icon;
+  final bool readOnly;
+  final IconData? icon, icon_;
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +33,23 @@ class TTextFormField extends StatelessWidget {
         ),
         const SizedBox(height: TSizes.spaceBtwLabelInputField),
         TextFormField(
+          readOnly: readOnly,
           decoration: icon != null
               ? InputDecoration(
                   prefixIcon: Icon(icon),
+                  hintText: hintText,
+                  hintStyle: Theme.of(context).textTheme.bodySmall,
                 )
-              : const InputDecoration(),
+              : icon_ != null
+                  ? InputDecoration(
+                      suffixIcon: Icon(icon_),
+                      hintText: hintText,
+                      hintStyle: Theme.of(context).textTheme.bodySmall,
+                    )
+                  : InputDecoration(
+                      hintText: hintText,
+                      hintStyle: Theme.of(context).textTheme.bodySmall,
+                    ),
         ),
       ],
     );
