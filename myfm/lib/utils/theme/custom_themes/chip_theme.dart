@@ -7,10 +7,10 @@ class TChipTheme {
   // static ChipThemeData lightChipTheme = ChipThemeData();
 
   static ChipThemeData darkChipTheme = const ChipThemeData(
-    disabledColor: Colors.grey,
-    labelStyle: TextStyle(color: Colors.white),
+    disabledColor: TColors.darkerGrey,
+    labelStyle: TextStyle(color: TColors.white),
     selectedColor: TColors.primary,
     padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 12.0),
-    checkmarkColor: Colors.white,
+    checkmarkColor: TColors.white,
   );
 }
