@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/common/widgets/chips/choice_chip.dart';
 import 'package:myfm/utils/constants/sizes.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 import 'package:myfm/utils/theme/custom_themes/text_theme.dart';
 
 class TColorChoiceChip extends StatelessWidget {
@@ -14,7 +15,7 @@ class TColorChoiceChip extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'COLOR',
+          TTexts.color.toUpperCase(),
           style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                 fontFamily: TTextTheme.fontFamilyIBM,
                 fontWeight: FontWeight.bold,
@@ -23,59 +24,15 @@ class TColorChoiceChip extends StatelessWidget {
         const SizedBox(height: TSizes.spaceBtwLabelInputField),
         Wrap(
           // spacing: 8,
-          children: [
-            TChoiceChip(
-              text: 'White',
-              selected: false,
+          children: List.generate(
+            TTexts.formColors.length,
+            (index) => TChoiceChip(
+              text: TTexts.formColors[index],
+              selected: TTexts.formColors[index] == "Green" ? true : false,
               onSelected: (value) {},
             ),
-            TChoiceChip(
-              text: 'Yellow',
-              selected: false,
-              onSelected: (value) {},
-            ),
-            TChoiceChip(
-              text: 'Orange',
-              selected: false,
-              onSelected: (value) {},
-            ),
-            TChoiceChip(
-              text: 'Pink',
-              selected: false,
-              onSelected: (value) {},
-            ),
-            TChoiceChip(
-              text: 'Red',
-              selected: false,
-              onSelected: (value) {},
-            ),
-            TChoiceChip(
-              text: 'Green',
-              selected: true,
-              onSelected: (value) {},
-            ),
-            TChoiceChip(
-              text: 'Blue',
-              selected: false,
-              onSelected: (value) {},
-            ),
-            TChoiceChip(
-              text: 'Purple',
-              selected: false,
-              onSelected: (value) {},
-            ),
-            TChoiceChip(
-              text: 'Black',
-              selected: false,
-              onSelected: (value) {},
-            ),
-            TChoiceChip(
-              text: 'customColor',
-              selected: false,
-              onSelected: (value) {},
-            ),
-          ],
-        )
+          ),
+        ),
       ],
     );
   }

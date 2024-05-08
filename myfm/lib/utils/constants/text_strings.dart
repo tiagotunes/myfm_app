@@ -1,6 +1,8 @@
 class TTexts {
   // Global Texts
+  static const String home = "Home";
   static const String name = "Name";
+  static const String teams = "Teams";
   static const String total = 'Total';
 
   // OnBoarding Texts
@@ -56,22 +58,20 @@ class TTexts {
   static const String termsOfUse = "Terms of use";
 
   // Navigation Menu Text
-  static const String home = "Home";
   static const String profile = "Profile";
   static const String search = "Search";
-  static const String teams = "Teams";
 
   // Search Tabbar Text
   static const List<String> searchTabbar = [
     "All",
     "Users",
-    "Teams",
+    teams,
     "Posts",
   ];
 
   // Team Tabbar Text
   static const List<String> teamTabbar = [
-    "Home",
+    home,
     "Squad",
     "Competitions",
     "Transfers",
@@ -86,4 +86,33 @@ class TTexts {
   static const String to = "to";
   static const String transfersIn = "transfers in";
   static const String transfersOut = "transfers out";
+
+  // Personalization Screens Text
+  static const String basic = "basic";
+  static const String bankBalance = "bank balance";
+  static const String chooseImage = "choose image";
+  static const String country = "country";
+  static const String season = "season";
+  static const String finances = "finances";
+  static const String images = "images";
+  static const String logo = "logo";
+  static const String kit = "kit";
+  static const String squadBudget = "squad budget";
+  static const String stadium = "stadium";
+  static const String teamDetails = "team details";
+  static const String wageBudget = "wage budget";
+
+  // Form Colors
+  static const List<String> formColors = [
+    "White",
+    "Yellow",
+    "Orange",
+    "Pink",
+    "Red",
+    "Green",
+    "Blue",
+    "Purple",
+    "Black",
+    "customColor"
+  ];
 }

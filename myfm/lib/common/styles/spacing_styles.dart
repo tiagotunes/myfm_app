@@ -8,4 +8,11 @@ class TSpacingStyles {
     TSizes.defaultSpace,
     TSizes.defaultSpace,
   );
+
+  static const EdgeInsetsGeometry paddingFormContainer = EdgeInsets.fromLTRB(
+    TSizes.defaultSpace / 2,
+    TSizes.defaultSpace * 2,
+    TSizes.defaultSpace / 2,
+    TSizes.defaultSpace * 3,
+  );
 }

@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myfm/common/widgets/chips/color_choice_chip.dart';
-import 'package:myfm/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:myfm/common/widgets/text/text_form_field.dart';
 import 'package:myfm/features/personalization/screens/team/widgets/team_form_page.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -21,13 +21,9 @@ class TTeamFormPageView extends StatelessWidget {
         items: [
           // Page 1 - Basic
           TeamFormPage(
-            bottomLabel: 'Basic',
-            formFields: TRoundedContainer(
-              height: THelperFunctions.screenHeight() -
-                  TDeviceUtils.getAppBarHeight() -
-                  TDeviceUtils.getStatusBarHeight() -
-                  TSizes.defaultSpace * 9,
-              backgroundColor: Colors.transparent,
+            bottomLabel: TTexts.basic.capitalize,
+            formFields: SizedBox(
+              height: TSizes.formFieldHeight,
               child: const SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,19 +36,19 @@ class TTeamFormPageView extends StatelessWidget {
                     SizedBox(height: TSizes.spaceBtwInputFields),
                     // Country
                     TTextFormField(
-                      label: 'Country',
+                      label: TTexts.country,
                       isRequired: true,
                     ),
                     SizedBox(height: TSizes.spaceBtwInputFields),
                     // Season Year
                     TTextFormField(
-                      label: 'Season Year',
+                      label: TTexts.season,
                       isRequired: true,
                     ),
                     SizedBox(height: TSizes.spaceBtwInputFields),
                     // Stadium Name
                     TTextFormField(
-                      label: 'Stadium Name',
+                      label: "${TTexts.stadium} ${TTexts.name}",
                       isRequired: false,
                     ),
                     SizedBox(height: TSizes.spaceBtwInputFields),
@@ -65,61 +61,73 @@ class TTeamFormPageView extends StatelessWidget {
           ),
 
           // Page 2 - Finances
-          const TeamFormPage(
-            bottomLabel: 'Finances',
-            formFields: Column(
-              children: [
-                // Bank Balance
-                TTextFormField(
-                  label: 'Bank Balance',
-                  isRequired: false,
+          TeamFormPage(
+            bottomLabel: TTexts.finances.capitalize,
+            formFields: SizedBox(
+              height: TSizes.formFieldHeight,
+              child: const SingleChildScrollView(
+                child: Column(
+                  children: [
+                    // Bank Balance
+                    TTextFormField(
+                      label: TTexts.bankBalance,
+                      isRequired: false,
+                    ),
+                    SizedBox(height: TSizes.spaceBtwInputFields),
+                    // Squad Budget
+                    TTextFormField(
+                      label: TTexts.squadBudget,
+                      isRequired: false,
+                    ),
+                    SizedBox(height: TSizes.spaceBtwInputFields),
+                    // Wage Budget
+                    TTextFormField(
+                      label: TTexts.wageBudget,
+                      isRequired: false,
+                    ),
+                    SizedBox(height: TSizes.spaceBtwInputFields),
+                  ],
                 ),
-                SizedBox(height: TSizes.spaceBtwInputFields),
-                // Squad Budget
-                TTextFormField(
-                  label: 'Squad Budget',
-                  isRequired: false,
-                ),
-                SizedBox(height: TSizes.spaceBtwInputFields),
-                // Wage Budget
-                TTextFormField(
-                  label: 'Wage Budget',
-                  isRequired: false,
-                ),
-                SizedBox(height: TSizes.spaceBtwInputFields),
-              ],
+              ),
             ),
           ),
 
           // Page 3 - Images
-          const TeamFormPage(
-            bottomLabel: 'Images',
-            formFields: Column(children: [
-              TTextFormField(
-                label: 'Logo',
-                isRequired: false,
-                readOnly: true,
-                hintText: 'Choose image',
-                icon_: Icons.cancel,
+          TeamFormPage(
+            bottomLabel: TTexts.images.capitalize,
+            formFields: SizedBox(
+              height: TSizes.formFieldHeight,
+              child: const SingleChildScrollView(
+                child: Column(
+                  children: [
+                    TTextFormField(
+                      label: TTexts.logo,
+                      isRequired: false,
+                      readOnly: true,
+                      hintText: TTexts.chooseImage,
+                      icon_: Icons.cancel,
+                    ),
+                    SizedBox(height: TSizes.spaceBtwInputFields),
+                    TTextFormField(
+                      label: TTexts.kit,
+                      isRequired: false,
+                      readOnly: true,
+                      hintText: TTexts.chooseImage,
+                      icon_: Icons.cancel,
+                    ),
+                    SizedBox(height: TSizes.spaceBtwInputFields),
+                    TTextFormField(
+                      label: TTexts.stadium,
+                      isRequired: false,
+                      readOnly: true,
+                      hintText: TTexts.chooseImage,
+                      icon_: Icons.cancel,
+                    ),
+                    SizedBox(height: TSizes.spaceBtwInputFields),
+                  ],
+                ),
               ),
-              SizedBox(height: TSizes.spaceBtwInputFields),
-              TTextFormField(
-                label: 'Kit',
-                isRequired: false,
-                readOnly: true,
-                hintText: 'Choose image',
-                icon_: Icons.cancel,
-              ),
-              SizedBox(height: TSizes.spaceBtwInputFields),
-              TTextFormField(
-                label: 'Stadium',
-                isRequired: false,
-                readOnly: true,
-                hintText: 'Choose image',
-                icon_: Icons.cancel,
-              ),
-              SizedBox(height: TSizes.spaceBtwInputFields),
-            ]),
+            ),
           ),
         ],
         options: CarouselOptions(

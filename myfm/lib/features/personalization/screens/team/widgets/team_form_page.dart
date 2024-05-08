@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/common/styles/spacing_styles.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -16,12 +17,7 @@ class TeamFormPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(
-        TSizes.defaultSpace / 2,
-        TSizes.defaultSpace * 2,
-        TSizes.defaultSpace / 2,
-        TSizes.defaultSpace * 3,
-      ),
+      padding: TSpacingStyles.paddingFormContainer,
       child: TRoundedContainer(
         width: double.infinity,
         backgroundColor: TColors.dark,

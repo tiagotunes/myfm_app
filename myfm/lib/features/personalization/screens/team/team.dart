@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/features/personalization/screens/team/widgets/team_form_page_view.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 
 class TTeamPersonalizationScreen extends StatelessWidget {
   const TTeamPersonalizationScreen({super.key});
@@ -15,7 +17,7 @@ class TTeamPersonalizationScreen extends StatelessWidget {
       appBar: TAppBar(
         showBackArrow: true,
         centerTitle: false,
-        title: const Text('Team details'),
+        title: Text(TTexts.teamDetails.capitalize!),
         actions: [
           // Import from Internet
           Container(

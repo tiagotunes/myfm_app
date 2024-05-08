@@ -1,3 +1,6 @@
+import 'package:myfm/utils/device/device_utility.dart';
+import 'package:myfm/utils/helpers/helper_functions.dart';
+
 class TSizes {
   // Padding and margin sizes
   static const double xs = 4.0;
@@ -77,4 +80,10 @@ class TSizes {
 
   // Grid view spacing
   static const double gridViewSpacing = 16.0;
+
+  // Form Field height
+  static double formFieldHeight = THelperFunctions.screenHeight() -
+      TDeviceUtils.getAppBarHeight() -
+      TDeviceUtils.getStatusBarHeight() -
+      TSizes.defaultSpace * 9;
 }
