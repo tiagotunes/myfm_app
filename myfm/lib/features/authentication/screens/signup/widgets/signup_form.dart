@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/text/text_form_field.dart';
-import 'package:myfm/features/authentication/screens/signup/verify_email.dart';
+import 'package:myfm/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:myfm/features/authentication/screens/signup/widgets/terms_conditions_checkbox.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
+import 'package:myfm/utils/helpers/helper_functions.dart';
+import 'package:myfm/utils/validators/validation.dart';
 
 class TSignUpForm extends StatelessWidget {
   const TSignUpForm({
@@ -14,46 +16,86 @@ class TSignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignupController());
     return Form(
+      key: controller.signupFormKey,
       child: Column(
         children: [
-          // E-mail
-          const TTextFormField(
-            label: TTexts.email,
+          // Name
+          TTextFormField(
+            label: TTexts.name,
+            controller: controller.name,
+            validator: (value) =>
+                TValidator.validateEmptyText(TTexts.name, value),
             isRequired: true,
-            icon: Iconsax.sms,
+            icon: const Icon(Iconsax.user),
+          ),
+          const SizedBox(height: TSizes.spaceBtwInputFields),
+
+          // Username
+          TTextFormField(
+            label: TTexts.username,
+            controller: controller.username,
+            validator: (value) =>
+                TValidator.validateEmptyText(TTexts.username, value),
+            isRequired: true,
+            icon: const Icon(Iconsax.user_edit),
+          ),
+          const SizedBox(height: TSizes.spaceBtwInputFields),
+
+          // E-mail
+          TTextFormField(
+            label: TTexts.email,
+            controller: controller.email,
+            validator: (value) => TValidator.validateEmail(value),
+            isRequired: true,
+            icon: const Icon(Iconsax.sms),
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
           // Password
-          const TTextFormField(
-            label: TTexts.password,
-            isRequired: true,
-            icon: Iconsax.password_check,
-          ),
-          const SizedBox(height: TSizes.spaceBtwInputFields),
-
-          // Name
-          const TTextFormField(
-            label: TTexts.name,
-            isRequired: true,
-            icon: Iconsax.user,
+          Obx(
+            () => TTextFormField(
+              label: TTexts.password,
+              controller: controller.password,
+              validator: (value) => TValidator.validatePassword(value),
+              isRequired: true,
+              obscureText: controller.hidePassword.value,
+              icon: const Icon(Iconsax.password_check),
+              icon_: IconButton(
+                onPressed: () => controller.hidePassword.value =
+                    !controller.hidePassword.value,
+                icon: Icon(
+                  controller.hidePassword.value
+                      ? Iconsax.eye_slash
+                      : Iconsax.eye,
+                ),
+              ),
+            ),
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
           // Nationality
-          const TTextFormField(
+          TTextFormField(
             label: TTexts.nationality,
-            isRequired: true,
-            icon: Iconsax.flag,
+            controller: controller.nationality,
+            // validator: (value) =>
+            //     TValidator.validateEmptyText(TTexts.nationality, value),
+            isRequired: false,
+            readOnly: true,
+            onTap: () => _selectNation(context),
+            icon: const Icon(Iconsax.flag),
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
           // Date of birth
-          const TTextFormField(
+          TTextFormField(
             label: TTexts.dob,
+            controller: controller.dateOfBirth,
             isRequired: false,
-            icon: Iconsax.calendar_1,
+            readOnly: true,
+            onTap: () => _selectDate(context),
+            icon: const Icon(Iconsax.calendar_1),
           ),
           const SizedBox(height: TSizes.spaceBtwSections),
 
@@ -65,12 +107,43 @@ class TSignUpForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () => Get.to(() => const VerifyEmailScreen()),
+              onPressed: () => controller.signup(),
               child: const Text(TTexts.createAccount),
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Future<void> _selectNation(BuildContext context) async {
+    await showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      constraints: BoxConstraints(
+        maxHeight: THelperFunctions.screenHeight() * 0.25,
+      ),
+      builder: (context) {
+        return ListView.builder(
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Center(
+                  child: Text('Nation ${index + 1}'),
+                ),
+              );
+            });
+      },
+    );
+  }
+
+  Future<void> _selectDate(BuildContext context) async {
+    await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime(2100),
     );
   }
 }

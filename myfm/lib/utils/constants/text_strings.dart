@@ -56,6 +56,7 @@ class TTexts {
   static const String skip = "skip";
   static const String submit = "Submit";
   static const String termsOfUse = "Terms of use";
+  static const String username = "Username";
 
   // Navigation Menu Text
   static const String profile = "Profile";

@@ -105,7 +105,7 @@ class TTeamFormPageView extends StatelessWidget {
                       isRequired: false,
                       readOnly: true,
                       hintText: TTexts.chooseImage,
-                      icon_: Icons.cancel,
+                      icon_: Icon(Icons.cancel),
                     ),
                     SizedBox(height: TSizes.spaceBtwInputFields),
                     TTextFormField(
@@ -113,7 +113,7 @@ class TTeamFormPageView extends StatelessWidget {
                       isRequired: false,
                       readOnly: true,
                       hintText: TTexts.chooseImage,
-                      icon_: Icons.cancel,
+                      icon_: Icon(Icons.cancel),
                     ),
                     SizedBox(height: TSizes.spaceBtwInputFields),
                     TTextFormField(
@@ -121,7 +121,7 @@ class TTeamFormPageView extends StatelessWidget {
                       isRequired: false,
                       readOnly: true,
                       hintText: TTexts.chooseImage,
-                      icon_: Icons.cancel,
+                      icon_: Icon(Icons.cancel),
                     ),
                     SizedBox(height: TSizes.spaceBtwInputFields),
                   ],

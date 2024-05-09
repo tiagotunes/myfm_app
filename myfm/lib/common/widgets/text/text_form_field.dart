@@ -11,13 +11,19 @@ class TTextFormField extends StatelessWidget {
     this.readOnly = false,
     this.hintText,
     this.icon_,
+    this.onTap,
+    this.controller,
+    this.validator,
+    this.obscureText = false,
   });
 
   final String label;
   final String? hintText;
-  final bool isRequired;
-  final bool readOnly;
-  final IconData? icon, icon_;
+  final bool isRequired, readOnly, obscureText;
+  final Widget? icon, icon_;
+  final VoidCallback? onTap;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -34,22 +40,16 @@ class TTextFormField extends StatelessWidget {
         const SizedBox(height: TSizes.spaceBtwLabelInputField),
         TextFormField(
           readOnly: readOnly,
-          decoration: icon != null
-              ? InputDecoration(
-                  prefixIcon: Icon(icon),
-                  hintText: hintText,
-                  hintStyle: Theme.of(context).textTheme.bodySmall,
-                )
-              : icon_ != null
-                  ? InputDecoration(
-                      suffixIcon: Icon(icon_),
-                      hintText: hintText,
-                      hintStyle: Theme.of(context).textTheme.bodySmall,
-                    )
-                  : InputDecoration(
-                      hintText: hintText,
-                      hintStyle: Theme.of(context).textTheme.bodySmall,
-                    ),
+          onTap: onTap,
+          controller: controller,
+          validator: validator,
+          obscureText: obscureText,
+          decoration: InputDecoration(
+            prefixIcon: icon,
+            suffixIcon: icon_,
+            hintText: hintText,
+            hintStyle: Theme.of(context).textTheme.bodySmall,
+          ),
         ),
       ],
     );
