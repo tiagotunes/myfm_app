@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myfm/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/theme/theme.dart';
 
 class App extends StatelessWidget {
@@ -12,7 +12,14 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.dark,
       theme: TAppTheme.darkTheme,
       darkTheme: TAppTheme.darkTheme,
-      home: const OnBoardingScreen(),
+      home: const Scaffold(
+        backgroundColor: TColors.dark,
+        body: Center(
+          child: CircularProgressIndicator(
+            color: Colors.white,
+          ),
+        ),
+      ),
     );
   }
 }
