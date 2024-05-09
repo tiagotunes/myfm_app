@@ -1,26 +1,51 @@
 {
   "project_info": {
-    "project_number": "331526207893",
-    "project_id": "myfm-60ca6",
-    "storage_bucket": "myfm-60ca6.appspot.com"
+    "project_number": "827709933298",
+    "project_id": "myfmapp-13672",
+    "storage_bucket": "myfmapp-13672.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:331526207893:android:2995c9b0d80b41e88c5e9c",
+        "mobilesdk_app_id": "1:827709933298:android:78741faf78fb5c0d83b26b",
         "android_client_info": {
           "package_name": "com.example.myfm"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "827709933298-0m7p6t9h72m9mknaoq6lc7jln12d45cs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myfm",
+            "certificate_hash": "247e39b4afec77563bfa17e4f63cffecab37b7e2"
+          }
+        },
+        {
+          "client_id": "827709933298-r4lgpd8ellm9jmvdm14ce47t4s20ojdb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyCmoD5g7UfShKc3pGtOPxW7hFryO6pvQFk"
+          "current_key": "AIzaSyDsV8jlV0PKqhK9B6LYtzN1j9FEhF9OCQs"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827709933298-fiucst7so6e8qlgqc6vprcq7g2c8gjn8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "827709933298-7fj26u6vi7odq6aoqnrq0ff7oauorqbi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.myfm"
+              }
+            }
+          ]
         }
       }
     }
