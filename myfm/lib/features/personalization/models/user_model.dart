@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserModel {
   // final values  for those you don't want to update
-  final String id, email;
-  String name, username, nationality, dateOfBirth, profilePicture;
+  final String id, email, dtCri;
+  String name, username, nationality, dateOfBirth, profilePicture, dtAct;
 
   // Constructor
   UserModel({
@@ -14,6 +14,8 @@ class UserModel {
     required this.nationality,
     required this.dateOfBirth,
     required this.profilePicture,
+    required this.dtCri,
+    required this.dtAct,
   });
 
   static UserModel empty() => UserModel(
@@ -24,17 +26,21 @@ class UserModel {
         nationality: '',
         dateOfBirth: '',
         profilePicture: '',
+        dtCri: '',
+        dtAct: '',
       );
 
   // Convert model to JSON structure for storing data in Firebase
   Map<String, dynamic> toJson() {
     return {
-      'Name': name,
-      'Username': username,
-      'Email': email,
-      'Nationality': nationality,
-      'DateOfBirth': dateOfBirth,
-      'ProfilePicture': profilePicture,
+      'name': name,
+      'username': username,
+      'email': email,
+      'nationality': nationality,
+      'date_of_birth': dateOfBirth,
+      'profile_picture': profilePicture,
+      'dt_cri': dtCri,
+      'dt_act': dtAct,
     };
   }
 
@@ -45,12 +51,14 @@ class UserModel {
     if (data != null) {
       return UserModel(
         id: document.id,
-        name: data['Name'] ?? '',
-        username: data['Username'] ?? '',
-        email: data['Email'] ?? '',
-        nationality: data['Nationality'] ?? '',
-        dateOfBirth: data['DateOfBirth'] ?? '',
-        profilePicture: data['ProfilePicture'] ?? '',
+        name: data['name'] ?? '',
+        username: data['username'] ?? '',
+        email: data['email'] ?? '',
+        nationality: data['nationality'] ?? '',
+        dateOfBirth: data['date_of_birth'] ?? '',
+        profilePicture: data['profile_picture'] ?? '',
+        dtCri: data['dt_cri'] ?? '',
+        dtAct: data['dt_act'] ?? '',
       );
     }
     return empty();

@@ -76,6 +76,8 @@ class SignupController extends GetxController {
         nationality: nationality.text.trim(),
         dateOfBirth: dateOfBirth.text.trim(),
         profilePicture: '',
+        dtCri: DateTime.now().toString().split('.')[0],
+        dtAct: '',
       );
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserRecord(newUser);

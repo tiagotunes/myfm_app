@@ -83,7 +83,7 @@ class TSignUpForm extends StatelessWidget {
             //     TValidator.validateEmptyText(TTexts.nationality, value),
             isRequired: false,
             readOnly: true,
-            onTap: () => _selectNation(context),
+            onTap: () => _selectNation(context, controller),
             icon: const Icon(Iconsax.flag),
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
@@ -94,7 +94,7 @@ class TSignUpForm extends StatelessWidget {
             controller: controller.dateOfBirth,
             isRequired: false,
             readOnly: true,
-            onTap: () => _selectDate(context),
+            onTap: () => _selectDate(context, controller),
             icon: const Icon(Iconsax.calendar_1),
           ),
           const SizedBox(height: TSizes.spaceBtwSections),
@@ -116,7 +116,8 @@ class TSignUpForm extends StatelessWidget {
     );
   }
 
-  Future<void> _selectNation(BuildContext context) async {
+  Future<void> _selectNation(
+      BuildContext context, SignupController controller) async {
     await showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -130,20 +131,31 @@ class TSignUpForm extends StatelessWidget {
             itemBuilder: (context, index) {
               return ListTile(
                 title: Center(
-                  child: Text('Nation ${index + 1}'),
+                  child: Text('Nationality ${index + 1}'),
                 ),
+                onTap: () {
+                  controller.nationality.text = 'Nationality ${index + 1}';
+                  Navigator.pop(context);
+                },
               );
             });
       },
     );
   }
 
-  Future<void> _selectDate(BuildContext context) async {
-    await showDatePicker(
+  Future<void> _selectDate(
+      BuildContext context, SignupController controller) async {
+    DateTime? picker = await showDatePicker(
       context: context,
-      initialDate: DateTime.now(),
+      initialDate: controller.dateOfBirth.text != ''
+          ? DateTime.parse(controller.dateOfBirth.text)
+          : DateTime.now(),
       firstDate: DateTime(1900),
       lastDate: DateTime(2100),
     );
+
+    if (picker != null) {
+      controller.dateOfBirth.text = picker.toString().split(' ')[0];
+    }
   }
 }
