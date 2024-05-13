@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/text/text_form_field.dart';
+import 'package:myfm/features/authentication/controllers/login/login_controller.dart';
 import 'package:myfm/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:myfm/features/authentication/screens/signup/signup.dart';
-import 'package:myfm/navigation_menu.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
+import 'package:myfm/utils/validators/validation.dart';
 
 class TLoginForm extends StatelessWidget {
   const TLoginForm({
@@ -14,7 +16,10 @@ class TLoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
+
     return Form(
+      key: controller.loginFormKey,
       child: Padding(
         padding: const EdgeInsets.symmetric(
           vertical: TSizes.spaceBtwSections,
@@ -22,18 +27,37 @@ class TLoginForm extends StatelessWidget {
         child: Column(
           children: [
             // Email
-            const TTextFormField(
+            TTextFormField(
               label: TTexts.email,
+              controller: controller.email,
               isRequired: true,
+              validator: (value) => TValidator.validateEmail(value),
               // icon: Icons.email_outlined,
             ),
             const SizedBox(height: TSizes.spaceBtwInputFields),
 
             // Password
-            const TTextFormField(
-              label: TTexts.password,
-              isRequired: true,
-              // icon: Icons.password_outlined,
+            Obx(
+              () => TTextFormField(
+                label: TTexts.password,
+                controller: controller.password,
+                isRequired: true,
+                obscureText: controller.hidePassword.value,
+                validator: (value) => TValidator.validateEmptyText(
+                  TTexts.password,
+                  value,
+                ),
+                icon_: IconButton(
+                  onPressed: () => controller.hidePassword.value =
+                      !controller.hidePassword.value,
+                  icon: Icon(
+                    controller.hidePassword.value
+                        ? Iconsax.eye_slash
+                        : Iconsax.eye,
+                  ),
+                ),
+                // icon: Icons.password_outlined,
+              ),
             ),
             const SizedBox(height: TSizes.spaceBtwInputFields / 2),
 
@@ -41,7 +65,18 @@ class TLoginForm extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                buildRemeberMeCheckBox(),
+                Row(
+                  children: [
+                    Obx(
+                      () => Checkbox(
+                        value: controller.rememberMe.value,
+                        onChanged: (value) => controller.rememberMe.value =
+                            !controller.rememberMe.value,
+                      ),
+                    ),
+                    const Text(TTexts.remeberMe),
+                  ],
+                ),
                 buildForgetPasswordTxtBtn(context),
               ],
             ),
@@ -49,7 +84,13 @@ class TLoginForm extends StatelessWidget {
             const SizedBox(height: TSizes.spaceBtwSections),
 
             // Sign In Button
-            buildSignInBtn(),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () => controller.emailAndPasswordSignIn(),
+                child: const Text(TTexts.signIn),
+              ),
+            ),
 
             const SizedBox(height: TSizes.spaceBtwItems),
 
@@ -61,34 +102,12 @@ class TLoginForm extends StatelessWidget {
     );
   }
 
-  Row buildRemeberMeCheckBox() {
-    return Row(
-      children: [
-        Checkbox(
-          value: true,
-          onChanged: (value) {},
-        ),
-        const Text(TTexts.remeberMe),
-      ],
-    );
-  }
-
   TextButton buildForgetPasswordTxtBtn(BuildContext context) {
     return TextButton(
       onPressed: () => Get.to(() => const ForgetPasswordScreen()),
       child: Text(
         TTexts.forgetPassword,
         style: Theme.of(context).textTheme.labelMedium,
-      ),
-    );
-  }
-
-  SizedBox buildSignInBtn() {
-    return SizedBox(
-      width: double.infinity,
-      child: ElevatedButton(
-        onPressed: () => Get.to(() => const NavigationMenu()),
-        child: const Text(TTexts.signIn),
       ),
     );
   }

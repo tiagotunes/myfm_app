@@ -6,6 +6,7 @@ import 'package:myfm/common/widgets/custom_shapes/containers/primary_header_cont
 import 'package:myfm/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:myfm/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:myfm/common/widgets/text/section_heading.dart';
+import 'package:myfm/data/repositories/authentication/authentication_repository.dart';
 import 'package:myfm/features/personalization/screens/profile/profile.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -106,7 +107,8 @@ class SettingsScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () =>
+                          AuthenticationRepository.instance.logout(),
                       style:
                           Theme.of(context).outlinedButtonTheme.style!.copyWith(
                         side: MaterialStateProperty.resolveWith<BorderSide?>(
