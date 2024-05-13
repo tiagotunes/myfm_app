@@ -55,6 +55,7 @@ flutter:
   # LOCAL ASSETS
   assets:
     - assets/icons/
+    - assets/icons/continents/
     - assets/images/backgrounds/
     - assets/images/banners/
     - assets/images/default/
