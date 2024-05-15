@@ -18,6 +18,17 @@ class UserModel {
     required this.dtAct,
   });
 
+  static String generateUsername(fullName) {
+    List<String> nameParts = fullName.split(" ");
+    String firstName = nameParts[0].toLowerCase();
+    String lastName = nameParts.length > 1
+        ? nameParts[nameParts.length - 1].toLowerCase()
+        : "";
+    String camelCaseUsername = "$firstName$lastName";
+    String usernameWithPrefix = "coach_$camelCaseUsername";
+    return usernameWithPrefix;
+  }
+
   static UserModel empty() => UserModel(
         id: '',
         name: '',

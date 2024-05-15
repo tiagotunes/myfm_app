@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:myfm/features/authentication/controllers/login/login_controller.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -10,6 +12,7 @@ class TSocialButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(
@@ -24,7 +27,9 @@ class TSocialButtons extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100),
               ),
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  if (index == 0) controller.googleSignIn();
+                },
                 icon: Opacity(
                   opacity: 0.8,
                   child: Image(

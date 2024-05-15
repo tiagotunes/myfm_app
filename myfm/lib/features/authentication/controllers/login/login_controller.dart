@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:myfm/data/repositories/authentication/authentication_repository.dart';
+import 'package:myfm/features/personalization/controllers/user_controller.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/helpers/network_manager.dart';
 import 'package:myfm/utils/popups/full_screen_loader.dart';
@@ -15,6 +16,7 @@ class LoginController extends GetxController {
   final localStorage = GetStorage();
   final rememberMe = false.obs;
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final userController = Get.put(UserController());
 
   @override
   void onInit() {
@@ -67,6 +69,41 @@ class LoginController extends GetxController {
         email.text.trim(),
         password.text.trim(),
       );
+
+      // Remove Loader
+      TFullScreenLoader.stopLoading();
+
+      // Redirect
+      AuthenticationRepository.instance.screenRedirect();
+    } catch (e) {
+      TFullScreenLoader.stopLoading();
+      TLoaders.errorSnackbar(title: 'Error', message: e.toString());
+    }
+  }
+
+  // Google SignIn
+  Future<void> googleSignIn() async {
+    try {
+      // Start Loading
+      TFullScreenLoader.openLoadingDialog(
+        'Logging you in...',
+        TImages.darkAppLogo,
+      );
+
+      // Check Internet Connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        // Remove Loader
+        TFullScreenLoader.stopLoading();
+        return;
+      }
+
+      // Google Authentication
+      final userCredentials =
+          await AuthenticationRepository.instance.signInWithGoogle();
+
+      // Save User Record
+      await userController.saveUserRecord(userCredentials);
 
       // Remove Loader
       TFullScreenLoader.stopLoading();
