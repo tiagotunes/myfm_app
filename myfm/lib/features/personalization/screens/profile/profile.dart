@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/common/widgets/images/circular_image.dart';
 import 'package:myfm/common/widgets/text/section_heading.dart';
+import 'package:myfm/features/personalization/controllers/user_controller.dart';
+import 'package:myfm/features/personalization/screens/profile/edit_profile.dart';
 import 'package:myfm/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
@@ -13,6 +16,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return Scaffold(
       appBar: const TAppBar(
         showBackArrow: true,
@@ -50,16 +54,31 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwItems),
 
               // Heading Profile Info
-              const TSectionHeading(title: 'Profile Information'),
+              TSectionHeading(
+                title: 'Personal Information',
+                showActionButton: true,
+                buttonTitle: 'Edit Profile',
+                onPressed: () => Get.to(() => const EditProfileScreen()),
+              ),
               const SizedBox(height: TSizes.spaceBtwItems),
               TProfileMenu(
                 title: 'Name',
-                value: 'Tiago Antunes',
+                value: controller.user.value.name,
                 onPressed: () {},
               ),
               TProfileMenu(
                 title: 'Username',
-                value: 'tiagotunes19',
+                value: controller.user.value.username,
+                onPressed: () {},
+              ),
+              TProfileMenu(
+                title: 'Nationality',
+                value: controller.user.value.nationality,
+                onPressed: () {},
+              ),
+              TProfileMenu(
+                title: 'Date of Birth',
+                value: controller.user.value.dateOfBirth,
                 onPressed: () {},
               ),
 
@@ -68,27 +87,17 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwItems),
 
               // Heading Personal Info
-              const TSectionHeading(title: 'Personal Information'),
+              const TSectionHeading(title: 'Account Information'),
               const SizedBox(height: TSizes.spaceBtwItems),
               TProfileMenu(
-                title: 'User ID',
-                value: '1230321',
-                icon: Iconsax.copy,
-                onPressed: () {},
-              ),
-              TProfileMenu(
                 title: 'Email',
-                value: 'example@mail.com',
+                value: controller.user.value.email,
                 onPressed: () {},
               ),
               TProfileMenu(
-                title: 'Nationality',
-                value: 'Portuguese',
-                onPressed: () {},
-              ),
-              TProfileMenu(
-                title: 'Date of Birth',
-                value: '15 Sep, 2000',
+                title: 'User ID',
+                value: controller.user.value.id,
+                icon: const Icon(Iconsax.copy),
                 onPressed: () {},
               ),
 

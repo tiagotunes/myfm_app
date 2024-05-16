@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/common/widgets/icons/counter_icon.dart';
+import 'package:myfm/common/widgets/loaders/shimmer.dart';
 import 'package:myfm/common/widgets/text/appbar_title_text.dart';
+import 'package:myfm/features/personalization/controllers/user_controller.dart';
 import 'package:myfm/utils/constants/colors.dart';
-import 'package:myfm/utils/constants/text_strings.dart';
 
 class THomeAppBar extends StatelessWidget {
   const THomeAppBar({
@@ -13,11 +15,20 @@ class THomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(UserController());
     return TAppBar(
       centerTitle: false,
-      title: const TAppBarTitleText(
-        title: TTexts.home,
-        // subtitle: '${TTexts.home} Subtitle',
+      title: Obx(
+        () {
+          if (controller.profileLoading.value) {
+            return const TShimmerEffect(width: 80, height: 15);
+          } else {
+            return TAppBarTitleText(
+              title: 'Coach ${controller.user.value.name}',
+              subtitle: 'Welcome back,',
+            );
+          }
+        },
       ),
       actions: [
         TCounterIcon(

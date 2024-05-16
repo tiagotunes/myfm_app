@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 
 class TProfileMenu extends StatelessWidget {
   const TProfileMenu({
     super.key,
-    this.icon = Iconsax.arrow_right_34,
+    this.icon, //= Icon(Iconsax.arrow_right_34,
     required this.onPressed,
     required this.title,
     required this.value,
   });
 
-  final IconData icon;
+  final Icon? icon;
   final VoidCallback onPressed;
   final String title, value;
 
@@ -40,7 +39,7 @@ class TProfileMenu extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            Expanded(child: Icon(icon, size: 18)),
+            Expanded(child: icon ?? const SizedBox()),
           ],
         ),
       ),
