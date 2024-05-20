@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:myfm/data/repositories/authentication/authentication_repository.dart';
 import 'package:myfm/data/repositories/user/user_repository.dart';
 import 'package:myfm/features/authentication/screens/login/login.dart';
@@ -47,26 +48,32 @@ class UserController extends GetxController {
   // Save user record from any registration provider
   Future<void> saveUserRecord(UserCredential? userCredentials) async {
     try {
-      if (userCredentials != null) {
-        // Generate Username
-        final username =
-            UserModel.generateUsername(userCredentials.user!.displayName ?? '');
+      // First Update Rx User and then check id user data is already stored. If not store new data
+      await fetchUserRecord();
 
-        // Map Data
-        final user = UserModel(
-          id: userCredentials.user!.uid,
-          name: userCredentials.user!.displayName ?? '',
-          username: username,
-          email: userCredentials.user!.email ?? '',
-          nationality: '',
-          dateOfBirth: '',
-          profilePicture: userCredentials.user!.photoURL ?? '',
-          dtCri: DateTime.now().toString().split('.')[0],
-          dtAct: '',
-        );
+      // If no record already stored
+      if (user.value.id.isEmpty) {
+        if (userCredentials != null) {
+          // Generate Username
+          final username = UserModel.generateUsername(
+              userCredentials.user!.displayName ?? '');
 
-        // Save User Data
-        await userRepository.saveUserRecord(user);
+          // Map Data
+          final user = UserModel(
+            id: userCredentials.user!.uid,
+            name: userCredentials.user!.displayName ?? '',
+            username: username,
+            email: userCredentials.user!.email ?? '',
+            nationality: '',
+            dateOfBirth: '',
+            profilePicture: userCredentials.user!.photoURL ?? '',
+            dtCri: DateTime.now().toString().split('.')[0],
+            dtAct: '',
+          );
+
+          // Save User Data
+          await userRepository.saveUserRecord(user);
+        }
       }
     } catch (e) {
       TLoaders.warningSnackBar(
@@ -177,6 +184,34 @@ class UserController extends GetxController {
     } catch (e) {
       TFullScreenLoader.stopLoading();
       TLoaders.warningSnackBar(title: 'Error', message: e.toString());
+    }
+  }
+
+  // Upload Profile Image
+  uploadProfilePicture() async {
+    try {
+      final image = await ImagePicker().pickImage(
+        source: ImageSource.gallery,
+        imageQuality: 70,
+        maxHeight: 512,
+        maxWidth: 512,
+      );
+      if (image != null) {
+        // Upload Image
+        final imageUrl =
+            await userRepository.uploadImage('User/Images/Profile/', image);
+
+        // Update user Image Record
+        Map<String, dynamic> json = {'profile_picture': imageUrl};
+        await userRepository.updateSingleField(json);
+
+        user.value.profilePicture = imageUrl;
+        TLoaders.sucessSnackBar(
+            title: 'Success', message: 'Yout Profile Image has been updated!');
+      }
+    } catch (e) {
+      TLoaders.errorSnackbar(
+          title: 'Error', message: 'Something went wrong: $e');
     }
   }
 }
