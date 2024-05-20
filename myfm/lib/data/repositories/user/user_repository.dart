@@ -79,7 +79,7 @@ class UserRepository extends GetxController {
       await _db
           .collection("User")
           .doc(AuthenticationRepository.instance.authUser?.uid)
-          .set(json);
+          .update(json);
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {

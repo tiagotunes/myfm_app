@@ -27,76 +27,78 @@ class EditProfileScreen extends StatelessWidget {
         actions: [
           // Save
           ActionIcon(
-            onPressed: () {},
+            onPressed: () => controller.updateUserData(),
             icon: Iconsax.user_tick,
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Headings
-            Text(
-              'Use real name for easy verification. This name will appear on several pages.',
-              style: Theme.of(context).textTheme.labelMedium,
-            ),
-            const SizedBox(height: TSizes.spaceBtwSections),
-
-            // Text fields
-            Form(
-              key: controller.editUserFormKey,
-              child: Column(
-                children: [
-                  // Name
-                  TTextFormField(
-                    label: TTexts.name,
-                    controller: controller.name,
-                    validator: (value) =>
-                        TValidator.validateEmptyText(TTexts.name, value),
-                    isRequired: true,
-                    icon: const Icon(Iconsax.user),
-                  ),
-                  const SizedBox(height: TSizes.spaceBtwInputFields),
-
-                  // Username
-                  TTextFormField(
-                    label: TTexts.username,
-                    controller: controller.username,
-                    validator: (value) =>
-                        TValidator.validateEmptyText(TTexts.username, value),
-                    isRequired: true,
-                    icon: const Icon(Iconsax.user_edit),
-                  ),
-                  const SizedBox(height: TSizes.spaceBtwInputFields),
-
-                  // Nationality
-                  TTextFormField(
-                    label: TTexts.nationality,
-                    controller: controller.nationality,
-                    // validator: (value) =>
-                    //     TValidator.validateEmptyText(TTexts.nationality, value),
-                    isRequired: false,
-                    readOnly: true,
-                    onTap: () => _selectNation(context, controller),
-                    icon: const Icon(Iconsax.flag),
-                  ),
-                  const SizedBox(height: TSizes.spaceBtwInputFields),
-
-                  // Date of birth
-                  TTextFormField(
-                    label: TTexts.dob,
-                    controller: controller.dateOfBirth,
-                    isRequired: false,
-                    readOnly: true,
-                    onTap: () => _selectDate(context, controller),
-                    icon: const Icon(Iconsax.calendar_1),
-                  ),
-                ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Headings
+              Text(
+                'Use real name for easy verification. This name will appear on several pages.',
+                style: Theme.of(context).textTheme.labelMedium,
               ),
-            ),
-          ],
+              const SizedBox(height: TSizes.spaceBtwSections),
+
+              // Text fields
+              Form(
+                key: controller.editUserFormKey,
+                child: Column(
+                  children: [
+                    // Name
+                    TTextFormField(
+                      label: TTexts.name,
+                      controller: controller.name,
+                      validator: (value) =>
+                          TValidator.validateEmptyText(TTexts.name, value),
+                      isRequired: true,
+                      icon: const Icon(Iconsax.user),
+                    ),
+                    const SizedBox(height: TSizes.spaceBtwInputFields),
+
+                    // Username
+                    TTextFormField(
+                      label: TTexts.username,
+                      controller: controller.username,
+                      validator: (value) =>
+                          TValidator.validateEmptyText(TTexts.username, value),
+                      isRequired: true,
+                      icon: const Icon(Iconsax.user_edit),
+                    ),
+                    const SizedBox(height: TSizes.spaceBtwInputFields),
+
+                    // Nationality
+                    TTextFormField(
+                      label: TTexts.nationality,
+                      controller: controller.nationality,
+                      // validator: (value) =>
+                      //     TValidator.validateEmptyText(TTexts.nationality, value),
+                      isRequired: false,
+                      readOnly: true,
+                      onTap: () => _selectNation(context, controller),
+                      icon: const Icon(Iconsax.flag),
+                    ),
+                    const SizedBox(height: TSizes.spaceBtwInputFields),
+
+                    // Date of birth
+                    TTextFormField(
+                      label: TTexts.dob,
+                      controller: controller.dateOfBirth,
+                      isRequired: false,
+                      readOnly: true,
+                      onTap: () => _selectDate(context, controller),
+                      icon: const Icon(Iconsax.calendar_1),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

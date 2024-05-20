@@ -90,14 +90,14 @@ class ProfileScreen extends StatelessWidget {
               const TSectionHeading(title: 'Account Information'),
               const SizedBox(height: TSizes.spaceBtwItems),
               TProfileMenu(
-                title: 'Email',
-                value: controller.user.value.email,
-                onPressed: () {},
-              ),
-              TProfileMenu(
                 title: 'User ID',
                 value: controller.user.value.id,
                 icon: const Icon(Iconsax.copy),
+                onPressed: () {},
+              ),
+              TProfileMenu(
+                title: 'Email',
+                value: controller.user.value.email,
                 onPressed: () {},
               ),
 
