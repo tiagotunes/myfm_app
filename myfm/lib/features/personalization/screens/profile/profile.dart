@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/common/widgets/images/circular_image.dart';
+import 'package:myfm/common/widgets/loaders/shimmer.dart';
 import 'package:myfm/common/widgets/text/section_heading.dart';
 import 'package:myfm/features/personalization/controllers/user_controller.dart';
 import 'package:myfm/features/personalization/screens/profile/edit_profile.dart';
@@ -37,17 +38,23 @@ class ProfileScreen extends StatelessWidget {
                       final networkImage = controller.user.value.profilePicture;
                       final image =
                           networkImage.isNotEmpty ? networkImage : TImages.user;
-                      return TCircularImage(
-                        image: image,
-                        overlayColor: TColors.darkGrey,
-                        width: 80,
-                        height: 80,
-                        padding: 0,
-                        isNetworkImage: networkImage.isNotEmpty,
-                      );
+                      return controller.imageUploading.value
+                          ? const TShimmerEffect(
+                              width: 80,
+                              height: 80,
+                              radius: 80,
+                            )
+                          : TCircularImage(
+                              image: image,
+                              overlayColor: TColors.darkGrey,
+                              width: 80,
+                              height: 80,
+                              padding: 0,
+                              isNetworkImage: networkImage.isNotEmpty,
+                            );
                     }),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () => controller.uploadProfilePicture(),
                       child: const Text('Change Profile Picture'),
                     ),
                   ],

@@ -18,6 +18,7 @@ class UserController extends GetxController {
   static UserController get instance => Get.find();
 
   final profileLoading = false.obs;
+  final imageUploading = false.obs;
   Rx<UserModel> user = UserModel.empty().obs;
 
   final hidePassword = true.obs;
@@ -192,26 +193,32 @@ class UserController extends GetxController {
     try {
       final image = await ImagePicker().pickImage(
         source: ImageSource.gallery,
-        imageQuality: 70,
-        maxHeight: 512,
-        maxWidth: 512,
+        // imageQuality: 70,
+        // maxHeight: 512,
+        // maxWidth: 512,
       );
       if (image != null) {
+        // Start Uploading
+        imageUploading.value = true;
         // Upload Image
         final imageUrl =
-            await userRepository.uploadImage('User/Images/Profile/', image);
+            await userRepository.uploadImage('Users/Images/Profile/', image);
 
         // Update user Image Record
         Map<String, dynamic> json = {'profile_picture': imageUrl};
         await userRepository.updateSingleField(json);
 
         user.value.profilePicture = imageUrl;
+        user.refresh();
+
         TLoaders.sucessSnackBar(
-            title: 'Success', message: 'Yout Profile Image has been updated!');
+            title: 'Success', message: 'Your Profile Image has been updated!');
       }
     } catch (e) {
       TLoaders.errorSnackbar(
           title: 'Error', message: 'Something went wrong: $e');
+    } finally {
+      imageUploading.value = false;
     }
   }
 }

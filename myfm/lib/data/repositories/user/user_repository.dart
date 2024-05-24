@@ -119,7 +119,7 @@ class UserRepository extends GetxController {
     try {
       final ref = FirebaseStorage.instance.ref(path).child(image.name);
       await ref.putFile(File(image.path));
-      final url = ref.getDownloadURL();
+      final url = await ref.getDownloadURL();
       return url;
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
