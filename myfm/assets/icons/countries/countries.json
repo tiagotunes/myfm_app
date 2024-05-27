@@ -1,0 +1,1994 @@
+[
+  {
+    "name": "Afghanistan",
+    "nationality": "Afghan",
+    "cca2": "AF",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/af.svg"
+  },
+  {
+    "name": "Albania",
+    "nationality": "Albanian",
+    "cca2": "AL",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/al.svg"
+  },
+  {
+    "name": "Algeria",
+    "nationality": "Algerian",
+    "cca2": "DZ",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/dz.svg"
+  },
+  {
+    "name": "American Samoa",
+    "nationality": "American Samoan",
+    "cca2": "AS",
+    "continent": "8",
+    "confederation": "7",
+    "flag": "assets/icons/countries/as.svg"
+  },
+  {
+    "name": "Andorra",
+    "nationality": "Andorran",
+    "cca2": "AD",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/ad.svg"
+  },
+  {
+    "name": "Angola",
+    "nationality": "Angolan",
+    "cca2": "AO",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/ao.svg"
+  },
+  {
+    "name": "Anguilla",
+    "nationality": "Anguillian",
+    "cca2": "AI",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/ai.svg"
+  },
+  {
+    "name": "Antigua and Barbuda",
+    "nationality": "Antiguan, Barbudan",
+    "cca2": "AG",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/ag.svg"
+  },
+  {
+    "name": "Argentina",
+    "nationality": "Argentine",
+    "cca2": "AR",
+    "continent": "4",
+    "confederation": "3",
+    "flag": "assets/icons/countries/ar.svg"
+  },
+  {
+    "name": "Armenia",
+    "nationality": "Armenian",
+    "cca2": "AM",
+    "continent": "6",
+    "confederation": "4",
+    "flag": "assets/icons/countries/am.svg"
+  },
+  {
+    "name": "Aruba",
+    "nationality": "Aruban",
+    "cca2": "AW",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/aw.svg"
+  },
+  {
+    "name": "Australia",
+    "nationality": "Australian",
+    "cca2": "AU",
+    "continent": "8",
+    "confederation": "6",
+    "flag": "assets/icons/countries/au.svg"
+  },
+  {
+    "name": "Austria",
+    "nationality": "Austrian",
+    "cca2": "AT",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/at.svg"
+  },
+  {
+    "name": "Azerbaijan",
+    "nationality": "Azerbaijani",
+    "cca2": "AZ",
+    "continent": "6",
+    "confederation": "4",
+    "flag": "assets/icons/countries/az.svg"
+  },
+  {
+    "name": "Bahamas",
+    "nationality": "Bahamian",
+    "cca2": "BS",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/bs.svg"
+  },
+  {
+    "name": "Bahrain",
+    "nationality": "Bahraini",
+    "cca2": "BH",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/bh.svg"
+  },
+  {
+    "name": "Bangladesh",
+    "nationality": "Bangladeshi",
+    "cca2": "BD",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/bd.svg"
+  },
+  {
+    "name": "Barbados",
+    "nationality": "Barbadian",
+    "cca2": "BB",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/bb.svg"
+  },
+  {
+    "name": "Belarus",
+    "nationality": "Belarusian",
+    "cca2": "BY",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/by.svg"
+  },
+  {
+    "name": "Belgium",
+    "nationality": "Belgian",
+    "cca2": "BE",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/be.svg"
+  },
+  {
+    "name": "Belize",
+    "nationality": "Belizean",
+    "cca2": "BZ",
+    "continent": "3",
+    "confederation": "2",
+    "flag": "assets/icons/countries/bz.svg"
+  },
+  {
+    "name": "Benin",
+    "nationality": "Beninese",
+    "cca2": "BJ",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/bj.svg"
+  },
+  {
+    "name": "Bermuda",
+    "nationality": "Bermudian",
+    "cca2": "BM",
+    "continent": "2",
+    "confederation": "2",
+    "flag": "assets/icons/countries/bm.svg"
+  },
+  {
+    "name": "Bhutan",
+    "nationality": "Bhutanese",
+    "cca2": "BT",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/bt.svg"
+  },
+  {
+    "name": "Bolivia",
+    "nationality": "Bolivian",
+    "cca2": "BO",
+    "continent": "4",
+    "confederation": "3",
+    "flag": "assets/icons/countries/bo.svg"
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "nationality": "Bosnian, Herzegovinian",
+    "cca2": "BA",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/ba.svg"
+  },
+  {
+    "name": "Botswana",
+    "nationality": "Motswana",
+    "cca2": "BW",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/bw.svg"
+  },
+  {
+    "name": "Brazil",
+    "nationality": "Brazilian",
+    "cca2": "BR",
+    "continent": "4",
+    "confederation": "3",
+    "flag": "assets/icons/countries/br.svg"
+  },
+  {
+    "name": "British Indian Ocean Territory",
+    "nationality": "Indian",
+    "cca2": "IO",
+    "continent": "1",
+    "confederation": "",
+    "flag": "assets/icons/countries/io.svg"
+  },
+  {
+    "name": "British Virgin Islands",
+    "nationality": "Virgin Islander",
+    "cca2": "VG",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/vg.svg"
+  },
+  {
+    "name": "Brunei",
+    "nationality": "Bruneian",
+    "cca2": "BN",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/bn.svg"
+  },
+  {
+    "name": "Bulgaria",
+    "nationality": "Bulgarian",
+    "cca2": "BG",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/bg.svg"
+  },
+  {
+    "name": "Burkina Faso",
+    "nationality": "Burkinabe",
+    "cca2": "BF",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/bf.svg"
+  },
+  {
+    "name": "Burundi",
+    "nationality": "Burundian",
+    "cca2": "BI",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/bi.svg"
+  },
+  {
+    "name": "Cambodia",
+    "nationality": "Cambodian",
+    "cca2": "KH",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/kh.svg"
+  },
+  {
+    "name": "Cameroon",
+    "nationality": "Cameroonian",
+    "cca2": "CM",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/cm.svg"
+  },
+  {
+    "name": "Canada",
+    "nationality": "Canadian",
+    "cca2": "CA",
+    "continent": "2",
+    "confederation": "2",
+    "flag": "assets/icons/countries/ca.svg"
+  },
+  {
+    "name": "Cape Verde",
+    "nationality": "Cape Verdian",
+    "cca2": "CV",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/cv.svg"
+  },
+  {
+    "name": "Caribbean Netherlands",
+    "nationality": "Dutch",
+    "cca2": "BQ",
+    "continent": "5",
+    "confederation": "",
+    "flag": "assets/icons/countries/bq.svg"
+  },
+  {
+    "name": "Cayman Islands",
+    "nationality": "Caymanian",
+    "cca2": "KY",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/ky.svg"
+  },
+  {
+    "name": "Central 1n Republic",
+    "nationality": "Central 1n",
+    "cca2": "CF",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/cf.svg"
+  },
+  {
+    "name": "Chad",
+    "nationality": "Chadian",
+    "cca2": "TD",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/td.svg"
+  },
+  {
+    "name": "Chile",
+    "nationality": "Chilean",
+    "cca2": "CL",
+    "continent": "4",
+    "confederation": "3",
+    "flag": "assets/icons/countries/cl.svg"
+  },
+  {
+    "name": "China",
+    "nationality": "Chinese",
+    "cca2": "CN",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/cn.svg"
+  },
+  {
+    "name": "Christmas Island",
+    "nationality": "Christmas Islander",
+    "cca2": "CX",
+    "continent": "8",
+    "confederation": "",
+    "flag": "assets/icons/countries/cx.svg"
+  },
+  {
+    "name": "Cocos (Keeling) Islands",
+    "nationality": "Cocos Islander",
+    "cca2": "CC",
+    "continent": "8",
+    "confederation": "",
+    "flag": "assets/icons/countries/cc.svg"
+  },
+  {
+    "name": "Colombia",
+    "nationality": "Colombian",
+    "cca2": "CO",
+    "continent": "4",
+    "confederation": "3",
+    "flag": "assets/icons/countries/co.svg"
+  },
+  {
+    "name": "Comoros",
+    "nationality": "Comoran",
+    "cca2": "KM",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/km.svg"
+  },
+  {
+    "name": "Cook Islands",
+    "nationality": "Cook Islander",
+    "cca2": "CK",
+    "continent": "8",
+    "confederation": "7",
+    "flag": "assets/icons/countries/ck.svg"
+  },
+  {
+    "name": "Costa Rica",
+    "nationality": "Costa Rican",
+    "cca2": "CR",
+    "continent": "3",
+    "confederation": "2",
+    "flag": "assets/icons/countries/cr.svg"
+  },
+  {
+    "name": "Croatia",
+    "nationality": "Croatian",
+    "cca2": "HR",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/hr.svg"
+  },
+  {
+    "name": "Cuba",
+    "nationality": "Cuban",
+    "cca2": "CU",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/cu.svg"
+  },
+  {
+    "name": "Curaçao",
+    "nationality": "Curaçaoan",
+    "cca2": "CW",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/cw.svg"
+  },
+  {
+    "name": "Cyprus",
+    "nationality": "Cypriot",
+    "cca2": "CY",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/cy.svg"
+  },
+  {
+    "name": "Czechia",
+    "nationality": "Czech",
+    "cca2": "CZ",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/cz.svg"
+  },
+  {
+    "name": "DR Congo",
+    "nationality": "Congolese",
+    "cca2": "CD",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/cd.svg"
+  },
+  {
+    "name": "Denmark",
+    "nationality": "Danish",
+    "cca2": "DK",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/dk.svg"
+  },
+  {
+    "name": "Djibouti",
+    "nationality": "Djibouti",
+    "cca2": "DJ",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/dj.svg"
+  },
+  {
+    "name": "Dominica",
+    "nationality": "Dominican",
+    "cca2": "DM",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/dm.svg"
+  },
+  {
+    "name": "Dominican Republic",
+    "nationality": "Dominican",
+    "cca2": "DO",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/do.svg"
+  },
+  {
+    "name": "Ecuador",
+    "nationality": "Ecuadorean",
+    "cca2": "EC",
+    "continent": "4",
+    "confederation": "3",
+    "flag": "assets/icons/countries/ec.svg"
+  },
+  {
+    "name": "Egypt",
+    "nationality": "Egyptian",
+    "cca2": "EG",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/eg.svg"
+  },
+  {
+    "name": "El Salvador",
+    "nationality": "Salvadoran",
+    "cca2": "SV",
+    "continent": "3",
+    "confederation": "2",
+    "flag": "assets/icons/countries/sv.svg"
+  },
+  {
+    "name": "England",
+    "nationality": "English",
+    "cca2": "GB-ENG",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/gb_eng.svg"
+  },
+  {
+    "name": "Equatorial Guinea",
+    "nationality": "Equatorial Guinean",
+    "cca2": "GQ",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/gq.svg"
+  },
+  {
+    "name": "Eritrea",
+    "nationality": "Eritrean",
+    "cca2": "ER",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/er.svg"
+  },
+  {
+    "name": "Estonia",
+    "nationality": "Estonian",
+    "cca2": "EE",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/ee.svg"
+  },
+  {
+    "name": "Eswatini",
+    "nationality": "Swazi",
+    "cca2": "SZ",
+    "continent": "1",
+    "confederation": "",
+    "flag": "assets/icons/countries/sz.svg"
+  },
+  {
+    "name": "Ethiopia",
+    "nationality": "Ethiopian",
+    "cca2": "ET",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/et.svg"
+  },
+  {
+    "name": "Falkland Islands",
+    "nationality": "Falkland Islander",
+    "cca2": "FK",
+    "continent": "4",
+    "confederation": "",
+    "flag": "assets/icons/countries/fk.svg"
+  },
+  {
+    "name": "Faroe Islands",
+    "nationality": "Faroese",
+    "cca2": "FO",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/fo.svg"
+  },
+  {
+    "name": "Fiji",
+    "nationality": "Fijian",
+    "cca2": "FJ",
+    "continent": "8",
+    "confederation": "7",
+    "flag": "assets/icons/countries/fj.svg"
+  },
+  {
+    "name": "Finland",
+    "nationality": "Finnish",
+    "cca2": "FI",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/fi.svg"
+  },
+  {
+    "name": "France",
+    "nationality": "French",
+    "cca2": "FR",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/fr.svg"
+  },
+  {
+    "name": "French Guiana",
+    "nationality": "Guianan",
+    "cca2": "GF",
+    "continent": "4",
+    "confederation": "2",
+    "flag": "assets/icons/countries/gf.svg"
+  },
+  {
+    "name": "French Polynesia",
+    "nationality": "French Polynesian",
+    "cca2": "PF",
+    "continent": "8",
+    "confederation": "7",
+    "flag": "assets/icons/countries/pf.svg"
+  },
+  {
+    "name": "Gabon",
+    "nationality": "Gabonese",
+    "cca2": "GA",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/ga.svg"
+  },
+  {
+    "name": "Gambia",
+    "nationality": "Gambian",
+    "cca2": "GM",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/gm.svg"
+  },
+  {
+    "name": "Georgia",
+    "nationality": "Georgian",
+    "cca2": "GE",
+    "continent": "6",
+    "confederation": "4",
+    "flag": "assets/icons/countries/ge.svg"
+  },
+  {
+    "name": "Germany",
+    "nationality": "German",
+    "cca2": "DE",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/de.svg"
+  },
+  {
+    "name": "Ghana",
+    "nationality": "Ghanaian",
+    "cca2": "GH",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/gh.svg"
+  },
+  {
+    "name": "Gibraltar",
+    "nationality": "Gibraltar",
+    "cca2": "GI",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/gi.svg"
+  },
+  {
+    "name": "Greece",
+    "nationality": "Greek",
+    "cca2": "GR",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/gr.svg"
+  },
+  {
+    "name": "Greenland",
+    "nationality": "Greenlandic",
+    "cca2": "GL",
+    "continent": "2",
+    "confederation": "",
+    "flag": "assets/icons/countries/gl.svg"
+  },
+  {
+    "name": "Grenada",
+    "nationality": "Grenadian",
+    "cca2": "GD",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/gd.svg"
+  },
+  {
+    "name": "Guadeloupe",
+    "nationality": "Guadeloupian",
+    "cca2": "GP",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/gp.svg"
+  },
+  {
+    "name": "Guam",
+    "nationality": "Guamanian",
+    "cca2": "GU",
+    "continent": "8",
+    "confederation": "6",
+    "flag": "assets/icons/countries/gu.svg"
+  },
+  {
+    "name": "Guatemala",
+    "nationality": "Guatemalan",
+    "cca2": "GT",
+    "continent": "3",
+    "confederation": "2",
+    "flag": "assets/icons/countries/gt.svg"
+  },
+  {
+    "name": "Guernsey",
+    "nationality": "Channel Islander",
+    "cca2": "GG",
+    "continent": "7",
+    "confederation": "",
+    "flag": "assets/icons/countries/gg.svg"
+  },
+  {
+    "name": "Guinea",
+    "nationality": "Guinean",
+    "cca2": "GN",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/gn.svg"
+  },
+  {
+    "name": "Guinea-Bissau",
+    "nationality": "Guinea-Bissauan",
+    "cca2": "GW",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/gw.svg"
+  },
+  {
+    "name": "Guyana",
+    "nationality": "Guyanese",
+    "cca2": "GY",
+    "continent": "4",
+    "confederation": "2",
+    "flag": "assets/icons/countries/gy.svg"
+  },
+  {
+    "name": "Haiti",
+    "nationality": "Haitian",
+    "cca2": "HT",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/ht.svg"
+  },
+  {
+    "name": "Honduras",
+    "nationality": "Honduran",
+    "cca2": "HN",
+    "continent": "3",
+    "confederation": "2",
+    "flag": "assets/icons/countries/hn.svg"
+  },
+  {
+    "name": "Hong Kong",
+    "nationality": "Hong Konger",
+    "cca2": "HK",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/hk.svg"
+  },
+  {
+    "name": "Hungary",
+    "nationality": "Hungarian",
+    "cca2": "HU",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/hu.svg"
+  },
+  {
+    "name": "Iceland",
+    "nationality": "Icelander",
+    "cca2": "IS",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/is.svg"
+  },
+  {
+    "name": "India",
+    "nationality": "Indian",
+    "cca2": "IN",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/in.svg"
+  },
+  {
+    "name": "Indonesia",
+    "nationality": "Indonesian",
+    "cca2": "ID",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/id.svg"
+  },
+  {
+    "name": "Iran",
+    "nationality": "Iranian",
+    "cca2": "IR",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/ir.svg"
+  },
+  {
+    "name": "Iraq",
+    "nationality": "Iraqi",
+    "cca2": "IQ",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/iq.svg"
+  },
+  {
+    "name": "Ireland",
+    "nationality": "Irish",
+    "cca2": "IE",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/ie.svg"
+  },
+  {
+    "name": "Isle of Man",
+    "nationality": "Manx",
+    "cca2": "IM",
+    "continent": "7",
+    "confederation": "",
+    "flag": "assets/icons/countries/im.svg"
+  },
+  {
+    "name": "Israel",
+    "nationality": "Israeli",
+    "cca2": "IL",
+    "continent": "6",
+    "confederation": "4",
+    "flag": "assets/icons/countries/il.svg"
+  },
+  {
+    "name": "Italy",
+    "nationality": "Italian",
+    "cca2": "IT",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/it.svg"
+  },
+  {
+    "name": "Ivory Coast",
+    "nationality": "Ivorian",
+    "cca2": "CI",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/ci.svg"
+  },
+  {
+    "name": "Jamaica",
+    "nationality": "Jamaican",
+    "cca2": "JM",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/jm.svg"
+  },
+  {
+    "name": "Japan",
+    "nationality": "Japanese",
+    "cca2": "JP",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/jp.svg"
+  },
+  {
+    "name": "Jersey",
+    "nationality": "Channel Islander",
+    "cca2": "JE",
+    "continent": "7",
+    "confederation": "",
+    "flag": "assets/icons/countries/je.svg"
+  },
+  {
+    "name": "Jordan",
+    "nationality": "Jordanian",
+    "cca2": "JO",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/jo.svg"
+  },
+  {
+    "name": "Kazakhstan",
+    "nationality": "Kazakhstani",
+    "cca2": "KZ",
+    "continent": "6",
+    "confederation": "4",
+    "flag": "assets/icons/countries/kz.svg"
+  },
+  {
+    "name": "Kenya",
+    "nationality": "Kenyan",
+    "cca2": "KE",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/ke.svg"
+  },
+  {
+    "name": "Kiribati",
+    "nationality": "I-Kiribati",
+    "cca2": "KI",
+    "continent": "8",
+    "confederation": "",
+    "flag": "assets/icons/countries/ki.svg"
+  },
+  {
+    "name": "Kosovo",
+    "nationality": "Kosovar",
+    "cca2": "XK",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/xk.svg"
+  },
+  {
+    "name": "Kuwait",
+    "nationality": "Kuwaiti",
+    "cca2": "KW",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/kw.svg"
+  },
+  {
+    "name": "Kyrgyzstan",
+    "nationality": "Kirghiz",
+    "cca2": "KG",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/kg.svg"
+  },
+  {
+    "name": "Laos",
+    "nationality": "Laotian",
+    "cca2": "LA",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/la.svg"
+  },
+  {
+    "name": "Latvia",
+    "nationality": "Latvian",
+    "cca2": "LV",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/lv.svg"
+  },
+  {
+    "name": "Lebanon",
+    "nationality": "Lebanese",
+    "cca2": "LB",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/lb.svg"
+  },
+  {
+    "name": "Lesotho",
+    "nationality": "Mosotho",
+    "cca2": "LS",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/ls.svg"
+  },
+  {
+    "name": "Liberia",
+    "nationality": "Liberian",
+    "cca2": "LR",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/lr.svg"
+  },
+  {
+    "name": "Libya",
+    "nationality": "Libyan",
+    "cca2": "LY",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/ly.svg"
+  },
+  {
+    "name": "Liechtenstein",
+    "nationality": "Liechtensteiner",
+    "cca2": "LI",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/li.svg"
+  },
+  {
+    "name": "Lithuania",
+    "nationality": "Lithuanian",
+    "cca2": "LT",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/lt.svg"
+  },
+  {
+    "name": "Luxembourg",
+    "nationality": "Luxembourger",
+    "cca2": "LU",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/lu.svg"
+  },
+  {
+    "name": "Macau",
+    "nationality": "Macanese",
+    "cca2": "MO",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/mo.svg"
+  },
+  {
+    "name": "Madagascar",
+    "nationality": "Malagasy",
+    "cca2": "MG",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/mg.svg"
+  },
+  {
+    "name": "Malawi",
+    "nationality": "Malawian",
+    "cca2": "MW",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/mw.svg"
+  },
+  {
+    "name": "Malaysia",
+    "nationality": "Malaysian",
+    "cca2": "MY",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/my.svg"
+  },
+  {
+    "name": "Maldives",
+    "nationality": "Maldivan",
+    "cca2": "MV",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/mv.svg"
+  },
+  {
+    "name": "Mali",
+    "nationality": "Malian",
+    "cca2": "ML",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/ml.svg"
+  },
+  {
+    "name": "Malta",
+    "nationality": "Maltese",
+    "cca2": "MT",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/mt.svg"
+  },
+  {
+    "name": "Marshall Islands",
+    "nationality": "Marshallese",
+    "cca2": "MH",
+    "continent": "8",
+    "confederation": "",
+    "flag": "assets/icons/countries/mh.svg"
+  },
+  {
+    "name": "Martinique",
+    "nationality": "Martinican",
+    "cca2": "MQ",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/mq.svg"
+  },
+  {
+    "name": "Mauritania",
+    "nationality": "Mauritanian",
+    "cca2": "MR",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/mr.svg"
+  },
+  {
+    "name": "Mauritius",
+    "nationality": "Mauritian",
+    "cca2": "MU",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/mu.svg"
+  },
+  {
+    "name": "Mayotte",
+    "nationality": "Mahoran",
+    "cca2": "YT",
+    "continent": "1",
+    "confederation": "",
+    "flag": "assets/icons/countries/yt.svg"
+  },
+  {
+    "name": "Mexico",
+    "nationality": "Mexican",
+    "cca2": "MX",
+    "continent": "2",
+    "confederation": "2",
+    "flag": "assets/icons/countries/mx.svg"
+  },
+  {
+    "name": "Micronesia",
+    "nationality": "Micronesian",
+    "cca2": "FM",
+    "continent": "8",
+    "confederation": "",
+    "flag": "assets/icons/countries/fm.svg"
+  },
+  {
+    "name": "Moldova",
+    "nationality": "Moldovan",
+    "cca2": "MD",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/md.svg"
+  },
+  {
+    "name": "Monaco",
+    "nationality": "Monegasque",
+    "cca2": "MC",
+    "continent": "7",
+    "confederation": "",
+    "flag": "assets/icons/countries/mc.svg"
+  },
+  {
+    "name": "Mongolia",
+    "nationality": "Mongolian",
+    "cca2": "MN",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/mn.svg"
+  },
+  {
+    "name": "Montenegro",
+    "nationality": "Montenegrin",
+    "cca2": "ME",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/me.svg"
+  },
+  {
+    "name": "Montserrat",
+    "nationality": "Montserratian",
+    "cca2": "MS",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/ms.svg"
+  },
+  {
+    "name": "Morocco",
+    "nationality": "Moroccan",
+    "cca2": "MA",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/ma.svg"
+  },
+  {
+    "name": "Mozambique",
+    "nationality": "Mozambican",
+    "cca2": "MZ",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/mz.svg"
+  },
+  {
+    "name": "Myanmar",
+    "nationality": "Burmese",
+    "cca2": "MM",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/mm.svg"
+  },
+  {
+    "name": "Namibia",
+    "nationality": "Namibian",
+    "cca2": "NA",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/na.svg"
+  },
+  {
+    "name": "Nauru",
+    "nationality": "Nauruan",
+    "cca2": "NR",
+    "continent": "8",
+    "confederation": "",
+    "flag": "assets/icons/countries/nr.svg"
+  },
+  {
+    "name": "Nepal",
+    "nationality": "Nepalese",
+    "cca2": "NP",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/np.svg"
+  },
+  {
+    "name": "Netherlands",
+    "nationality": "Dutch",
+    "cca2": "NL",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/nl.svg"
+  },
+  {
+    "name": "New Caledonia",
+    "nationality": "New Caledonian",
+    "cca2": "NC",
+    "continent": "8",
+    "confederation": "7",
+    "flag": "assets/icons/countries/nc.svg"
+  },
+  {
+    "name": "New Zealand",
+    "nationality": "New Zealander",
+    "cca2": "NZ",
+    "continent": "8",
+    "confederation": "7",
+    "flag": "assets/icons/countries/nz.svg"
+  },
+  {
+    "name": "Nicaragua",
+    "nationality": "Nicaraguan",
+    "cca2": "NI",
+    "continent": "3",
+    "confederation": "2",
+    "flag": "assets/icons/countries/ni.svg"
+  },
+  {
+    "name": "Niger",
+    "nationality": "Nigerien",
+    "cca2": "NE",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/ne.svg"
+  },
+  {
+    "name": "Nigeria",
+    "nationality": "Nigerian",
+    "cca2": "NG",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/ng.svg"
+  },
+  {
+    "name": "Niue",
+    "nationality": "Niuean",
+    "cca2": "NU",
+    "continent": "8",
+    "confederation": "",
+    "flag": "assets/icons/countries/nu.svg"
+  },
+  {
+    "name": "Norfolk Island",
+    "nationality": "Norfolk Islander",
+    "cca2": "NF",
+    "continent": "8",
+    "confederation": "",
+    "flag": "assets/icons/countries/nf.svg"
+  },
+  {
+    "name": "North Korea",
+    "nationality": "North Korean",
+    "cca2": "KP",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/kp.svg"
+  },
+  {
+    "name": "North Macedonia",
+    "nationality": "Macedonian",
+    "cca2": "MK",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/mk.svg"
+  },
+  {
+    "name": "Northern Ireland",
+    "nationality": "Northern Irish",
+    "cca2": "GB-NIR",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/gb_nir.svg"
+  },
+  {
+    "name": "Northern Mariana Islands",
+    "nationality": "American",
+    "cca2": "MP",
+    "continent": "8",
+    "confederation": "6",
+    "flag": "assets/icons/countries/mp.svg"
+  },
+  {
+    "name": "Norway",
+    "nationality": "Norwegian",
+    "cca2": "NO",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/no.svg"
+  },
+  {
+    "name": "Oman",
+    "nationality": "Omani",
+    "cca2": "OM",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/om.svg"
+  },
+  {
+    "name": "Pakistan",
+    "nationality": "Pakistani",
+    "cca2": "PK",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/pk.svg"
+  },
+  {
+    "name": "Palau",
+    "nationality": "Palauan",
+    "cca2": "PW",
+    "continent": "8",
+    "confederation": "",
+    "flag": "assets/icons/countries/pw.svg"
+  },
+  {
+    "name": "Palestine",
+    "nationality": "Palestinian",
+    "cca2": "PS",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/ps.svg"
+  },
+  {
+    "name": "Panama",
+    "nationality": "Panamanian",
+    "cca2": "PA",
+    "continent": "3",
+    "confederation": "2",
+    "flag": "assets/icons/countries/pa.svg"
+  },
+  {
+    "name": "Papua New Guinea",
+    "nationality": "Papua New Guinean",
+    "cca2": "PG",
+    "continent": "8",
+    "confederation": "7",
+    "flag": "assets/icons/countries/pg.svg"
+  },
+  {
+    "name": "Paraguay",
+    "nationality": "Paraguayan",
+    "cca2": "PY",
+    "continent": "4",
+    "confederation": "3",
+    "flag": "assets/icons/countries/py.svg"
+  },
+  {
+    "name": "Peru",
+    "nationality": "Peruvian",
+    "cca2": "PE",
+    "continent": "4",
+    "confederation": "3",
+    "flag": "assets/icons/countries/pe.svg"
+  },
+  {
+    "name": "Philippines",
+    "nationality": "Filipino",
+    "cca2": "PH",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/ph.svg"
+  },
+  {
+    "name": "Pitcairn Islands",
+    "nationality": "Pitcairn Islander",
+    "cca2": "PN",
+    "continent": "8",
+    "confederation": "",
+    "flag": "assets/icons/countries/pn.svg"
+  },
+  {
+    "name": "Poland",
+    "nationality": "Polish",
+    "cca2": "PL",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/pl.svg"
+  },
+  {
+    "name": "Portugal",
+    "nationality": "Portuguese",
+    "cca2": "PT",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/pt.svg"
+  },
+  {
+    "name": "Puerto Rico",
+    "nationality": "Puerto Rican",
+    "cca2": "PR",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/pr.svg"
+  },
+  {
+    "name": "Qatar",
+    "nationality": "Qatari",
+    "cca2": "QA",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/qa.svg"
+  },
+  {
+    "name": "Republic of the Congo",
+    "nationality": "Congolese",
+    "cca2": "CG",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/cg.svg"
+  },
+  {
+    "name": "Romania",
+    "nationality": "Romanian",
+    "cca2": "RO",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/ro.svg"
+  },
+  {
+    "name": "Russia",
+    "nationality": "Russian",
+    "cca2": "RU",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/ru.svg"
+  },
+  {
+    "name": "Rwanda",
+    "nationality": "Rwandan",
+    "cca2": "RW",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/rw.svg"
+  },
+  {
+    "name": "Réunion",
+    "nationality": "Réunionese",
+    "cca2": "RE",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/re.svg"
+  },
+  {
+    "name": "Saint Barthélemy",
+    "nationality": "Saint Barthélemy Islander",
+    "cca2": "BL",
+    "continent": "5",
+    "confederation": "",
+    "flag": "assets/icons/countries/bl.svg"
+  },
+  {
+    "name": "Saint Helena, Ascension and Tristan da Cunha",
+    "nationality": "Saint Helenian",
+    "cca2": "SH",
+    "continent": "1",
+    "confederation": "",
+    "flag": "assets/icons/countries/sh.svg"
+  },
+  {
+    "name": "Saint Kitts and Nevis",
+    "nationality": "Kittitian or Nevisian",
+    "cca2": "KN",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/kn.svg"
+  },
+  {
+    "name": "Saint Lucia",
+    "nationality": "Saint Lucian",
+    "cca2": "LC",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/lc.svg"
+  },
+  {
+    "name": "Saint Martin",
+    "nationality": "Saint Martin Islander",
+    "cca2": "MF",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/mf.svg"
+  },
+  {
+    "name": "Saint Pierre and Miquelon",
+    "nationality": "Saint-Pierrais, Miquelonnais",
+    "cca2": "PM",
+    "continent": "2",
+    "confederation": "",
+    "flag": "assets/icons/countries/pm.svg"
+  },
+  {
+    "name": "Saint Vincent and the Grenadines",
+    "nationality": "Saint Vincentian",
+    "cca2": "VC",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/vc.svg"
+  },
+  {
+    "name": "Samoa",
+    "nationality": "Samoan",
+    "cca2": "WS",
+    "continent": "8",
+    "confederation": "7",
+    "flag": "assets/icons/countries/ws.svg"
+  },
+  {
+    "name": "San Marino",
+    "nationality": "Sammarinese",
+    "cca2": "SM",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/sm.svg"
+  },
+  {
+    "name": "Saudi Arabia",
+    "nationality": "Saudi Arabian",
+    "cca2": "SA",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/sa.svg"
+  },
+  {
+    "name": "Scotland",
+    "nationality": "Scots",
+    "cca2": "GB-SCT",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/gb-sct.svg"
+  },
+  {
+    "name": "Senegal",
+    "nationality": "Senegalese",
+    "cca2": "SN",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/sn.svg"
+  },
+  {
+    "name": "Serbia",
+    "nationality": "Serbian",
+    "cca2": "RS",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/rs.svg"
+  },
+  {
+    "name": "Seychelles",
+    "nationality": "Seychellois",
+    "cca2": "SC",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/sc.svg"
+  },
+  {
+    "name": "Sierra Leone",
+    "nationality": "Sierra Leonean",
+    "cca2": "SL",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/sl.svg"
+  },
+  {
+    "name": "Singapore",
+    "nationality": "Singaporean",
+    "cca2": "SG",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/sg.svg"
+  },
+  {
+    "name": "Sint Maarten",
+    "nationality": "St. Maartener",
+    "cca2": "SX",
+    "continent": "5",
+    "confederation": "",
+    "flag": "assets/icons/countries/sx.svg"
+  },
+  {
+    "name": "Slovakia",
+    "nationality": "Slovak",
+    "cca2": "SK",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/sk.svg"
+  },
+  {
+    "name": "Slovenia",
+    "nationality": "Slovene",
+    "cca2": "SI",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/si.svg"
+  },
+  {
+    "name": "Solomon Islands",
+    "nationality": "Solomon Islander",
+    "cca2": "SB",
+    "continent": "8",
+    "confederation": "7",
+    "flag": "assets/icons/countries/sb.svg"
+  },
+  {
+    "name": "Somalia",
+    "nationality": "Somali",
+    "cca2": "SO",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/so.svg"
+  },
+  {
+    "name": "South 1",
+    "nationality": "South 1n",
+    "cca2": "ZA",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/za.svg"
+  },
+  {
+    "name": "South Korea",
+    "nationality": "South Korean",
+    "cca2": "KR",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/kr.svg"
+  },
+  {
+    "name": "South Sudan",
+    "nationality": "South Sudanese",
+    "cca2": "SS",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/ss.svg"
+  },
+  {
+    "name": "Spain",
+    "nationality": "Spanish",
+    "cca2": "ES",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/es.svg"
+  },
+  {
+    "name": "Sri Lanka",
+    "nationality": "Sri Lankan",
+    "cca2": "LK",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/lk.svg"
+  },
+  {
+    "name": "Sudan",
+    "nationality": "Sudanese",
+    "cca2": "SD",
+    "continent": "1",
+    "confederation": "",
+    "flag": "assets/icons/countries/sd.svg"
+  },
+  {
+    "name": "Suriname",
+    "nationality": "Surinamer",
+    "cca2": "SR",
+    "continent": "4",
+    "confederation": "",
+    "flag": "assets/icons/countries/sr.svg"
+  },
+  {
+    "name": "Svalbard and Jan Mayen",
+    "nationality": "Norwegian",
+    "cca2": "SJ",
+    "continent": "7",
+    "confederation": "",
+    "flag": "assets/icons/countries/sj.svg"
+  },
+  {
+    "name": "Sweden",
+    "nationality": "Swedish",
+    "cca2": "SE",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/se.svg"
+  },
+  {
+    "name": "Switzerland",
+    "nationality": "Swiss",
+    "cca2": "CH",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/ch.svg"
+  },
+  {
+    "name": "Syria",
+    "nationality": "Syrian",
+    "cca2": "SY",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/sy.svg"
+  },
+  {
+    "name": "São Tomé and Príncipe",
+    "nationality": "Sao Tomean",
+    "cca2": "ST",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/st.svg"
+  },
+  {
+    "name": "Taiwan",
+    "nationality": "Taiwanese",
+    "cca2": "TW",
+    "continent": "6",
+    "confederation": "",
+    "flag": "assets/icons/countries/tw.svg"
+  },
+  {
+    "name": "Tajikistan",
+    "nationality": "Tadzhik",
+    "cca2": "TJ",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/tj.svg"
+  },
+  {
+    "name": "Tanzania",
+    "nationality": "Tanzanian",
+    "cca2": "TZ",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/tz.svg"
+  },
+  {
+    "name": "Thailand",
+    "nationality": "Thai",
+    "cca2": "TH",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/th.svg"
+  },
+  {
+    "name": "Timor-Leste",
+    "nationality": "East Timorese",
+    "cca2": "TL",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/tl.svg"
+  },
+  {
+    "name": "Togo",
+    "nationality": "Togolese",
+    "cca2": "TG",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/tg.svg"
+  },
+  {
+    "name": "Tokelau",
+    "nationality": "Tokelauan",
+    "cca2": "TK",
+    "continent": "8",
+    "confederation": "",
+    "flag": "assets/icons/countries/tk.svg"
+  },
+  {
+    "name": "Tonga",
+    "nationality": "Tongan",
+    "cca2": "TO",
+    "continent": "8",
+    "confederation": "7",
+    "flag": "assets/icons/countries/to.svg"
+  },
+  {
+    "name": "Trinidad and Tobago",
+    "nationality": "Trinidadian",
+    "cca2": "TT",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/tt.svg"
+  },
+  {
+    "name": "Tunisia",
+    "nationality": "Tunisian",
+    "cca2": "TN",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/tn.svg"
+  },
+  {
+    "name": "Turkey",
+    "nationality": "Turkish",
+    "cca2": "TR",
+    "continent": "6",
+    "confederation": "4",
+    "flag": "assets/icons/countries/tr.svg"
+  },
+  {
+    "name": "Turkmenistan",
+    "nationality": "Turkmen",
+    "cca2": "TM",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/tm.svg"
+  },
+  {
+    "name": "Turks and Caicos Islands",
+    "nationality": "Turks and Caicos Islander",
+    "cca2": "TC",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/tc.svg"
+  },
+  {
+    "name": "Tuvalu",
+    "nationality": "Tuvaluan",
+    "cca2": "TV",
+    "continent": "8",
+    "confederation": "",
+    "flag": "assets/icons/countries/tv.svg"
+  },
+  {
+    "name": "Uganda",
+    "nationality": "Ugandan",
+    "cca2": "UG",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/ug.svg"
+  },
+  {
+    "name": "Ukraine",
+    "nationality": "Ukrainian",
+    "cca2": "UA",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/ua.svg"
+  },
+  {
+    "name": "United Arab Emirates",
+    "nationality": "Emirati",
+    "cca2": "AE",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/ae.svg"
+  },
+  {
+    "name": "United Kingdom",
+    "nationality": "British",
+    "cca2": "GB",
+    "continent": "7",
+    "confederation": "",
+    "flag": "assets/icons/countries/gb.svg"
+  },
+  {
+    "name": "United States",
+    "nationality": "American",
+    "cca2": "US",
+    "continent": "2",
+    "confederation": "2",
+    "flag": "assets/icons/countries/us.svg"
+  },
+  {
+    "name": "United States Minor Outlying Islands",
+    "nationality": "American Islander",
+    "cca2": "UM",
+    "continent": "2",
+    "confederation": "",
+    "flag": "assets/icons/countries/um.svg"
+  },
+  {
+    "name": "United States Virgin Islands",
+    "nationality": "Virgin Islander",
+    "cca2": "VI",
+    "continent": "5",
+    "confederation": "2",
+    "flag": "assets/icons/countries/vi.svg"
+  },
+  {
+    "name": "Uruguay",
+    "nationality": "Uruguayan",
+    "cca2": "UY",
+    "continent": "4",
+    "confederation": "3",
+    "flag": "assets/icons/countries/uy.svg"
+  },
+  {
+    "name": "Uzbekistan",
+    "nationality": "Uzbekistani",
+    "cca2": "UZ",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/uz.svg"
+  },
+  {
+    "name": "Vanuatu",
+    "nationality": "Ni-Vanuatu",
+    "cca2": "VU",
+    "continent": "8",
+    "confederation": "7",
+    "flag": "assets/icons/countries/vu.svg"
+  },
+  {
+    "name": "Vatican City",
+    "nationality": "Vatican",
+    "cca2": "VA",
+    "continent": "7",
+    "confederation": "",
+    "flag": "assets/icons/countries/va.svg"
+  },
+  {
+    "name": "Venezuela",
+    "nationality": "Venezuelan",
+    "cca2": "VE",
+    "continent": "4",
+    "confederation": "3",
+    "flag": "assets/icons/countries/ve.svg"
+  },
+  {
+    "name": "Vietnam",
+    "nationality": "Vietnamese",
+    "cca2": "VN",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/vn.svg"
+  },
+  {
+    "name": "Wales",
+    "nationality": "Welsh",
+    "cca2": "GB-WLS",
+    "continent": "7",
+    "confederation": "4",
+    "flag": "assets/icons/countries/gb-wls.svg"
+  },
+  {
+    "name": "Wallis and Futuna",
+    "nationality": "Wallis and Futuna Islander",
+    "cca2": "WF",
+    "continent": "8",
+    "confederation": "",
+    "flag": "assets/icons/countries/wf.svg"
+  },
+  {
+    "name": "Western Sahara",
+    "nationality": "Sahrawi",
+    "cca2": "EH",
+    "continent": "1",
+    "confederation": "",
+    "flag": "assets/icons/countries/eh.svg"
+  },
+  {
+    "name": "Yemen",
+    "nationality": "Yemeni",
+    "cca2": "YE",
+    "continent": "6",
+    "confederation": "6",
+    "flag": "assets/icons/countries/ye.svg"
+  },
+  {
+    "name": "Zambia",
+    "nationality": "Zambian",
+    "cca2": "ZM",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/zm.svg"
+  },
+  {
+    "name": "Zimbabwe",
+    "nationality": "Zimbabwean",
+    "cca2": "ZW",
+    "continent": "1",
+    "confederation": "5",
+    "flag": "assets/icons/countries/zw.svg"
+  },
+  {
+    "name": "Åland Islands",
+    "nationality": "Ålandish",
+    "cca2": "AX",
+    "continent": "7",
+    "confederation": "",
+    "flag": "assets/icons/countries/ax.svg"
+  }
+]
