@@ -30,7 +30,7 @@ class SettingsScreen extends StatelessWidget {
                   TAppBar(
                     centerTitle: false,
                     title: Text(
-                      'Account',
+                      'Settings',
                       style: Theme.of(context)
                           .textTheme
                           .headlineMedium!

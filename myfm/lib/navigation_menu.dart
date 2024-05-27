@@ -38,8 +38,8 @@ class NavigationMenu extends StatelessWidget {
               label: TTexts.teams,
             ),
             NavigationDestination(
-              icon: Icon(Iconsax.user),
-              label: TTexts.profile,
+              icon: Icon(Iconsax.setting_2),
+              label: 'Settings',
             ),
           ],
         ),
