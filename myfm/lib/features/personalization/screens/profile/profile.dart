@@ -8,7 +8,6 @@ import 'package:myfm/common/widgets/text/section_heading.dart';
 import 'package:myfm/features/personalization/controllers/user_controller.dart';
 import 'package:myfm/features/personalization/screens/profile/edit_profile.dart';
 import 'package:myfm/features/personalization/screens/profile/widgets/profile_menu.dart';
-import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 
@@ -40,15 +39,14 @@ class ProfileScreen extends StatelessWidget {
                           networkImage.isNotEmpty ? networkImage : TImages.user;
                       return controller.imageUploading.value
                           ? const TShimmerEffect(
-                              width: 80,
-                              height: 80,
-                              radius: 80,
+                              width: 120,
+                              height: 120,
+                              radius: 120,
                             )
                           : TCircularImage(
                               image: image,
-                              overlayColor: TColors.darkGrey,
-                              width: 80,
-                              height: 80,
+                              width: 120,
+                              height: 120,
                               padding: 0,
                               isNetworkImage: networkImage.isNotEmpty,
                             );
