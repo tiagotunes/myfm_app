@@ -39,7 +39,7 @@ class NavigationMenu extends StatelessWidget {
             ),
             NavigationDestination(
               icon: Icon(Iconsax.setting_2),
-              label: 'Settings',
+              label: TTexts.settings,
             ),
           ],
         ),

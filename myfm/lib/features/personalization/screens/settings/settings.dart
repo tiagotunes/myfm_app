@@ -11,6 +11,7 @@ import 'package:myfm/features/personalization/controllers/user_controller.dart';
 import 'package:myfm/features/personalization/screens/profile/profile.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -30,7 +31,7 @@ class SettingsScreen extends StatelessWidget {
                   TAppBar(
                     centerTitle: false,
                     title: Text(
-                      'Settings',
+                      TTexts.settings,
                       style: Theme.of(context)
                           .textTheme
                           .headlineMedium!
@@ -52,51 +53,53 @@ class SettingsScreen extends StatelessWidget {
               child: Column(
                 children: [
                   // Account Settings
-                  const TSectionHeading(title: 'Account Settings'),
+                  const TSectionHeading(
+                      title: "${TTexts.account} ${TTexts.settings}"),
                   const SizedBox(height: TSizes.spaceBtwItems),
                   const TSettingsMenuTile(
                     icon: Iconsax.bookmark,
-                    title: 'Saved',
+                    title: TTexts.saved,
                     subtitle: 'Check your personal colletion',
                   ),
                   const TSettingsMenuTile(
                     icon: Iconsax.notification,
-                    title: 'Notifications',
+                    title: TTexts.notifications,
                     subtitle: 'Set any kind of notification message',
                   ),
                   const TSettingsMenuTile(
                     icon: Iconsax.security_user,
-                    title: 'Account Privacy',
+                    title: TTexts.privacy,
                     subtitle: 'Control your account privacy',
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   // App Settings
-                  const TSectionHeading(title: 'App Settings'),
+                  const TSectionHeading(
+                      title: "${TTexts.app} ${TTexts.settings}"),
                   const SizedBox(height: TSizes.spaceBtwItems),
                   const TSettingsMenuTile(
                     icon: Iconsax.translate,
-                    title: 'Language',
+                    title: TTexts.language,
                     subtitle: 'English',
                   ),
                   const TSettingsMenuTile(
                     icon: Iconsax.dollar_circle,
-                    title: 'Currency',
+                    title: TTexts.currency,
                     subtitle: 'Euro',
                   ),
                   const TSettingsMenuTile(
                     icon: Iconsax.moneys,
-                    title: 'Wage Display Format',
+                    title: TTexts.wageDisplay,
                     subtitle: 'Monthly',
                   ),
                   const TSettingsMenuTile(
                     icon: Iconsax.moon,
-                    title: 'Theme',
+                    title: TTexts.theme,
                     subtitle: 'Dark',
                   ),
                   TSettingsMenuTile(
                     icon: Iconsax.finger_cricle,
-                    title: 'Biometric Authentication',
+                    title: TTexts.biometricAuth,
                     subtitle: 'Sign in with your unique identity',
                     trailing: Switch(
                       value: false,
@@ -119,7 +122,7 @@ class SettingsScreen extends StatelessWidget {
                           },
                         ),
                       ),
-                      child: const Text('Logout'),
+                      child: const Text(TTexts.logout),
                     ),
                   ),
                   const SizedBox(height: TSizes.spaceBtwItems),
@@ -138,7 +141,7 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       ),
                       child: const Text(
-                        'Close account',
+                        TTexts.closeAccount,
                         style: TextStyle(color: Colors.red),
                       ),
                     ),

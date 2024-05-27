@@ -61,6 +61,7 @@ class TTexts {
   // Navigation Menu Text
   static const String profile = "Profile";
   static const String search = "Search";
+  static const String settings = "Settings";
 
   // Search Tabbar Text
   static const List<String> searchTabbar = [
@@ -103,6 +104,20 @@ class TTexts {
   static const String stadium = "stadium";
   static const String teamDetails = "team details";
   static const String wageBudget = "wage budget";
+
+  // Settings Screen Text
+  static const String account = "Account";
+  static const String app = "App";
+  static const String biometricAuth = "Biometric Authentication";
+  static const String closeAccount = "Close account";
+  static const String currency = "Currency";
+  static const String language = "Language";
+  static const String logout = "Logout";
+  static const String notifications = "Notifications";
+  static const String privacy = "Privacy";
+  static const String saved = "Saved";
+  static const String theme = "Theme";
+  static const String wageDisplay = "Wage Display";
 
   // Form Colors
   static const List<String> formColors = [
