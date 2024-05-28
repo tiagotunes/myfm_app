@@ -4,10 +4,11 @@ import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/common/widgets/icons/action_icon.dart';
 import 'package:myfm/common/widgets/text/text_form_field.dart';
+import 'package:myfm/features/personalization/controllers/country_controller.dart';
 import 'package:myfm/features/personalization/controllers/edit_user_controller.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
-import 'package:myfm/utils/helpers/helper_functions.dart';
+import 'package:myfm/utils/popups/text_form_field_popup.dart';
 import 'package:myfm/utils/validators/validation.dart';
 
 class EditProfileScreen extends StatelessWidget {
@@ -15,7 +16,8 @@ class EditProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(EditUserController());
+    final editUserController = Get.put(EditUserController());
+    final countryController = Get.put(CountryController());
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
@@ -27,7 +29,7 @@ class EditProfileScreen extends StatelessWidget {
         actions: [
           // Save
           ActionIcon(
-            onPressed: () => controller.updateUserData(),
+            onPressed: () => editUserController.updateUserData(),
             icon: Iconsax.user_tick,
           ),
         ],
@@ -47,13 +49,13 @@ class EditProfileScreen extends StatelessWidget {
 
               // Text fields
               Form(
-                key: controller.editUserFormKey,
+                key: editUserController.editUserFormKey,
                 child: Column(
                   children: [
                     // Name
                     TTextFormField(
                       label: TTexts.name,
-                      controller: controller.name,
+                      controller: editUserController.name,
                       validator: (value) =>
                           TValidator.validateEmptyText(TTexts.name, value),
                       isRequired: true,
@@ -64,7 +66,7 @@ class EditProfileScreen extends StatelessWidget {
                     // Username
                     TTextFormField(
                       label: TTexts.username,
-                      controller: controller.username,
+                      controller: editUserController.username,
                       validator: (value) =>
                           TValidator.validateEmptyText(TTexts.username, value),
                       isRequired: true,
@@ -75,12 +77,15 @@ class EditProfileScreen extends StatelessWidget {
                     // Nationality
                     TTextFormField(
                       label: TTexts.nationality,
-                      controller: controller.nationality,
-                      // validator: (value) =>
-                      //     TValidator.validateEmptyText(TTexts.nationality, value),
+                      controller: editUserController.nationality,
                       isRequired: false,
                       readOnly: true,
-                      onTap: () => _selectNation(context, controller),
+                      onTap: () => TTextFormFieldPopup.selectNation(
+                        context,
+                        null,
+                        editUserController,
+                        countryController,
+                      ),
                       icon: const Icon(Iconsax.flag),
                     ),
                     const SizedBox(height: TSizes.spaceBtwInputFields),
@@ -88,10 +93,16 @@ class EditProfileScreen extends StatelessWidget {
                     // Date of birth
                     TTextFormField(
                       label: TTexts.dob,
-                      controller: controller.dateOfBirth,
+                      controller: editUserController.dateOfBirth,
+                      validator: (value) =>
+                          TValidator.validateDateOfBirth(value),
                       isRequired: false,
                       readOnly: true,
-                      onTap: () => _selectDate(context, controller),
+                      onTap: () => TTextFormFieldPopup.selectDate(
+                        context,
+                        null,
+                        editUserController,
+                      ),
                       icon: const Icon(Iconsax.calendar_1),
                     ),
                   ],
@@ -102,48 +113,5 @@ class EditProfileScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Future<void> _selectNation(
-      BuildContext context, EditUserController controller) async {
-    await showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      constraints: BoxConstraints(
-        maxHeight: THelperFunctions.screenHeight() * 0.25,
-      ),
-      builder: (context) {
-        return ListView.builder(
-            shrinkWrap: true,
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Center(
-                  child: Text('Nationality ${index + 1}'),
-                ),
-                onTap: () {
-                  controller.nationality.text = 'Nationality ${index + 1}';
-                  Navigator.pop(context);
-                },
-              );
-            });
-      },
-    );
-  }
-
-  Future<void> _selectDate(
-      BuildContext context, EditUserController controller) async {
-    DateTime? picker = await showDatePicker(
-      context: context,
-      initialDate: controller.dateOfBirth.text != ''
-          ? DateTime.parse(controller.dateOfBirth.text)
-          : DateTime.now(),
-      firstDate: DateTime(1900),
-      lastDate: DateTime(2100),
-    );
-
-    if (picker != null) {
-      controller.dateOfBirth.text = picker.toString().split(' ')[0];
-    }
   }
 }

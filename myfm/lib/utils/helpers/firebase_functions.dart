@@ -28,8 +28,8 @@ class TFirebaseFunctions {
         continent: c['continent'],
         confederation: c['confederation'],
         flag: c['flag'],
+        active: true,
         dtCri: DateTime.now().toString().split('.')[0],
-        dtAct: '',
       );
 
       final FirebaseFirestore _db = FirebaseFirestore.instance;

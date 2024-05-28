@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class CountryModel {
   final String id, dtCri;
   String name, nationality, cca2, continent, confederation, flag, dtAct;
+  bool active;
 
   // Constructor
   CountryModel({
@@ -13,8 +14,9 @@ class CountryModel {
     required this.continent,
     required this.confederation,
     required this.flag,
+    required this.active,
     required this.dtCri,
-    required this.dtAct,
+    this.dtAct = '',
   });
 
   static CountryModel empty() => CountryModel(
@@ -25,8 +27,8 @@ class CountryModel {
         continent: '',
         confederation: '',
         flag: '',
+        active: false,
         dtCri: '',
-        dtAct: '',
       );
 
   // Convert model to JSON structure for storing data in Firebase
@@ -38,6 +40,7 @@ class CountryModel {
       'continent': continent,
       'confederation': confederation,
       'flag': flag,
+      'active': active,
       'dt_cri': dtCri,
       'dt_act': dtAct,
     };
@@ -50,14 +53,15 @@ class CountryModel {
     if (data != null) {
       return CountryModel(
         id: document.id,
-        name: data['name'],
-        nationality: data['nationality'],
-        cca2: data['cca2'],
-        continent: data['continent'],
-        confederation: data['confederation'],
-        flag: data['flag'],
-        dtCri: data['dt_cri'],
-        dtAct: data['dt_act'],
+        name: data['name'] ?? '',
+        nationality: data['nationality'] ?? '',
+        cca2: data['cca2'] ?? '',
+        continent: data['continent'] ?? '',
+        confederation: data['confederation'] ?? '',
+        flag: data['flag'] ?? '',
+        active: data['active'] ?? false,
+        dtCri: data['dt_cri'] ?? '',
+        dtAct: data['dt_act'] ?? '',
       );
     }
     return empty();

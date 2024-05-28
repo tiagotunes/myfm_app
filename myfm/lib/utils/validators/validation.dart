@@ -48,6 +48,16 @@ class TValidator {
     return null;
   }
 
+  static String? validateDateOfBirth(String? value) {
+    if (value != null) {
+      final age = DateTime.now().year - DateTime.parse(value).year;
+      if (age < 18) {
+        return 'You must 18+ to be a coach';
+      }
+    }
+    return null;
+  }
+
   static String? validatePhoneNumber(String? value) {
     if (value == null || value.isEmpty) {
       return 'Phone number is required';
