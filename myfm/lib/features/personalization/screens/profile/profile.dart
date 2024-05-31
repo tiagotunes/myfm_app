@@ -75,28 +75,45 @@ class ProfileScreen extends StatelessWidget {
                 onPressed: () => Get.to(() => const EditProfileScreen()),
               ),
               const SizedBox(height: TSizes.spaceBtwItems),
-              TProfileMenu(
-                title: 'Name',
-                value: userController.user.value.name,
-                onPressed: () {},
+              Obx(
+                () => TProfileMenu(
+                  title: 'Name',
+                  value: userController.user.value.name != ""
+                      ? userController.user.value.name
+                      : "...",
+                  onPressed: () {},
+                ),
               ),
-              TProfileMenu(
-                title: 'Username',
-                value: userController.user.value.username,
-                onPressed: () {},
+              Obx(
+                () => TProfileMenu(
+                  title: 'Username',
+                  value: userController.user.value.username != ""
+                      ? userController.user.value.username
+                      : "...",
+                  onPressed: () {},
+                ),
               ),
-              TProfileMenu(
-                title: 'Nationality',
-                value: countryController
-                    .allCountries[
-                        int.parse(userController.user.value.nationality) - 1]
-                    .nationality,
-                onPressed: () {},
+              Obx(
+                () => TProfileMenu(
+                  title: 'Nationality',
+                  value: userController.user.value.nationality != ""
+                      ? countryController
+                          .allCountries[
+                              int.parse(userController.user.value.nationality) -
+                                  1]
+                          .nationality
+                      : "...",
+                  onPressed: () {},
+                ),
               ),
-              TProfileMenu(
-                title: 'Date of Birth',
-                value: userController.user.value.dateOfBirth,
-                onPressed: () {},
+              Obx(
+                () => TProfileMenu(
+                  title: 'Date of Birth',
+                  value: userController.user.value.dateOfBirth != ""
+                      ? userController.user.value.dateOfBirth
+                      : "...",
+                  onPressed: () {},
+                ),
               ),
 
               const SizedBox(height: TSizes.spaceBtwItems),

@@ -4,7 +4,7 @@ import 'package:myfm/data/repositories/user/user_repository.dart';
 import 'package:myfm/features/personalization/controllers/country_controller.dart';
 import 'package:myfm/features/personalization/controllers/user_controller.dart';
 import 'package:myfm/features/personalization/models/user_model.dart';
-import 'package:myfm/features/personalization/screens/profile/profile.dart';
+import 'package:myfm/navigation_menu.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/helpers/network_manager.dart';
 import 'package:myfm/utils/popups/full_screen_loader.dart';
@@ -12,6 +12,8 @@ import 'package:myfm/utils/popups/loaders.dart';
 
 class EditUserController extends GetxController {
   static EditUserController get instance => Get.find();
+
+  final navigationController = Get.put(NavigationController());
 
   // Variables
   final userController = Get.put(UserController());
@@ -91,14 +93,16 @@ class EditUserController extends GetxController {
       // Remove Loader
       TFullScreenLoader.stopLoading();
 
+      // Move to previous screen
+      // Get.off(() => const ProfileScreen());
+      Get.back();
+      userController.user.refresh();
+
       // Show Success Message
       TLoaders.sucessSnackBar(
         title: 'Success',
         message: 'Your profile has been updated.',
       );
-
-      // Move to previous screen
-      Get.off(() => const ProfileScreen());
     } catch (e) {
       // Remove Loader
       TFullScreenLoader.stopLoading();
