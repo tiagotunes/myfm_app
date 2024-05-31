@@ -18,7 +18,7 @@ class TTextFormFieldPopup {
       context: context,
       isScrollControlled: true,
       constraints: BoxConstraints(
-        maxHeight: THelperFunctions.screenHeight() * 0.3,
+        maxHeight: THelperFunctions.screenHeight() * 0.4,
       ),
       builder: (context) {
         return Obx(() {
@@ -46,15 +46,21 @@ class TTextFormFieldPopup {
               final country = countryController.activeCountries[index];
               return ListTile(
                 leading: country.name != ''
-                    ? SvgPicture.asset(country.flag)
+                    ? SvgPicture.asset(
+                        country.flag,
+                        width: 33,
+                      )
                     : const Icon(Iconsax.flag),
                 title: Text(country.nationality),
+                //title: Text('${country.id} ${country.nationality}')
                 onTap: () {
                   if (signupController != null) {
                     signupController.nationality.text = country.nationality;
+                    signupController.nationalityID.text = country.id;
                   }
                   if (editUserController != null) {
                     editUserController.nationality.text = country.nationality;
+                    editUserController.nationalityID.text = country.id;
                   }
                   Navigator.pop(context);
                 },

@@ -17,6 +17,7 @@ class EditUserController extends GetxController {
   final name = TextEditingController();
   final username = TextEditingController();
   final nationality = TextEditingController();
+  final nationalityID = TextEditingController();
   final dateOfBirth = TextEditingController();
   GlobalKey<FormState> editUserFormKey = GlobalKey<FormState>();
   final userRepository = Get.put(UserRepository());
@@ -65,7 +66,8 @@ class EditUserController extends GetxController {
         name: name.text.trim(),
         username: username.text.trim(),
         email: userController.user.value.email,
-        nationality: nationality.text.trim(),
+        // nationality: nationality.text.trim(),
+        nationality: nationalityID.text.trim(),
         dateOfBirth: dateOfBirth.text.trim(),
         profilePicture: userController.user.value.profilePicture,
         dtCri: userController.user.value.dtCri,

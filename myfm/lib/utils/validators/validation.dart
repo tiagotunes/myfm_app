@@ -49,7 +49,7 @@ class TValidator {
   }
 
   static String? validateDateOfBirth(String? value) {
-    if (value != null) {
+    if (value != null && value != "") {
       final age = DateTime.now().year - DateTime.parse(value).year;
       if (age < 18) {
         return 'You must 18+ to be a coach';

@@ -19,6 +19,7 @@ class SignupController extends GetxController {
   final password = TextEditingController();
   final hidePassword = true.obs;
   final nationality = TextEditingController();
+  final nationalityID = TextEditingController();
   final dateOfBirth = TextEditingController();
   final checkTermsConditions = false.obs;
   GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
@@ -73,7 +74,8 @@ class SignupController extends GetxController {
         name: name.text.trim(),
         username: username.text.trim(),
         email: email.text.trim(),
-        nationality: nationality.text.trim(),
+        // nationality: nationality.text.trim(),
+        nationality: nationalityID.text.trim(),
         dateOfBirth: dateOfBirth.text.trim(),
         profilePicture: '',
         dtCri: DateTime.now().toString().split('.')[0],
