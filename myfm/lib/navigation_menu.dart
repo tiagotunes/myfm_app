@@ -25,14 +25,14 @@ class NavigationMenu extends StatelessWidget {
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
           destinations: const [
-            NavigationDestination(
-              icon: Icon(Iconsax.home_2),
-              label: TTexts.home,
-            ),
-            NavigationDestination(
-              icon: Icon(Iconsax.search_normal_1),
-              label: TTexts.search,
-            ),
+            // NavigationDestination(
+            //   icon: Icon(Iconsax.home_2),
+            //   label: TTexts.home,
+            // ),
+            // NavigationDestination(
+            //   icon: Icon(Iconsax.search_normal_1),
+            //   label: TTexts.search,
+            // ),
             NavigationDestination(
               icon: Icon(Iconsax.shield),
               label: TTexts.teams,
@@ -52,8 +52,8 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = const [
-    HomeScreen(),
-    SearchScreen(),
+    // HomeScreen(),
+    // SearchScreen(),
     TeamsScreen(),
     SettingsScreen(),
   ];

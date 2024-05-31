@@ -45,7 +45,7 @@ class TTextFormFieldPopup {
             itemBuilder: (context, index) {
               final country = countryController.activeCountries[index];
               return ListTile(
-                leading: country.name != ''
+                leading: country.flag != ''
                     ? SvgPicture.asset(
                         country.flag,
                         width: 33,
