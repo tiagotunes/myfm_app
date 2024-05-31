@@ -28,12 +28,17 @@ class CountryController extends GetxController {
 
       // Update the countries list
       allCountries.assignAll(countries);
+      // Sort alphabetically countries
+      allCountries.sort((a, b) {
+        if (int.parse(a.id) >= int.parse(b.id)) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
 
       // Filter active countries
       activeCountries.assignAll(allCountries.where((c) => c.active).toList());
-
-      // Sort alphabetically countries
-      activeCountries.sort((a, b) => a.nationality.compareTo(b.nationality));
     } catch (e) {
       TLoaders.errorSnackbar(title: 'Error', message: e.toString());
     } finally {

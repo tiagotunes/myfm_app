@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myfm/data/repositories/user/user_repository.dart';
+import 'package:myfm/features/personalization/controllers/country_controller.dart';
 import 'package:myfm/features/personalization/controllers/user_controller.dart';
 import 'package:myfm/features/personalization/models/user_model.dart';
 import 'package:myfm/features/personalization/screens/profile/profile.dart';
@@ -16,6 +17,7 @@ class EditUserController extends GetxController {
   final userController = Get.put(UserController());
   final name = TextEditingController();
   final username = TextEditingController();
+  final countryController = Get.put(CountryController());
   final nationality = TextEditingController();
   final nationalityID = TextEditingController();
   final dateOfBirth = TextEditingController();
@@ -33,7 +35,12 @@ class EditUserController extends GetxController {
   Future<void> initializeUserData() async {
     name.text = userController.user.value.name;
     username.text = userController.user.value.username;
-    nationality.text = userController.user.value.nationality;
+    if (userController.user.value.nationality != "") {
+      nationality.text = countryController
+          .allCountries[int.parse(userController.user.value.nationality) - 1]
+          .nationality;
+      nationalityID.text = userController.user.value.nationality;
+    }
     dateOfBirth.text = userController.user.value.dateOfBirth;
   }
 
@@ -78,7 +85,7 @@ class EditUserController extends GetxController {
       // Update the Rx User value
       userController.user.value.name = name.text.trim();
       userController.user.value.username = username.text.trim();
-      userController.user.value.nationality = nationality.text.trim();
+      userController.user.value.nationality = nationalityID.text.trim();
       userController.user.value.dateOfBirth = dateOfBirth.text.trim();
 
       // Remove Loader
