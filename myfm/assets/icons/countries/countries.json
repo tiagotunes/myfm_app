@@ -320,8 +320,8 @@
     "flag": "assets/icons/countries/ky.svg"
   },
   {
-    "name": "Central 1n Republic",
-    "nationality": "Central 1n",
+    "name": "Central African Republic",
+    "nationality": "Central African",
     "cca2": "CF",
     "continent": "1",
     "confederation": "5",
@@ -1624,8 +1624,8 @@
     "flag": "assets/icons/countries/so.svg"
   },
   {
-    "name": "South 1",
-    "nationality": "South 1n",
+    "name": "South Africa",
+    "nationality": "South African",
     "cca2": "ZA",
     "continent": "1",
     "confederation": "5",
