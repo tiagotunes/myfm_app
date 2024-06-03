@@ -10,6 +10,8 @@ class CountryController extends GetxController {
   final _countryRepository = Get.put(CountryRepository());
   final RxList<CountryModel> allCountries = <CountryModel>[].obs;
   final RxList<CountryModel> activeCountries = <CountryModel>[].obs;
+  final RxList<CountryModel> activeCountriesOrderNationality =
+      <CountryModel>[].obs;
 
   @override
   void onInit() {
@@ -39,6 +41,12 @@ class CountryController extends GetxController {
 
       // Filter active countries
       activeCountries.assignAll(allCountries.where((c) => c.active).toList());
+
+      // Order active countries by nationality
+      activeCountriesOrderNationality.assignAll(activeCountries);
+      activeCountriesOrderNationality.sort((a, b) {
+        return a.nationality.compareTo(b.nationality);
+      });
     } catch (e) {
       TLoaders.errorSnackbar(title: 'Error', message: e.toString());
     } finally {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/features/fm/screens/home/home.dart';
-import 'package:myfm/features/fm/screens/search/search.dart';
+// import 'package:myfm/features/fm/screens/search/search.dart';
 import 'package:myfm/features/fm/screens/teams/teams.dart';
 import 'package:myfm/features/personalization/screens/settings/settings.dart';
 import 'package:myfm/utils/constants/colors.dart';
@@ -25,10 +25,10 @@ class NavigationMenu extends StatelessWidget {
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
           destinations: const [
-            // NavigationDestination(
-            //   icon: Icon(Iconsax.home_2),
-            //   label: TTexts.home,
-            // ),
+            NavigationDestination(
+              icon: Icon(Iconsax.home_2),
+              label: TTexts.home,
+            ),
             // NavigationDestination(
             //   icon: Icon(Iconsax.search_normal_1),
             //   label: TTexts.search,
@@ -52,7 +52,7 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = const [
-    // HomeScreen(),
+    HomeScreen(),
     // SearchScreen(),
     TeamsScreen(),
     SettingsScreen(),

@@ -41,9 +41,10 @@ class TTextFormFieldPopup {
           }
           return ListView.builder(
             shrinkWrap: true,
-            itemCount: countryController.activeCountries.length,
+            itemCount: countryController.activeCountriesOrderNationality.length,
             itemBuilder: (context, index) {
-              final country = countryController.activeCountries[index];
+              final country =
+                  countryController.activeCountriesOrderNationality[index];
               return ListTile(
                 leading: country.flag != ''
                     ? SvgPicture.asset(
