@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/common/widgets/icons/action_icon.dart';
-import 'package:myfm/features/personalization/screens/team/widgets/team_form_page_view.dart';
+import 'package:myfm/features/personalization/screens/team/widgets/edit_team_form_page_view.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
 
-class TTeamPersonalizationScreen extends StatelessWidget {
-  const TTeamPersonalizationScreen({super.key});
+class TEditTeamScreen extends StatelessWidget {
+  const TEditTeamScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class TTeamPersonalizationScreen extends StatelessWidget {
               opacity: 0.5,
             ),
           ),
-          child: const TTeamFormPageView(),
+          child: const TEditTeamFormPageView(),
         ),
       ),
     );

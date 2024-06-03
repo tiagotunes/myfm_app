@@ -11,8 +11,8 @@ import 'package:myfm/utils/constants/text_strings.dart';
 import 'package:myfm/utils/popups/text_form_field_popup.dart';
 import 'package:myfm/utils/validators/validation.dart';
 
-class EditProfileScreen extends StatelessWidget {
-  const EditProfileScreen({super.key});
+class TEditProfileScreen extends StatelessWidget {
+  const TEditProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

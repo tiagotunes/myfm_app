@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myfm/common/widgets/chips/color_choice_chip.dart';
 import 'package:myfm/common/widgets/text/text_form_field.dart';
-import 'package:myfm/features/personalization/screens/team/widgets/team_form_page.dart';
+import 'package:myfm/features/personalization/screens/team/widgets/edit_team_form_page.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
 import 'package:myfm/utils/device/device_utility.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
 
-class TTeamFormPageView extends StatelessWidget {
-  const TTeamFormPageView({
+class TEditTeamFormPageView extends StatelessWidget {
+  const TEditTeamFormPageView({
     super.key,
   });
 
@@ -20,7 +20,7 @@ class TTeamFormPageView extends StatelessWidget {
       child: CarouselSlider(
         items: [
           // Page 1 - Basic
-          TeamFormPage(
+          TEditTeamFormPage(
             bottomLabel: TTexts.basic.capitalize,
             formFields: SizedBox(
               height: TSizes.formFieldHeight,
@@ -61,7 +61,7 @@ class TTeamFormPageView extends StatelessWidget {
           ),
 
           // Page 2 - Finances
-          TeamFormPage(
+          TEditTeamFormPage(
             bottomLabel: TTexts.finances.capitalize,
             formFields: SizedBox(
               height: TSizes.formFieldHeight,
@@ -93,7 +93,7 @@ class TTeamFormPageView extends StatelessWidget {
           ),
 
           // Page 3 - Images
-          TeamFormPage(
+          TEditTeamFormPage(
             bottomLabel: TTexts.images.capitalize,
             formFields: SizedBox(
               height: TSizes.formFieldHeight,

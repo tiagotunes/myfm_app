@@ -5,7 +5,7 @@ import 'package:myfm/common/widgets/cards/team/team_card_vertical.dart';
 import 'package:myfm/common/widgets/icons/counter_icon.dart';
 import 'package:myfm/common/widgets/layouts/grid_layout.dart';
 import 'package:myfm/common/widgets/text/appbar_title_text.dart';
-import 'package:myfm/features/personalization/screens/team/team.dart';
+import 'package:myfm/features/personalization/screens/team/edit_team.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -22,7 +22,7 @@ class TeamsScreen extends StatelessWidget {
         title: const TAppBarTitleText(title: TTexts.teams),
         actions: [
           TCounterIcon(
-            onPressed: () => Get.to(() => const TTeamPersonalizationScreen()),
+            onPressed: () => Get.to(() => const TEditTeamScreen()),
             iconColor: TColors.white,
             icon: Icons.add_rounded,
           )

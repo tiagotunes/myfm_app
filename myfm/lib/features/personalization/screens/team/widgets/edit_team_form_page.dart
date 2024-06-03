@@ -4,8 +4,8 @@ import 'package:myfm/common/widgets/custom_shapes/containers/rounded_container.d
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 
-class TeamFormPage extends StatelessWidget {
-  const TeamFormPage({
+class TEditTeamFormPage extends StatelessWidget {
+  const TEditTeamFormPage({
     super.key,
     required this.formFields,
     this.bottomLabel,

@@ -72,7 +72,7 @@ class ProfileScreen extends StatelessWidget {
                 title: 'Personal Information',
                 showActionButton: true,
                 buttonTitle: 'Edit Profile',
-                onPressed: () => Get.to(() => const EditProfileScreen()),
+                onPressed: () => Get.to(() => const TEditProfileScreen()),
               ),
               const SizedBox(height: TSizes.spaceBtwItems),
               Obx(
