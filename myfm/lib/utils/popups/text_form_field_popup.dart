@@ -4,6 +4,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:myfm/features/personalization/controllers/country_controller.dart';
+import 'package:myfm/features/personalization/controllers/edit_team_controller.dart';
 import 'package:myfm/features/personalization/controllers/edit_user_controller.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
 
@@ -12,6 +13,7 @@ class TTextFormFieldPopup {
     BuildContext context,
     SignupController? signupController,
     EditUserController? editUserController,
+    EditTeamController? editTeamController,
     CountryController countryController,
   ) async {
     await showModalBottomSheet(
@@ -43,8 +45,9 @@ class TTextFormFieldPopup {
             shrinkWrap: true,
             itemCount: countryController.activeCountriesOrderNationality.length,
             itemBuilder: (context, index) {
-              final country =
-                  countryController.activeCountriesOrderNationality[index];
+              final country = editTeamController != null
+                  ? countryController.activeCountries[index]
+                  : countryController.activeCountriesOrderNationality[index];
               return ListTile(
                 leading: country.flag != ''
                     ? SvgPicture.asset(
@@ -52,7 +55,11 @@ class TTextFormFieldPopup {
                         width: 33,
                       )
                     : const Icon(Iconsax.flag),
-                title: Text(country.nationality),
+                title: Text(
+                  editTeamController != null
+                      ? country.name
+                      : country.nationality,
+                ),
                 //title: Text('${country.id} ${country.nationality}')
                 onTap: () {
                   if (signupController != null) {
@@ -62,6 +69,10 @@ class TTextFormFieldPopup {
                   if (editUserController != null) {
                     editUserController.nationality.text = country.nationality;
                     editUserController.nationalityID.text = country.id;
+                  }
+                  if (editTeamController != null) {
+                    editTeamController.country.text = country.name;
+                    editTeamController.countryID.text = country.id;
                   }
                   Navigator.pop(context);
                 },

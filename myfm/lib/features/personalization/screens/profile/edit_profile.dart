@@ -4,7 +4,6 @@ import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/common/widgets/icons/action_icon.dart';
 import 'package:myfm/common/widgets/text/text_form_field.dart';
-import 'package:myfm/features/personalization/controllers/country_controller.dart';
 import 'package:myfm/features/personalization/controllers/edit_user_controller.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
@@ -17,7 +16,6 @@ class TEditProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final editUserController = Get.put(EditUserController());
-    final countryController = Get.put(CountryController());
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
@@ -84,7 +82,8 @@ class TEditProfileScreen extends StatelessWidget {
                         context,
                         null,
                         editUserController,
-                        countryController,
+                        null,
+                        editUserController.countryController,
                       ),
                       icon: const Icon(Iconsax.flag),
                     ),

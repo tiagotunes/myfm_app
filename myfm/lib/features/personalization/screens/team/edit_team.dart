@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/common/widgets/icons/action_icon.dart';
+import 'package:myfm/features/personalization/controllers/edit_team_controller.dart';
 import 'package:myfm/features/personalization/screens/team/widgets/edit_team_form_page_view.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -13,6 +14,7 @@ class TEditTeamScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final editTeamController = Get.put(EditTeamController());
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
@@ -29,7 +31,7 @@ class TEditTeamScreen extends StatelessWidget {
 
           // Save
           ActionIcon(
-            onPressed: () {},
+            onPressed: () => editTeamController.saveTeamData(),
             icon: Iconsax.shield_tick,
           ),
         ],

@@ -15,6 +15,7 @@ class TTextFormField extends StatelessWidget {
     this.controller,
     this.validator,
     this.obscureText = false,
+    this.inputType,
   });
 
   final String label;
@@ -24,6 +25,7 @@ class TTextFormField extends StatelessWidget {
   final VoidCallback? onTap;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+  final TextInputType? inputType;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +45,7 @@ class TTextFormField extends StatelessWidget {
           onTap: onTap,
           controller: controller,
           validator: validator,
+          keyboardType: inputType,
           obscureText: obscureText,
           decoration: InputDecoration(
             prefixIcon: icon,
