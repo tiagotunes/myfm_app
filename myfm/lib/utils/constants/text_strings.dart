@@ -94,8 +94,8 @@ class TTexts {
   static const String bankBalance = "bank balance";
   static const String chooseImage = "choose image";
   static const String color = "color";
-  static const String country = "country";
-  static const String season = "season";
+  static const String country = "Country";
+  static const String season = "Season";
   static const String finances = "finances";
   static const String images = "images";
   static const String logo = "logo";

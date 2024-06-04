@@ -97,6 +97,7 @@ class TEditTeamFormPageView extends StatelessWidget {
                       label: TTexts.bankBalance,
                       isRequired: false,
                       controller: editTeamController.bankBalance,
+                      inputType: TextInputType.number,
                     ),
                     const SizedBox(height: TSizes.spaceBtwInputFields),
                     // Squad Budget
@@ -104,6 +105,7 @@ class TEditTeamFormPageView extends StatelessWidget {
                       label: TTexts.squadBudget,
                       isRequired: false,
                       controller: editTeamController.squadBudget,
+                      inputType: TextInputType.number,
                     ),
                     const SizedBox(height: TSizes.spaceBtwInputFields),
                     // Wage Budget
@@ -111,6 +113,7 @@ class TEditTeamFormPageView extends StatelessWidget {
                       label: TTexts.wageBudget,
                       isRequired: false,
                       controller: editTeamController.wageBudget,
+                      inputType: TextInputType.number,
                     ),
                     const SizedBox(height: TSizes.spaceBtwInputFields),
                   ],

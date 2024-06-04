@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:myfm/data/repositories/associations/country_repository.dart';
+import 'package:myfm/data/repositories/association/country_repository.dart';
 import 'package:myfm/features/fm/models/country_model.dart';
 import 'package:myfm/utils/popups/loaders.dart';
 

@@ -80,7 +80,7 @@ class UserController extends GetxController {
       TLoaders.warningSnackBar(
         title: 'Data not saved',
         message:
-            'Something wnet wrong while saving your information. You can re-save your data in your Profile.',
+            'Something went wrong while saving your information. You can re-save your data in your Profile.',
       );
     }
   }
