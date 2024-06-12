@@ -4,13 +4,16 @@ import 'package:myfm/common/widgets/appbar/appbar.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_detail_slider.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_squad_tab.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_transfers_tab.dart';
+import 'package:myfm/features/personalization/models/team_model.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
 
 class TeamDetailScreen extends StatelessWidget {
-  const TeamDetailScreen({super.key});
+  const TeamDetailScreen({super.key, required this.team});
+
+  final TeamModel team;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class TeamDetailScreen extends StatelessWidget {
           diagonalRectColor: const Color(0xFF008057),
           showBackArrow: true,
           title: Text(
-            'Sporting CP'.toUpperCase(),
+            team.name.toUpperCase(),
             style: Theme.of(context)
                 .textTheme
                 .headlineMedium!

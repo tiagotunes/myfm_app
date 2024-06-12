@@ -1,24 +1,29 @@
 import 'package:get/get.dart';
 import 'package:myfm/data/repositories/team/team_repository.dart';
+import 'package:myfm/features/personalization/controllers/user_controller.dart';
 import 'package:myfm/features/personalization/models/team_model.dart';
 import 'package:myfm/utils/popups/loaders.dart';
 
-class TeamsController extends GetxController {
-  static TeamsController get instance => Get.find();
+class TeamController extends GetxController {
+  static TeamController get instance => Get.find();
 
   final isLoading = false.obs;
   final _teamRepository = Get.put(TeamRepository());
+  final userController = Get.put(UserController());
   RxList<TeamModel> allTeams = <TeamModel>[].obs;
+  RxList<TeamModel> userTeams = <TeamModel>[].obs;
 
   @override
   void onInit() {
-    fetchTeams();
+    fetchUserTeams();
+    // fetchTeams();
     super.onInit();
   }
 
   @override
   void refresh() {
-    fetchTeams();
+    fetchUserTeams();
+    // fetchTeams();
     super.refresh();
   }
 
@@ -41,4 +46,22 @@ class TeamsController extends GetxController {
   }
 
   // Load User Teams
+  Future<void> fetchUserTeams() async {
+    try {
+      // Show loader while loading categories
+      isLoading.value = true;
+
+      // Fetch teams from data source
+      final teams =
+          await _teamRepository.getUserTeams(userController.user.value.id);
+
+      // Update the teams list
+      userTeams.assignAll(teams);
+    } catch (e) {
+      TLoaders.errorSnackbar(title: 'Error', message: e.toString());
+    } finally {
+      // Remove Loader
+      isLoading.value = false;
+    }
+  }
 }

@@ -23,10 +23,30 @@ class TeamRepository extends GetxController {
     }
   }
 
-  // Get all Countries
+  // Get all Teams
   Future<List<TeamModel>> getAllTeams() async {
     try {
       final snapshot = await _db.collection('Team').get();
+      final list = snapshot.docs
+          .map((document) => TeamModel.fromSnapshot(document))
+          .toList();
+      return list;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
+
+  // Get User Teams
+  Future<List<TeamModel>> getUserTeams(String userId) async {
+    try {
+      final snapshot = await _db
+          .collection('Team')
+          .where('user_id', isEqualTo: userId)
+          .get();
       final list = snapshot.docs
           .map((document) => TeamModel.fromSnapshot(document))
           .toList();

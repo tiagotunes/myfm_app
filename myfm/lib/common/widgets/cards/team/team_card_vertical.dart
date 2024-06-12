@@ -5,26 +5,27 @@ import 'package:myfm/common/widgets/images/rounded_image.dart';
 import 'package:myfm/common/widgets/text/card_team_title_text.dart';
 import 'package:myfm/common/widgets/text/label_text_with_icon.dart';
 import 'package:myfm/features/fm/screens/team_details/team_detail.dart';
+import 'package:myfm/features/personalization/controllers/country_controller.dart';
+import 'package:myfm/features/personalization/models/team_model.dart';
 import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
 
 class TTeamCardVertical extends StatelessWidget {
   const TTeamCardVertical({
     super.key,
-    required this.imageUrl,
-    required this.name,
-    required this.country,
-    required this.year,
+    required this.team,
   });
 
-  final String imageUrl, name, country, year;
+  final TeamModel team;
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
+    final countryController = Get.put(CountryController());
     return GestureDetector(
-      onTap: () => Get.to(() => const TeamDetailScreen()),
+      onTap: () => Get.to(() => TeamDetailScreen(team: team)),
       child: Container(
         width: TSizes.teamCardVerticalWidth,
         padding: const EdgeInsets.all(TSizes.xs),
@@ -40,10 +41,10 @@ class TTeamCardVertical extends StatelessWidget {
               height: TSizes.teamImageHeight,
               padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
-              child: Stack(
+              child: const Stack(
                 children: [
                   TRoundedImage(
-                    imageUrl: imageUrl,
+                    imageUrl: TImages.scp,
                     applyImageRadius: true,
                     width: double.infinity,
                     fit: BoxFit.contain,
@@ -60,16 +61,18 @@ class TTeamCardVertical extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Name
-                  TCardTeamTitleText(title: name),
+                  TCardTeamTitleText(title: team.name),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
 
                   // Country
-                  TLabelWithIconText(label: country),
+                  TLabelWithIconText(
+                      label: countryController
+                          .allCountries[int.parse(team.country) - 1].name),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
 
                   // Year
                   Text(
-                    year,
+                    team.season,
                     maxLines: 1,
                     style: Theme.of(context).textTheme.labelSmall,
                   ),

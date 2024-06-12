@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myfm/data/repositories/team/team_repository.dart';
-import 'package:myfm/features/fm/controllers/teams_controller.dart';
+import 'package:myfm/features/fm/controllers/team_controller.dart';
 import 'package:myfm/features/personalization/controllers/country_controller.dart';
 import 'package:myfm/features/personalization/controllers/user_controller.dart';
 import 'package:myfm/features/personalization/models/team_model.dart';
@@ -30,7 +30,7 @@ class EditTeamController extends GetxController {
   final stadiumImg = TextEditingController();
   GlobalKey<FormState> editTeamFormKey = GlobalKey<FormState>();
   final teamRepository = Get.put(TeamRepository());
-  final teamsController = Get.put(TeamsController());
+  final teamsController = Get.put(TeamController());
 
   Future<void> saveTeamData() async {
     try {
