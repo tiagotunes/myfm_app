@@ -46,4 +46,12 @@ class TFirebaseFunctions {
       }
     }
   }
+
+  // static void uploadBanners() async {
+  //   final List<BannerModel> banners = [
+  //     BannerModel(imageUrl: imageUrl, targetScreen: '/', active: true),
+  //     BannerModel(imageUrl: imageUrl, targetScreen: '/', active: true),
+  //     BannerModel(imageUrl: imageUrl, targetScreen: '/', active: true),
+  //   ];
+  // }
 }

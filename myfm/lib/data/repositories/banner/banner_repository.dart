@@ -1,24 +1,22 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:myfm/features/fm/models/country_model.dart';
+import 'package:myfm/features/fm/models/banner_model.dart';
 import 'package:myfm/utils/exceptions/firebase_exceptions.dart';
 import 'package:myfm/utils/exceptions/platform_exceptions.dart';
 
-class CountryRepository extends GetxController {
-  static CountryRepository get instance => Get.find();
+class BannerRepository extends GetxController {
+  static BannerRepository get instace => Get.find();
 
   // Variables
   final _db = FirebaseFirestore.instance;
 
-  // Get all Countries
-  Future<List<CountryModel>> getAllCountries() async {
+  // Get all order related to current User
+  Future<List<BannerModel>> fetchBanners() async {
     try {
-      final snapshot = await _db.collection('Country').get();
-      final list = snapshot.docs
-          .map((document) => CountryModel.fromSnapshot(document))
-          .toList();
-      return list;
+      final result =
+          await _db.collection('Banner').where('active', isEqualTo: true).get();
+      return result.docs.map((b) => BannerModel.fromSnapshot(b)).toList();
     } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
     } on PlatformException catch (e) {
@@ -27,4 +25,6 @@ class CountryRepository extends GetxController {
       throw 'Something went wrong. Please try again';
     }
   }
+
+  // Upload Banners to the Cloud Firebase
 }
