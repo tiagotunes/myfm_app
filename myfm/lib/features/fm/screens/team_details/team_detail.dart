@@ -6,7 +6,6 @@ import 'package:myfm/features/fm/screens/team_details/widgets/team_squad_tab.dar
 import 'package:myfm/features/fm/screens/team_details/widgets/team_transfers_tab.dart';
 import 'package:myfm/features/personalization/models/team_model.dart';
 import 'package:myfm/utils/constants/colors.dart';
-import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
 
@@ -22,7 +21,8 @@ class TeamDetailScreen extends StatelessWidget {
       child: Scaffold(
         appBar: TAppBar(
           wDiagonalRect: true,
-          diagonalRectColor: const Color(0xFF008057),
+          diagonalRectColor:
+              team.color.isEmpty ? TColors.primary : Colors.green,
           showBackArrow: true,
           title: Text(
             team.name.toUpperCase(),
@@ -42,12 +42,7 @@ class TeamDetailScreen extends StatelessWidget {
           // Header
           headerSliverBuilder: (context, innerBoxIsScrolled) {
             return [
-              const TTeamDetailSlider(
-                teamLogo: TImages.scp,
-                teamKit: TImages.scpKit,
-                teamStadium: TImages.scpStadium,
-                indicatorColor: Color(0xFF008057),
-              ),
+              TTeamDetailSlider(team: team),
             ];
           },
 

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:myfm/common/widgets/images/rounded_image.dart';
 import 'package:myfm/features/fm/controllers/team_image_controller.dart';
+import 'package:myfm/features/personalization/models/team_model.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 
 class TTeamImageSlider extends StatelessWidget {
   const TTeamImageSlider({
     super.key,
-    required this.teamLogo,
-    required this.teamKit,
-    required this.teamStadium,
+    required this.team,
   });
 
-  final String teamLogo, teamKit, teamStadium;
+  final TeamModel team;
 
   @override
   Widget build(BuildContext context) {
@@ -34,17 +34,13 @@ class TTeamImageSlider extends StatelessWidget {
                 child: Stack(
                   alignment: AlignmentDirectional.center,
                   children: [
-                    TRoundedImage(
-                      height: 200,
-                      width: 300,
-                      fit: BoxFit.fitHeight,
-                      imageUrl: controller.imageCurrentIndex.value == 0
-                          ? teamLogo
-                          : controller.imageCurrentIndex.value == 1
-                              ? teamKit
-                              : teamStadium,
-                    ),
+                    controller.imageCurrentIndex.value == 0
+                        ? buildTeamLogo()
+                        : controller.imageCurrentIndex.value == 1
+                            ? buildTeamKit()
+                            : buildTeamStadium(),
                     controller.imageCurrentIndex.value == 2
+                        // && team.stadiumName.isNotEmpty
                         ? Positioned(
                             bottom: 0,
                             child: Container(
@@ -55,7 +51,10 @@ class TTeamImageSlider extends StatelessWidget {
                               child: const Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(Iconsax.location),
+                                  Icon(
+                                    Iconsax.location,
+                                    color: TColors.darkGrey,
+                                  ),
                                   SizedBox(width: TSizes.spaceBtwItems / 2),
                                   Text('Estádio José Alvalade XXI')
                                 ],
@@ -93,5 +92,78 @@ class TTeamImageSlider extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  Widget buildTeamLogo() {
+    if (team.logo.isEmpty) {
+      return SvgPicture.asset(
+        'assets/icons/shield.svg',
+        height: 200,
+        width: 300,
+        colorFilter: ColorFilter.mode(
+          team.color.isEmpty ? Colors.white : Colors.green,
+          BlendMode.srcIn,
+        ),
+      );
+    } else {
+      return TRoundedImage(
+        height: 200,
+        width: 300,
+        fit: BoxFit.fitHeight,
+        imageUrl: team.logo,
+      );
+    }
+  }
+
+  Widget buildTeamKit() {
+    if (team.logo.isEmpty) {
+      return SizedBox(
+        width: 300,
+        height: 200,
+        child: Center(
+          child: SvgPicture.asset(
+            'assets/icons/shirt.svg',
+            height: 130,
+            colorFilter: ColorFilter.mode(
+              Colors.white.withOpacity(0.2),
+              BlendMode.srcIn,
+            ),
+          ),
+        ),
+      );
+    } else {
+      return TRoundedImage(
+        height: 200,
+        width: 300,
+        fit: BoxFit.fitHeight,
+        imageUrl: team.logo,
+      );
+    }
+  }
+
+  Widget buildTeamStadium() {
+    if (team.logo.isEmpty) {
+      return SizedBox(
+        width: 300,
+        height: 200,
+        child: Center(
+          child: SvgPicture.asset(
+            'assets/icons/stadium.svg',
+            height: 130,
+            colorFilter: ColorFilter.mode(
+              Colors.white.withOpacity(0.2),
+              BlendMode.srcIn,
+            ),
+          ),
+        ),
+      );
+    } else {
+      return TRoundedImage(
+        height: 200,
+        width: 300,
+        fit: BoxFit.fitHeight,
+        imageUrl: team.logo,
+      );
+    }
   }
 }

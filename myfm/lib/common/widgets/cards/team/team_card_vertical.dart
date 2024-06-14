@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:myfm/common/widgets/images/rounded_image.dart';
@@ -41,16 +42,25 @@ class TTeamCardVertical extends StatelessWidget {
               height: TSizes.teamImageHeight,
               padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
-              child: const Stack(
-                children: [
-                  TRoundedImage(
-                    imageUrl: TImages.scp,
-                    applyImageRadius: true,
-                    width: double.infinity,
-                    fit: BoxFit.contain,
-                  ),
-                ],
-              ),
+              child: team.logo.isEmpty
+                  ? SizedBox(
+                      width: double.infinity,
+                      child: FittedBox(
+                        child: SvgPicture.asset(
+                          'assets/icons/shield.svg',
+                          colorFilter: ColorFilter.mode(
+                            team.color.isEmpty ? Colors.white : Colors.green,
+                            BlendMode.srcIn,
+                          ),
+                        ),
+                      ),
+                    )
+                  : const TRoundedImage(
+                      imageUrl: TImages.scp,
+                      applyImageRadius: true,
+                      width: double.infinity,
+                      fit: BoxFit.contain,
+                    ),
             ),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
 
