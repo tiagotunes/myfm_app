@@ -52,8 +52,23 @@ class TeamController extends GetxController {
       isLoading.value = true;
 
       // Fetch teams from data source
-      final teams =
+      var teams =
           await _teamRepository.getUserTeams(userController.user.value.id);
+      teams.sort((a, b) {
+        if (a.dtAct.isEmpty || b.dtAct.isEmpty) {
+          if (int.parse(a.season) < int.parse(b.season)) {
+            return 1;
+          } else {
+            return -1;
+          }
+        } else {
+          if (DateTime.parse(a.dtAct).isBefore(DateTime.parse(b.dtAct))) {
+            return 1;
+          } else {
+            return -1;
+          }
+        }
+      });
 
       // Update the teams list
       userTeams.assignAll(teams);
