@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myfm/common/widgets/text/label_text.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/enums.dart';
@@ -14,12 +15,14 @@ class TLabelWithIconText extends StatelessWidget {
     this.labelSize = TextSizes.small,
     this.iconColor = TColors.primary,
     this.icon = Icons.flag,
+    this.countryFlag,
   });
 
   final String label;
   final int maxLines;
   final Color? textColor, iconColor;
   final IconData icon;
+  final String? countryFlag;
   final TextAlign? textAlign;
   final TextSizes labelSize;
 
@@ -37,12 +40,17 @@ class TLabelWithIconText extends StatelessWidget {
             labelSize: labelSize,
           ),
         ),
-        const SizedBox(width: TSizes.xs),
-        Icon(
-          icon,
-          // color: iconColor,
-          size: TSizes.iconXs,
-        ),
+        const SizedBox(width: TSizes.sm),
+        countryFlag != null
+            ? SvgPicture.asset(
+                countryFlag!,
+                height: 20,
+              )
+            : Icon(
+                icon,
+                // color: iconColor,
+                size: TSizes.iconXs,
+              ),
       ],
     );
   }

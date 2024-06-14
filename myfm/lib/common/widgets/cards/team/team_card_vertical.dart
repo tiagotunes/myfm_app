@@ -66,7 +66,7 @@ class TTeamCardVertical extends StatelessWidget {
 
             // Details
             Padding(
-              padding: const EdgeInsets.only(left: TSizes.sm),
+              padding: const EdgeInsets.symmetric(horizontal: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -76,8 +76,11 @@ class TTeamCardVertical extends StatelessWidget {
 
                   // Country
                   TLabelWithIconText(
-                      label: countryController
-                          .allCountries[int.parse(team.country) - 1].name),
+                    countryFlag: countryController
+                        .allCountries[int.parse(team.country) - 1].flag,
+                    label: countryController
+                        .allCountries[int.parse(team.country) - 1].name,
+                  ),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
 
                   // Year

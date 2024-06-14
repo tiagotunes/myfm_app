@@ -39,8 +39,8 @@ class TTeamImageSlider extends StatelessWidget {
                         : controller.imageCurrentIndex.value == 1
                             ? buildTeamKit()
                             : buildTeamStadium(),
-                    controller.imageCurrentIndex.value == 2
-                        // && team.stadiumName.isNotEmpty
+                    controller.imageCurrentIndex.value == 2 &&
+                            team.stadiumName.isNotEmpty
                         ? Positioned(
                             bottom: 0,
                             child: Container(
@@ -48,15 +48,16 @@ class TTeamImageSlider extends StatelessWidget {
                               height: 30,
                               decoration: BoxDecoration(
                                   color: TColors.dark.withOpacity(0.6)),
-                              child: const Row(
+                              child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Iconsax.location,
                                     color: TColors.darkGrey,
                                   ),
-                                  SizedBox(width: TSizes.spaceBtwItems / 2),
-                                  Text('Estádio José Alvalade XXI')
+                                  const SizedBox(
+                                      width: TSizes.spaceBtwItems / 2),
+                                  Text(team.stadiumName)
                                 ],
                               ),
                             ),
