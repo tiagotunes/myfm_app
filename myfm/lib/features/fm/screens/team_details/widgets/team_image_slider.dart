@@ -35,10 +35,10 @@ class TTeamImageSlider extends StatelessWidget {
                   alignment: AlignmentDirectional.center,
                   children: [
                     controller.imageCurrentIndex.value == 0
-                        ? buildTeamLogo()
+                        ? buildTeamLogo(controller)
                         : controller.imageCurrentIndex.value == 1
-                            ? buildTeamKit()
-                            : buildTeamStadium(),
+                            ? buildTeamKit(controller)
+                            : buildTeamStadium(controller),
                     controller.imageCurrentIndex.value == 2 &&
                             team.stadiumName.isNotEmpty
                         ? Positioned(
@@ -95,7 +95,7 @@ class TTeamImageSlider extends StatelessWidget {
     );
   }
 
-  Widget buildTeamLogo() {
+  Widget buildTeamLogo(ImageController controller) {
     if (team.logo.isEmpty) {
       return SvgPicture.asset(
         'assets/icons/shield.svg',
@@ -111,13 +111,15 @@ class TTeamImageSlider extends StatelessWidget {
         height: 200,
         width: 300,
         fit: BoxFit.fitHeight,
+        isNetworkImage: true,
         imageUrl: team.logo,
+        onPressed: () => controller.showEnlargedImage(team.logo),
       );
     }
   }
 
-  Widget buildTeamKit() {
-    if (team.logo.isEmpty) {
+  Widget buildTeamKit(ImageController controller) {
+    if (team.kit.isEmpty) {
       return SizedBox(
         width: 300,
         height: 200,
@@ -137,13 +139,15 @@ class TTeamImageSlider extends StatelessWidget {
         height: 200,
         width: 300,
         fit: BoxFit.fitHeight,
-        imageUrl: team.logo,
+        isNetworkImage: true,
+        imageUrl: team.kit,
+        onPressed: () => controller.showEnlargedImage(team.kit),
       );
     }
   }
 
-  Widget buildTeamStadium() {
-    if (team.logo.isEmpty) {
+  Widget buildTeamStadium(ImageController controller) {
+    if (team.stadiumImg.isEmpty) {
       return SizedBox(
         width: 300,
         height: 200,
@@ -163,7 +167,9 @@ class TTeamImageSlider extends StatelessWidget {
         height: 200,
         width: 300,
         fit: BoxFit.fitHeight,
-        imageUrl: team.logo,
+        isNetworkImage: true,
+        imageUrl: team.stadiumImg,
+        onPressed: () => controller.showEnlargedImage(team.stadiumImg),
       );
     }
   }
