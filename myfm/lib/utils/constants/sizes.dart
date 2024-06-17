@@ -78,8 +78,9 @@ class TSizes {
   // Loading Indicator size
   static const double loadingIndicatorSize = 36.0;
 
-  // Grid view spacing
+  // Grid view
   static const double gridViewSpacing = 16.0;
+  static const double gridMainAxisExtent = 265.0;
 
   // Form Field height
   static double formFieldHeight = THelperFunctions.screenHeight() -

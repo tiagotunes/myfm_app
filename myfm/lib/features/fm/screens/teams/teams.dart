@@ -34,9 +34,12 @@ class TeamsScreen extends StatelessWidget {
       body: Obx(
         () {
           if (teamsController.isLoading.value) {
-            return const TShimmerEffect(
-              width: double.infinity,
-              height: TSizes.xl,
+            return const Padding(
+              padding: EdgeInsets.all(TSizes.defaultSpace),
+              child: TShimmerEffect(
+                width: TSizes.teamCardVerticalWidth,
+                height: TSizes.gridMainAxisExtent,
+              ),
             );
           }
 
