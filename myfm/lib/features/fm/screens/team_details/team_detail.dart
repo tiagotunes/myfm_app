@@ -8,6 +8,7 @@ import 'package:myfm/features/personalization/models/team_model.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
+import 'package:myfm/utils/helpers/helper_functions.dart';
 
 class TeamDetailScreen extends StatelessWidget {
   const TeamDetailScreen({super.key, required this.team});
@@ -21,8 +22,10 @@ class TeamDetailScreen extends StatelessWidget {
       child: Scaffold(
         appBar: TAppBar(
           wDiagonalRect: true,
-          diagonalRectColor:
-              team.color.isEmpty ? TColors.primary : Colors.green,
+          diagonalRectColor: team.color.isEmpty ||
+                  THelperFunctions.getColor(team.color) == null
+              ? TColors.primary
+              : THelperFunctions.getColor(team.color)!,
           showBackArrow: true,
           title: Text(
             team.name.toUpperCase(),

@@ -8,6 +8,7 @@ import 'package:myfm/features/fm/controllers/team_image_controller.dart';
 import 'package:myfm/features/personalization/models/team_model.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
+import 'package:myfm/utils/helpers/helper_functions.dart';
 
 class TTeamImageSlider extends StatelessWidget {
   const TTeamImageSlider({
@@ -102,7 +103,10 @@ class TTeamImageSlider extends StatelessWidget {
         height: 200,
         width: 300,
         colorFilter: ColorFilter.mode(
-          team.color.isEmpty ? Colors.white : Colors.green,
+          // team.color.isEmpty ? Colors.white : Colors.green,
+          team.color.isEmpty || THelperFunctions.getColor(team.color) == null
+              ? Colors.white
+              : THelperFunctions.getColor(team.color)!,
           BlendMode.srcIn,
         ),
       );

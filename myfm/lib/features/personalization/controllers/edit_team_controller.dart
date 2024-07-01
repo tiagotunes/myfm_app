@@ -20,7 +20,7 @@ class EditTeamController extends GetxController {
   final country = TextEditingController();
   final countryID = TextEditingController();
   final season = TextEditingController();
-  final color = TextEditingController();
+  Rx<String> color = "".obs;
   final stadiumName = TextEditingController();
   final bankBalance = TextEditingController();
   final squadBudget = TextEditingController();
@@ -63,7 +63,7 @@ class EditTeamController extends GetxController {
         country: countryID.text.trim(),
         season: season.text.trim(),
         stadiumName: stadiumName.text.trim(),
-        color: color.text.trim(),
+        color: color.trim(),
         bankBalance: bankBalance.text.trim() != ""
             ? int.parse(bankBalance.text.trim())
             : null,
