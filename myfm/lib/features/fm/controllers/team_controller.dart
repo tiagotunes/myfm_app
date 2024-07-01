@@ -55,18 +55,14 @@ class TeamController extends GetxController {
       var teams =
           await _teamRepository.getUserTeams(userController.user.value.id);
       teams.sort((a, b) {
-        if (a.dtAct.isEmpty || b.dtAct.isEmpty) {
-          if (int.parse(a.season) < int.parse(b.season)) {
-            return 1;
-          } else {
-            return -1;
-          }
+        if (a.dtAct.isEmpty && b.dtAct.isEmpty) {
+          return DateTime.parse(b.dtCri).compareTo(DateTime.parse(a.dtCri));
+        } else if (a.dtAct.isEmpty) {
+          return 1;
+        } else if (b.dtAct.isEmpty) {
+          return -1;
         } else {
-          if (DateTime.parse(a.dtAct).isBefore(DateTime.parse(b.dtAct))) {
-            return 1;
-          } else {
-            return -1;
-          }
+          return DateTime.parse(b.dtAct).compareTo(DateTime.parse(a.dtAct));
         }
       });
 
