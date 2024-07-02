@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:get/get.dart';
 import 'package:myfm/common/widgets/chips/choice_chip.dart';
 import 'package:myfm/features/personalization/controllers/edit_team_controller.dart';
@@ -35,11 +36,26 @@ class TColorChoiceChip extends StatelessWidget {
                         TTexts.formColors[index] == "customColor"
                     ? false
                     : true,
-                onSelected: (value) {
-                  // print(editTeamController.color.obs.toString());
-                  editTeamController.color.value = TTexts.formColors[index];
-                  // print(editTeamController.color.obs.toString());
-                },
+                /*onSelected: (value) => editTeamController.color.value =
+                    (editTeamController.color.value == TTexts.formColors[index])
+                        ? ""
+                        : TTexts.formColors[index],*/
+                onSelected: (value) => showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    content: SingleChildScrollView(
+                      child: ColorPicker(
+                        enableAlpha: false,
+                        hexInputBar: true,
+                        paletteType: PaletteType.hsvWithHue,
+                        labelTypes: const [],
+                        displayThumbColor: true,
+                        pickerColor: Colors.white,
+                        onColorChanged: (value) {},
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
           ),
