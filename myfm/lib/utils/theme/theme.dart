@@ -5,6 +5,7 @@ import 'package:myfm/utils/theme/custom_themes/bottom_sheet_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/checkbox_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/chip_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/elevated_button_theme.dart';
+import 'package:myfm/utils/theme/custom_themes/navigation_bar_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/outlined_button_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/switch_theme.dart';
 import 'package:myfm/utils/theme/custom_themes/text_button_theme.dart';
@@ -32,5 +33,6 @@ class TAppTheme {
     outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
     textButtonTheme: TTextButtonTheme.darkTextButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
+    navigationBarTheme: TNavigationBarTheme.darkNavigationBarTheme,
   );
 }

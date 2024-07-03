@@ -5,7 +5,6 @@ import 'package:myfm/features/fm/screens/home/home.dart';
 // import 'package:myfm/features/fm/screens/search/search.dart';
 import 'package:myfm/features/fm/screens/teams/teams.dart';
 import 'package:myfm/features/personalization/screens/settings/settings.dart';
-import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
 
 class NavigationMenu extends StatelessWidget {
@@ -18,9 +17,6 @@ class NavigationMenu extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
-          height: 80,
-          elevation: 0,
-          indicatorColor: TColors.darkGrey.withOpacity(0.3),
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
