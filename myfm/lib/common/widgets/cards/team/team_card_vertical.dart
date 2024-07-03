@@ -50,11 +50,9 @@ class TTeamCardVertical extends StatelessWidget {
                           'assets/icons/shield.svg',
                           colorFilter: ColorFilter.mode(
                             // team.color.isEmpty ? Colors.white : Colors.green,
-                            team.color.isEmpty ||
-                                    THelperFunctions.getColor(team.color) ==
-                                        null
+                            team.color == null
                                 ? Colors.white
-                                : THelperFunctions.getColor(team.color)!,
+                                : Color(team.color!),
                             BlendMode.srcIn,
                           ),
                         ),

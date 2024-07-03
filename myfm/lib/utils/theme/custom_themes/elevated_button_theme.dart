@@ -16,7 +16,7 @@ class TElevatedButtonTheme {
       disabledForegroundColor: TColors.darkGrey,
       disabledBackgroundColor: TColors.darkGrey,
       side: const BorderSide(color: TColors.buttonPrimary),
-      padding: const EdgeInsets.symmetric(vertical: 18),
+      padding: const EdgeInsets.symmetric(vertical: 16),
       textStyle: const TextStyle(
         fontSize: TSizes.fontSizeMd,
         color: TColors.white,

@@ -28,9 +28,7 @@ class TTeamDetailSlider extends StatelessWidget {
       // Tabs
       bottom: TTabBar(
         indicatorColor:
-            team.color.isEmpty || THelperFunctions.getColor(team.color) == null
-                ? TColors.primary
-                : THelperFunctions.getColor(team.color)!,
+            team.color == null ? TColors.primary : Color(team.color!),
         tabs: List.generate(TTexts.teamTabbar.length,
             (index) => Tab(child: Text(TTexts.teamTabbar[index]))),
       ),
