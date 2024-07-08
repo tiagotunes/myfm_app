@@ -59,7 +59,7 @@ class TColorChoiceChip extends StatelessWidget {
                     ? Color(editTeamController.color.value!)
                     : const Color(4294198070),
                 onColorChanged: (color) {
-                  print(color.value);
+                  // print(color.value);
                   editTeamController.color.value = color.value;
                 },
                 pickersEnabled: const <ColorPickerType, bool>{
@@ -75,10 +75,11 @@ class TColorChoiceChip extends StatelessWidget {
                 enableShadesSelection: true,
                 includeIndex850: true,
                 actionButtons: const ColorPickerActionButtons(
-                  dialogCancelButtonLabel: 'Close',
-                  dialogCancelButtonType: ColorPickerActionButtonType.outlined,
-                  dialogOkButtonLabel: 'Ok',
-                  dialogOkButtonType: ColorPickerActionButtonType.elevated,
+                  // dialogCancelButtonLabel: 'Close',
+                  // dialogCancelButtonType: ColorPickerActionButtonType.outlined,
+                  // dialogOkButtonLabel: 'Ok',
+                  // dialogOkButtonType: ColorPickerActionButtonType.elevated,
+                  dialogActionButtons: false,
                 ),
                 borderRadius: TSizes.borderRadiusMd,
                 wheelDiameter: 230,
