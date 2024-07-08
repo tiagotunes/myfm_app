@@ -87,4 +87,9 @@ class TSizes {
       TDeviceUtils.getAppBarHeight() -
       TDeviceUtils.getStatusBarHeight() -
       TSizes.defaultSpace * 9;
+
+  // Color Picker sizes
+  static double wheelDiameter = 230.0;
+  static double wheelWidth = 25.0;
+  static double colorIndicatorHeight = 50.0;
 }

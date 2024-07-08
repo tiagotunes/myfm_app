@@ -7,6 +7,7 @@ import 'package:myfm/common/widgets/text/label_text.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
 
 class TPlayerCardVertical extends StatelessWidget {
@@ -107,14 +108,13 @@ class TPlayerCardVertical extends StatelessWidget {
 
                   // Age
                   TLabelText(
-                    label: '$age years',
+                    label: '$age ${TTexts.years}',
                   ),
                   const SizedBox(
                     height: TSizes.spaceBtwItems / 2,
                   ),
 
-                  // Position
-                  // Later we can put ability stars here instead
+                  // Position (later we can put ability stars here instead)
                   Text(
                     position,
                     maxLines: 1,

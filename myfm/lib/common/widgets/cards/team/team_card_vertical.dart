@@ -47,7 +47,7 @@ class TTeamCardVertical extends StatelessWidget {
                       width: double.infinity,
                       child: FittedBox(
                         child: SvgPicture.asset(
-                          'assets/icons/shield.svg',
+                          TImages.shield,
                           colorFilter: ColorFilter.mode(
                             // team.color.isEmpty ? Colors.white : Colors.green,
                             team.color == null

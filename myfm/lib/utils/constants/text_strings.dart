@@ -119,6 +119,13 @@ class TTexts {
   static const String theme = "Theme";
   static const String wageDisplay = "Wage Display";
 
+  // Card Text
+  static const String years = "years";
+
+  // Color Picker Text
+  static const String selectColor = "Select color";
+  static const String selectColorShade = "Select color shade";
+
   // Form Colors
   static const List<String> formColors = [
     "White",

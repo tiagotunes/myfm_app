@@ -29,6 +29,7 @@ class TImages {
   // Default Images
   static const String user = "assets/images/default/user.png";
   static const String player = "assets/images/default/player.png";
+  static const String shield = "assets/icons/shield.svg";
 
   // Background Images
   static const String clubOffice = "assets/images/backgrounds/club_office.jpg";
