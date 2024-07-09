@@ -19,9 +19,17 @@ class TDiagonalRect extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double pos = first ? -2 : 2;
-    List<Color> colors = first 
-      ? [color.withOpacity(0.7), color.withOpacity(0.4), color.withOpacity(0.01)] 
-      : [color.withOpacity(0.4), color.withOpacity(0.2), color.withOpacity(0.01)];
+    List<Color> colors = first
+        ? [
+            color.withOpacity(0.7),
+            color.withOpacity(0.1),
+            color.withOpacity(0.01)
+          ]
+        : [
+            color.withOpacity(0.4),
+            color.withOpacity(0.09),
+            color.withOpacity(0.01)
+          ];
     return Positioned(
       // top: 50,
       // left: 100 + 15 * pos,
@@ -34,11 +42,10 @@ class TDiagonalRect extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomRight,
-              colors: colors,
-              stops: const [0, 0.4, 0.6]
-            ),
+                begin: Alignment.topRight,
+                end: Alignment.bottomRight,
+                colors: colors,
+                stops: const [0, 0.4, 0.6]),
           ),
           height: height,
           width: width,
