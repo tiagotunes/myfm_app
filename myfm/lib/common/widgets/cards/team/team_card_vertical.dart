@@ -58,8 +58,9 @@ class TTeamCardVertical extends StatelessWidget {
                         ),
                       ),
                     )
-                  : const TRoundedImage(
-                      imageUrl: TImages.scp,
+                  : TRoundedImage(
+                      imageUrl: team.logo,
+                      isNetworkImage: true,
                       applyImageRadius: true,
                       width: double.infinity,
                       fit: BoxFit.contain,

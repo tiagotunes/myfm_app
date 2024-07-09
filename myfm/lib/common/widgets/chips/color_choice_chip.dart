@@ -59,7 +59,7 @@ class TColorChoiceChip extends StatelessWidget {
                     ? Color(editTeamController.color.value!)
                     : const Color(4294198070),
                 onColorChanged: (color) {
-                  // print(color.value);
+                  print(color.value);
                   editTeamController.color.value = color.value;
                 },
                 pickersEnabled: const <ColorPickerType, bool>{

@@ -136,7 +136,8 @@ class TEditTeamFormPageView extends StatelessWidget {
                       readOnly: true,
                       hintText: TTexts.chooseImage,
                       icon_: const Icon(Icons.cancel),
-                      controller: editTeamController.logo,
+                      controller: editTeamController.logoImg,
+                      onTap: () => editTeamController.chooseImage('logo'),
                     ),
                     const SizedBox(height: TSizes.spaceBtwInputFields),
                     TTextFormField(
@@ -145,7 +146,8 @@ class TEditTeamFormPageView extends StatelessWidget {
                       readOnly: true,
                       hintText: TTexts.chooseImage,
                       icon_: const Icon(Icons.cancel),
-                      controller: editTeamController.kit,
+                      controller: editTeamController.kitImg,
+                      onTap: () => editTeamController.chooseImage('kit'),
                     ),
                     const SizedBox(height: TSizes.spaceBtwInputFields),
                     TTextFormField(
@@ -155,6 +157,7 @@ class TEditTeamFormPageView extends StatelessWidget {
                       hintText: TTexts.chooseImage,
                       icon_: const Icon(Icons.cancel),
                       controller: editTeamController.stadiumImg,
+                      onTap: () => editTeamController.chooseImage('stadium'),
                     ),
                   ],
                 ),

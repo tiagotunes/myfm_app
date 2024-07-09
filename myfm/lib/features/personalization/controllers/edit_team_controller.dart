@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:myfm/data/repositories/team/team_repository.dart';
+import 'package:myfm/data/repositories/user/user_repository.dart';
 import 'package:myfm/features/fm/controllers/team_controller.dart';
 import 'package:myfm/features/personalization/controllers/country_controller.dart';
 import 'package:myfm/features/personalization/controllers/user_controller.dart';
@@ -25,11 +27,15 @@ class EditTeamController extends GetxController {
   final bankBalance = TextEditingController();
   final squadBudget = TextEditingController();
   final wageBudget = TextEditingController();
-  final logo = TextEditingController();
-  final kit = TextEditingController();
+  final logoImg = TextEditingController();
+  final logoImgPath = TextEditingController();
+  final kitImg = TextEditingController();
+  final kitImgPath = TextEditingController();
   final stadiumImg = TextEditingController();
+  final stadiumImgPath = TextEditingController();
   GlobalKey<FormState> editTeamFormKey = GlobalKey<FormState>();
   final teamRepository = Get.put(TeamRepository());
+  final userRepository = Get.put(UserRepository());
   final teamsController = Get.put(TeamController());
 
   Future<void> saveTeamData() async {
@@ -55,6 +61,13 @@ class EditTeamController extends GetxController {
         return;
       }
 
+      if (logoImgPath.text != '') {
+        logoImgPath.text = await userRepository.uploadImage(
+          'Users/Images/Team',
+          XFile(logoImgPath.text),
+        );
+      }
+
       // Save team in the Firebase Firestore
       final newTeam = TeamModel(
         id: '',
@@ -73,9 +86,9 @@ class EditTeamController extends GetxController {
         wageBudget: wageBudget.text.trim() != ""
             ? int.parse(wageBudget.text.trim())
             : null,
-        logo: logo.text.trim(),
-        kit: kit.text.trim(),
-        stadiumImg: stadiumImg.text.trim(),
+        logo: logoImgPath.text.trim(),
+        kit: kitImgPath.text.trim(),
+        stadiumImg: stadiumImgPath.text.trim(),
         dtCri: DateTime.now().toString().split('.')[0],
         dtAct: '',
       );
@@ -99,6 +112,44 @@ class EditTeamController extends GetxController {
 
       // Show some Generic Error to the user
       TLoaders.errorSnackbar(title: 'Error', message: e.toString());
+    }
+  }
+
+  String getFileName(String path) {
+    var splitStr = path.split('/');
+    return splitStr[splitStr.length - 1];
+  }
+
+  chooseImage(String img) async {
+    try {
+      final image = await ImagePicker().pickImage(
+        source: ImageSource.gallery,
+        // imageQuality: 70,
+        // maxHeight: 512,
+        // maxWidth: 512,
+      );
+      if (image != null) {
+        // print(image.path);
+        // print(getFileName(image.path));
+
+        if (img == 'logo') {
+          logoImgPath.text = image.path;
+          logoImg.text = getFileName(image.path);
+        }
+
+        if (img == 'kit') {
+          kitImgPath.text = image.path;
+          kitImg.text = getFileName(image.path);
+        }
+
+        if (img == 'stadium') {
+          stadiumImgPath.text = image.path;
+          stadiumImg.text = getFileName(image.path);
+        }
+      }
+    } catch (e) {
+      TLoaders.errorSnackbar(
+          title: 'Error', message: 'Something went wrong: $e');
     }
   }
 }
