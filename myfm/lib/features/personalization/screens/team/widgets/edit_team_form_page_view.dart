@@ -135,7 +135,13 @@ class TEditTeamFormPageView extends StatelessWidget {
                       isRequired: false,
                       readOnly: true,
                       hintText: TTexts.chooseImage,
-                      icon_: const Icon(Icons.cancel),
+                      icon_: GestureDetector(
+                        onTap: () {
+                          editTeamController.logoImg.clear();
+                          editTeamController.logoImgPath.clear();
+                        },
+                        child: const Icon(Icons.cancel),
+                      ),
                       controller: editTeamController.logoImg,
                       onTap: () => editTeamController.chooseImage('logo'),
                     ),
@@ -145,7 +151,13 @@ class TEditTeamFormPageView extends StatelessWidget {
                       isRequired: false,
                       readOnly: true,
                       hintText: TTexts.chooseImage,
-                      icon_: const Icon(Icons.cancel),
+                      icon_: GestureDetector(
+                        onTap: () {
+                          editTeamController.kitImg.clear();
+                          editTeamController.kitImgPath.clear();
+                        },
+                        child: const Icon(Icons.cancel),
+                      ),
                       controller: editTeamController.kitImg,
                       onTap: () => editTeamController.chooseImage('kit'),
                     ),
@@ -155,7 +167,13 @@ class TEditTeamFormPageView extends StatelessWidget {
                       isRequired: false,
                       readOnly: true,
                       hintText: TTexts.chooseImage,
-                      icon_: const Icon(Icons.cancel),
+                      icon_: GestureDetector(
+                        onTap: () {
+                          editTeamController.stadiumImg.clear();
+                          editTeamController.stadiumImgPath.clear();
+                        },
+                        child: const Icon(Icons.cancel),
+                      ),
                       controller: editTeamController.stadiumImg,
                       onTap: () => editTeamController.chooseImage('stadium'),
                     ),

@@ -67,6 +67,18 @@ class EditTeamController extends GetxController {
           XFile(logoImgPath.text),
         );
       }
+      if (kitImgPath.text != '') {
+        kitImgPath.text = await userRepository.uploadImage(
+          'Users/Images/Team',
+          XFile(kitImgPath.text),
+        );
+      }
+      if (stadiumImgPath.text != '') {
+        stadiumImgPath.text = await userRepository.uploadImage(
+          'Users/Images/Team',
+          XFile(stadiumImgPath.text),
+        );
+      }
 
       // Save team in the Firebase Firestore
       final newTeam = TeamModel(
