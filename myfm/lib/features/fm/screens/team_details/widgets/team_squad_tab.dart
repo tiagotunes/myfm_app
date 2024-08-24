@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_squad_list_view.dart';
+import 'package:myfm/features/personalization/models/team_model.dart';
 
 class TTeamSquadTab extends StatelessWidget {
   const TTeamSquadTab({
-    super.key,
+    super.key, required this.team,
   });
+
+  final TeamModel team;
 
   @override
   Widget build(BuildContext context) {
@@ -16,19 +19,19 @@ class TTeamSquadTab extends StatelessWidget {
           children: [
             TTeamSquadListView(
               position: 'Goalkeepers',
-              nPlayers: 2,
+              nPlayers: 0,
             ),
             TTeamSquadListView(
               position: 'Defenders',
-              nPlayers: 4,
+              nPlayers: 0,
             ),
             TTeamSquadListView(
               position: 'Midfielders',
-              nPlayers: 6,
+              nPlayers: 0,
             ),
             TTeamSquadListView(
               position: 'Forwards',
-              nPlayers: 1,
+              nPlayers: 0,
             ),
           ],
         ),

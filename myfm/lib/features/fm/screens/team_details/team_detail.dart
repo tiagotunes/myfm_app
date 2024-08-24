@@ -47,23 +47,23 @@ class TeamDetailScreen extends StatelessWidget {
           },
 
           // Body
-          body: const Padding(
-            padding: EdgeInsets.all(TSizes.defaultSpace),
+          body: Padding(
+            padding: const EdgeInsets.all(TSizes.defaultSpace),
             child: TabBarView(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               children: [
                 // Home
-                TTmpTabBarView(),
+                const TTmpTabBarView(),
                 // Squad
-                TTeamSquadTab(),
+                TTeamSquadTab(team: team),
                 // Competitions
-                TTmpTabBarView(),
+                const TTmpTabBarView(),
                 // Transfers
-                TTeamTransfersTab(),
+                const TTeamTransfersTab(),
                 // Club
-                TTmpTabBarView(),
+                const TTmpTabBarView(),
                 // Finances
-                TTmpTabBarView(),
+                const TTmpTabBarView(),
               ],
             ),
           ),

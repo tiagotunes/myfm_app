@@ -7,7 +7,7 @@ import 'package:myfm/common/widgets/icons/counter_icon.dart';
 import 'package:myfm/common/widgets/layouts/grid_layout.dart';
 import 'package:myfm/common/widgets/loaders/shimmer.dart';
 import 'package:myfm/common/widgets/text/appbar_title_text.dart';
-import 'package:myfm/features/fm/controllers/team_controller.dart';
+import 'package:myfm/features/fm/controllers/teams_controller.dart';
 import 'package:myfm/features/personalization/screens/team/edit_team.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -18,7 +18,7 @@ class TeamsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final teamsController = Get.put(TeamController());
+    final teamsController = Get.put(TeamsController());
     return Scaffold(
       appBar: TAppBar(
         centerTitle: false,

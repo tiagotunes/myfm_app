@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:myfm/data/repositories/team/team_repository.dart';
 import 'package:myfm/data/repositories/user/user_repository.dart';
-import 'package:myfm/features/fm/controllers/team_controller.dart';
+import 'package:myfm/features/fm/controllers/teams_controller.dart';
 import 'package:myfm/features/personalization/controllers/country_controller.dart';
 import 'package:myfm/features/personalization/controllers/user_controller.dart';
 import 'package:myfm/features/personalization/models/team_model.dart';
@@ -36,7 +36,7 @@ class EditTeamController extends GetxController {
   GlobalKey<FormState> editTeamFormKey = GlobalKey<FormState>();
   final teamRepository = Get.put(TeamRepository());
   final userRepository = Get.put(UserRepository());
-  final teamsController = Get.put(TeamController());
+  final teamsController = Get.put(TeamsController());
 
   Future<void> saveTeamData() async {
     try {

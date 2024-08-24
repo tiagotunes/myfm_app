@@ -4,8 +4,8 @@ import 'package:myfm/features/personalization/controllers/user_controller.dart';
 import 'package:myfm/features/personalization/models/team_model.dart';
 import 'package:myfm/utils/popups/loaders.dart';
 
-class TeamController extends GetxController {
-  static TeamController get instance => Get.find();
+class TeamsController extends GetxController {
+  static TeamsController get instance => Get.find();
 
   final isLoading = false.obs;
   final _teamRepository = Get.put(TeamRepository());

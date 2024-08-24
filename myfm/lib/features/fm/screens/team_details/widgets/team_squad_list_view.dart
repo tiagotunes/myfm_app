@@ -20,8 +20,8 @@ class TTeamSquadListView extends StatelessWidget {
       children: [
         TSectionHeading(
           title: position,
-          // showActionButton: nPlayers > 0 ? true : false,
-          // buttonTitle: nPlayers > 1 ? "$nPlayers players" : "$nPlayers player",
+          showActionButton: nPlayers > 0 ? true : false,
+          buttonTitle: nPlayers > 1 ? "$nPlayers players" : "$nPlayers player",
         ),
         const SizedBox(height: TSizes.spaceBtwItems / 2),
         nPlayers > 0
