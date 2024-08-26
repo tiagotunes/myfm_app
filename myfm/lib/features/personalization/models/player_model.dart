@@ -2,17 +2,26 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PlayerModel {
   // final values  for those you don't want to update
-  final String id, playerId, teamId, dtCri;
-  int value, wage, releaseClause, onLoan, loaned;
-  String? loanFrom, loanedTo;
-  int? ca, pa, number;
-  String dtAct;
+  final String id, userId, teamId, dtCri;
+  int value, wage, onLoan, loaned, freeAgent;
+  String? foot,loanFrom, loanedTo;
+  int? releaseClause, height, ca, pa, number;
+  String name, nationality, dateOfBirth, position, role, dtAct;
 
   // Constructor
   PlayerModel({
     required this.id,
-    required this.playerId,
+    required this.userId,
     required this.teamId,
+    required this.name,
+    required this.nationality,
+    required this.dateOfBirth,
+    required this.position,
+    required this.role,
+    required this.height,
+    required this.foot,
+    required this.number,
+    required this.freeAgent,
     required this.value,
     required this.wage,
     required this.releaseClause,
@@ -22,25 +31,32 @@ class PlayerModel {
     required this.loanedTo,
     required this.ca,
     required this.pa,
-    required this.number,
     required this.dtCri,
     required this.dtAct,
   });
 
   static PlayerModel empty() => PlayerModel(
         id: '',
-        playerId: '',
+        userId: '',
         teamId: '',
+        name: '',
+        nationality: '',
+        dateOfBirth: '',
+        position: '',
+        role: '',
+        height: null,
+        foot: null,
+        number: null,
+        freeAgent: 1,
         value: 0,
         wage: 0,
-        releaseClause: 0,
+        releaseClause: null,
         onLoan: 0,
         loanFrom: '',
         loaned: 0,
         loanedTo: '',
         ca: 0,
         pa: 0,
-        number: 0,
         dtCri: '',
         dtAct: '',
       );
@@ -48,18 +64,26 @@ class PlayerModel {
   // Convert model to JSON structure for storing data in Firebase
   Map<String, dynamic> toJson() {
     return {
-      'player_id': playerId,
+      'user_id': userId,
       'team_id': teamId,
+      'name': name,
+      'nationality': nationality,
+      'date_of_birth': dateOfBirth,
+      'position': position,
+      'role': role,
+      'height': height,
+      'foot': foot,
+      'number': number,
+      'free_agent': freeAgent,
       'value': value,
       'wage': wage,
-      'releaseClause': releaseClause,
-      'onLoan': onLoan,
-      'loanFrom': loanFrom,
+      'release_clause': releaseClause,
+      'on_loan': onLoan,
+      'loan_from': loanFrom,
       'loaned': loaned,
-      'loanedTo': loanedTo,
+      'loaned_to': loanedTo,
       'ca': ca,
       'pa': pa,
-      'number': number,
       'dt_cri': dtCri,
       'dt_act': dtAct,
     };
@@ -72,18 +96,26 @@ class PlayerModel {
     if (data != null) {
       return PlayerModel(
         id: document.id,
-        playerId: data['player_id'] ?? '',
+        userId: data['user_id'] ?? '',
         teamId: data['team_id'] ?? '',
-        value: data['value'] ?? '',
-        wage: data['wage'] ?? '',
-        releaseClause: data['releaseClause'] ?? '',
-        onLoan: data['onLoan'],
-        loanFrom: data['loanFrom'],
+        name: data['name'] ?? '',
+        nationality: data['nationality'] ?? '',
+        dateOfBirth: data['date_of_birth'] ?? '',
+        position: data['position'] ?? '',
+        role: data['role'],
+        height: data['height'],
+        foot: data['foot'],
+        number: data['number'],
+        freeAgent: data['free_agent'] ?? 0,
+        value: data['value'] ?? 0,
+        wage: data['wage'] ?? 0,
+        releaseClause: data['release_clause'],
+        onLoan: data['on_loan'],
+        loanFrom: data['loan_from'],
         loaned: data['loaned'],
-        loanedTo: data['loanedTo'],
+        loanedTo: data['loaned_to'],
         ca: data['ca'],
         pa: data['pa'],
-        number: data['number'],
         dtCri: data['dt_cri'] ?? '',
         dtAct: data['dt_act'] ?? '',
       );
