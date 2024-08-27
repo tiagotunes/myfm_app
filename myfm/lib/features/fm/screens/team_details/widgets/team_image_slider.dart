@@ -7,6 +7,7 @@ import 'package:myfm/common/widgets/images/rounded_image.dart';
 import 'package:myfm/features/fm/controllers/team_image_controller.dart';
 import 'package:myfm/features/personalization/models/team_model.dart';
 import 'package:myfm/utils/constants/colors.dart';
+import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 
 class TTeamImageSlider extends StatelessWidget {
@@ -97,7 +98,7 @@ class TTeamImageSlider extends StatelessWidget {
   Widget buildTeamLogo(ImageController controller) {
     if (team.logo == null) {
       return SvgPicture.asset(
-        'assets/icons/shield.svg',
+        TImages.shield,
         height: 200,
         width: 300,
         colorFilter: ColorFilter.mode(
@@ -125,7 +126,7 @@ class TTeamImageSlider extends StatelessWidget {
         height: 200,
         child: Center(
           child: SvgPicture.asset(
-            'assets/icons/shirt.svg',
+            TImages.shirt,
             height: 130,
             colorFilter: ColorFilter.mode(
               Colors.white.withOpacity(0.2),
@@ -153,7 +154,7 @@ class TTeamImageSlider extends StatelessWidget {
         height: 200,
         child: Center(
           child: SvgPicture.asset(
-            'assets/icons/stadium.svg',
+            TImages.stadium,
             height: 130,
             colorFilter: ColorFilter.mode(
               Colors.white.withOpacity(0.2),

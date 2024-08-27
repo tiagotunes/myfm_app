@@ -15,12 +15,12 @@ class TTextFormField extends StatelessWidget {
     this.controller,
     this.validator,
     this.obscureText = false,
-    this.inputType,
+    this.inputType, this.enabled = true,
   });
 
   final String label;
   final String? hintText;
-  final bool isRequired, readOnly, obscureText;
+  final bool isRequired, readOnly, obscureText, enabled;
   final Widget? icon, icon_;
   final VoidCallback? onTap;
   final TextEditingController? controller;
@@ -41,6 +41,7 @@ class TTextFormField extends StatelessWidget {
         ),
         const SizedBox(height: TSizes.spaceBtwLabelInputField),
         TextFormField(
+          enabled: enabled,
           readOnly: readOnly,
           onTap: onTap,
           controller: controller,

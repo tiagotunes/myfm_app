@@ -19,9 +19,9 @@ class TCategoryTab extends StatelessWidget {
               // Users
               TUserShowCase(
                 images: [
-                  TImages.scp,
-                  TImages.scp,
-                  TImages.scp,
+                  TImages.shield,
+                  TImages.shield,
+                  TImages.shield,
                 ],
               ),
 

@@ -1,3 +1,5 @@
+import 'package:myfm/utils/constants/image_strings.dart';
+
 class TTexts {
   // Global Texts
   static const String home = "Home";
@@ -100,6 +102,7 @@ class TTexts {
   static const String images = "images";
   static const String logo = "logo";
   static const String kit = "kit";
+  static const String playerDetails = "player details";
   static const String squadBudget = "squad budget";
   static const String stadium = "stadium";
   static const String teamDetails = "team details";
@@ -139,4 +142,24 @@ class TTexts {
     "Black",
     "customColor"
   ];
+
+  // Position and Roles
+  static const positionsRoles = {
+    "Goalkeeper": {
+      "icon": TImages.goalkeeper,
+      "pos": ["Goalkeeper"],
+    },
+    "Defender": {
+      "icon": TImages.defender,
+      "pos": ["Central Defender", "Full Back", "Wing Back"],
+    },
+    "Midfielder": {
+      "icon": TImages.midfielder,
+      "pos": ["Defensive Midfielder", "Central Midfielder", "Attacking Midfielder", "Wide Midfielder", "Wide Playmaker"],
+    },
+    "Forward": {
+      "icon": TImages.forward,
+      "pos": ["Winger", "Advanced Playmaker", "Striker"],
+    },
+  };
 }

@@ -4,8 +4,10 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:myfm/features/personalization/controllers/country_controller.dart';
+import 'package:myfm/features/personalization/controllers/edit_player_controller.dart';
 import 'package:myfm/features/personalization/controllers/edit_team_controller.dart';
 import 'package:myfm/features/personalization/controllers/edit_user_controller.dart';
+import 'package:myfm/utils/constants/text_strings.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
 
 class TTextFormFieldPopup {
@@ -14,6 +16,7 @@ class TTextFormFieldPopup {
     SignupController? signupController,
     EditUserController? editUserController,
     EditTeamController? editTeamController,
+    EditPlayerController? editPlayerController,
     CountryController countryController,
   ) async {
     await showModalBottomSheet(
@@ -74,6 +77,10 @@ class TTextFormFieldPopup {
                     editTeamController.country.text = country.name;
                     editTeamController.countryID.text = country.id;
                   }
+                  if (editPlayerController != null) {
+                    editPlayerController.nationality.text = country.nationality;
+                    editPlayerController.nationalityID.text = country.id;
+                  }
                   Navigator.pop(context);
                 },
               );
@@ -85,10 +92,10 @@ class TTextFormFieldPopup {
   }
 
   static Future<void> selectDate(
-    BuildContext context,
-    SignupController? signupController,
-    EditUserController? editUserController,
-  ) async {
+      BuildContext context,
+      SignupController? signupController,
+      EditUserController? editUserController,
+      EditPlayerController? editPlayerController) async {
     DateTime? picker = await showDatePicker(
       context: context,
       initialDate:
@@ -109,6 +116,75 @@ class TTextFormFieldPopup {
       if (editUserController != null) {
         editUserController.dateOfBirth.text = picker.toString().split(' ')[0];
       }
+      if (editPlayerController != null) {
+        editPlayerController.dateOfBirth.text = picker.toString().split(' ')[0];
+      }
     }
+  }
+
+  static Future<void> selectRole(
+      BuildContext context, EditPlayerController? editPlayerController) async {
+    await showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      constraints: BoxConstraints(
+        maxHeight: THelperFunctions.screenHeight() * 0.4,
+      ),
+      builder: (context) {
+        return Wrap(
+          children: TTexts.positionsRoles.entries.map((e) {
+            return ListTile(
+              leading: SvgPicture.asset(
+                height: 20,
+                width: 20,
+                colorFilter: const ColorFilter.mode(
+                  Colors.white,
+                  BlendMode.srcIn,
+                ),
+                e.value["icon"].toString(),
+              ),
+              title: Text(e.key),
+              onTap: () {
+                editPlayerController!.role.text = e.key;
+                Navigator.pop(context);
+              },
+            );
+          }).toList(),
+        );
+      },
+    );
+  }
+
+  static Future<void> selectPosition(
+      BuildContext context, String role, EditPlayerController? editPlayerController) async {
+    await showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      constraints: BoxConstraints(
+        maxHeight: THelperFunctions.screenHeight() * 0.4,
+      ),
+      builder: (context) {
+        return Wrap(
+          children: TTexts.positionsRoles.entries.map((e) {
+            return ListTile(
+              leading: SvgPicture.asset(
+                height: 20,
+                width: 20,
+                colorFilter: const ColorFilter.mode(
+                  Colors.white,
+                  BlendMode.srcIn,
+                ),
+                e.value["icon"].toString(),
+              ),
+              title: Text(e.key),
+              onTap: () {
+                editPlayerController!.role.text = e.key;
+                Navigator.pop(context);
+              },
+            );
+          }).toList(),
+        );
+      },
+    );
   }
 }
