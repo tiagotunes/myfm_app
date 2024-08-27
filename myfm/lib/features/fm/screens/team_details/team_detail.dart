@@ -8,6 +8,7 @@ import 'package:myfm/features/personalization/models/team_model.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
+import 'package:myfm/utils/popups/team_add_popup.dart';
 
 class TeamDetailScreen extends StatelessWidget {
   const TeamDetailScreen({super.key, required this.team});
@@ -33,7 +34,7 @@ class TeamDetailScreen extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () => TTeamAddPopup.selectOption(context),
               icon: const Icon(Iconsax.add),
             ),
           ],

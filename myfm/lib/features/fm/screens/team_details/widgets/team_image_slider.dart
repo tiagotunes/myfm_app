@@ -39,8 +39,7 @@ class TTeamImageSlider extends StatelessWidget {
                         : controller.imageCurrentIndex.value == 1
                             ? buildTeamKit(controller)
                             : buildTeamStadium(controller),
-                    controller.imageCurrentIndex.value == 2 &&
-                            team.stadiumName.isNotEmpty
+                    controller.imageCurrentIndex.value == 2
                         ? Positioned(
                             bottom: 0,
                             child: Container(
@@ -57,7 +56,7 @@ class TTeamImageSlider extends StatelessWidget {
                                   ),
                                   const SizedBox(
                                       width: TSizes.spaceBtwItems / 2),
-                                  Text(team.stadiumName)
+                                  Text(team.stadiumName != null ? team.stadiumName! : '${team.name} Stadium'),
                                 ],
                               ),
                             ),
@@ -96,7 +95,7 @@ class TTeamImageSlider extends StatelessWidget {
   }
 
   Widget buildTeamLogo(ImageController controller) {
-    if (team.logo.isEmpty) {
+    if (team.logo == null) {
       return SvgPicture.asset(
         'assets/icons/shield.svg',
         height: 200,
@@ -113,14 +112,14 @@ class TTeamImageSlider extends StatelessWidget {
         width: 300,
         fit: BoxFit.fitHeight,
         isNetworkImage: true,
-        imageUrl: team.logo,
-        onPressed: () => controller.showEnlargedImage(team.logo),
+        imageUrl: team.logo!,
+        // onPressed: () => controller.showEnlargedImage(team.logo!),
       );
     }
   }
 
   Widget buildTeamKit(ImageController controller) {
-    if (team.kit.isEmpty) {
+    if (team.kit == null) {
       return SizedBox(
         width: 300,
         height: 200,
@@ -141,14 +140,14 @@ class TTeamImageSlider extends StatelessWidget {
         width: 300,
         fit: BoxFit.fitHeight,
         isNetworkImage: true,
-        imageUrl: team.kit,
-        onPressed: () => controller.showEnlargedImage(team.kit),
+        imageUrl: team.kit!,
+        // onPressed: () => controller.showEnlargedImage(team.kit!),
       );
     }
   }
 
   Widget buildTeamStadium(ImageController controller) {
-    if (team.stadiumImg.isEmpty) {
+    if (team.stadiumImg == null) {
       return SizedBox(
         width: 300,
         height: 200,
@@ -169,8 +168,8 @@ class TTeamImageSlider extends StatelessWidget {
         width: 300,
         fit: BoxFit.fitHeight,
         isNetworkImage: true,
-        imageUrl: team.stadiumImg,
-        onPressed: () => controller.showEnlargedImage(team.stadiumImg),
+        imageUrl: team.stadiumImg!,
+        // onPressed: () => controller.showEnlargedImage(team.stadiumImg!),
       );
     }
   }

@@ -29,4 +29,24 @@ class PlayerRepository extends GetxController {
       throw 'Something went wrong. Please try again';
     }
   }
+
+  // Get Team Players
+  Future<List<PlayerModel>> getTeamPlayers(String teamId) async {
+    try {
+      final snapshot = await _db
+          .collection('Player')
+          .where('team_id', isEqualTo: teamId)
+          .get();
+      final list = snapshot.docs
+          .map((document) => PlayerModel.fromSnapshot(document))
+          .toList();
+      return list;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 }

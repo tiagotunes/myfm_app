@@ -12,19 +12,19 @@ class PlayersController extends GetxController {
   final userController = Get.put(UserController());
   RxList<PlayerModel> userPlayers = <PlayerModel>[].obs;
 
-  @override
-  void onInit() {
-    fetchUserPlayers();
-    // fetchTeams();
-    super.onInit();
-  }
+  // @override
+  // void onInit() {
+  //   // fetchUserPlayers();
+  //   // fetchTeams();
+  //   super.onInit();
+  // }
 
-  @override
-  void refresh() {
-    fetchUserPlayers();
-    // fetchTeams();
-    super.refresh();
-  }
+  // @override
+  // void refresh() {
+  //   // fetchUserPlayers();
+  //   // fetchTeams();
+  //   super.refresh();
+  // }
 
   Future<void> fetchUserPlayers() async {
     try {
@@ -34,17 +34,6 @@ class PlayersController extends GetxController {
       // Fetch players from data source
       var players =
           await _playerRepository.getUserPlayers(userController.user.value.id);
-      players.sort((a, b) {
-        if (a.dtAct.isEmpty && b.dtAct.isEmpty) {
-          return DateTime.parse(b.dtCri).compareTo(DateTime.parse(a.dtCri));
-        } else if (a.dtAct.isEmpty) {
-          return 1;
-        } else if (b.dtAct.isEmpty) {
-          return -1;
-        } else {
-          return DateTime.parse(b.dtAct).compareTo(DateTime.parse(a.dtAct));
-        }
-      });
 
       // Update the players list
       userPlayers.assignAll(players);
@@ -56,7 +45,27 @@ class PlayersController extends GetxController {
     }
   }
 
-  Future<List<PlayerModel>> getTeamPlayers(String teamId) async {
-    return userPlayers.where((p) => p.teamId == teamId).toList();
+  // Future<List<PlayerModel>> getTeamPlayers(String teamId) async {
+  //   return userPlayers
+  //       .where((p) => p.teamId == teamId && p.freeAgent == 0)
+  //       .toList();
+  // }
+
+  Future<void> getTeamPlayers(String teamId) async {
+    try {
+      // Show loader while loading players
+      isLoading.value = true;
+
+      // Fetch players from data source
+      var players = await _playerRepository.getTeamPlayers(teamId);
+
+      // Update the players list
+      userPlayers.assignAll(players);
+    } catch (e) {
+      TLoaders.errorSnackbar(title: 'Error', message: e.toString());
+    } finally {
+      // Remove Loader
+      isLoading.value = false;
+    }
   }
 }

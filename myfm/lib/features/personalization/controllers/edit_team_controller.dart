@@ -87,7 +87,8 @@ class EditTeamController extends GetxController {
         name: name.text.trim(),
         country: countryID.text.trim(),
         season: season.text.trim(),
-        stadiumName: stadiumName.text.trim(),
+        stadiumName:
+            stadiumName.text.trim() != "" ? stadiumName.text.trim() : null,
         color: color.value,
         bankBalance: bankBalance.text.trim() != ""
             ? int.parse(bankBalance.text.trim())
@@ -98,9 +99,11 @@ class EditTeamController extends GetxController {
         wageBudget: wageBudget.text.trim() != ""
             ? int.parse(wageBudget.text.trim())
             : null,
-        logo: logoImgPath.text.trim(),
-        kit: kitImgPath.text.trim(),
-        stadiumImg: stadiumImgPath.text.trim(),
+        logo: logoImgPath.text.trim() != "" ? logoImgPath.text.trim() : null,
+        kit: kitImgPath.text.trim() != "" ? kitImgPath.text.trim() : null,
+        stadiumImg: stadiumImgPath.text.trim() != ""
+            ? stadiumImgPath.text.trim()
+            : null,
         dtCri: DateTime.now().toString().split('.')[0],
         dtAct: '',
       );

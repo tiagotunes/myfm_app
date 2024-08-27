@@ -42,7 +42,7 @@ class TTeamCardVertical extends StatelessWidget {
               height: TSizes.teamImageHeight,
               padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
-              child: team.logo.isEmpty
+              child: team.logo == null
                   ? SizedBox(
                       width: double.infinity,
                       child: FittedBox(
@@ -59,7 +59,7 @@ class TTeamCardVertical extends StatelessWidget {
                       ),
                     )
                   : TRoundedImage(
-                      imageUrl: team.logo,
+                      imageUrl: team.logo!,
                       isNetworkImage: true,
                       applyImageRadius: true,
                       width: double.infinity,

@@ -17,12 +17,13 @@ class TTeamSquadTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final playersController = Get.put(PlayersController());
+    playersController.getTeamPlayers(team.id);
     return Obx(() {
       if (playersController.isLoading.value) {
         return const Padding(
           padding: EdgeInsets.all(TSizes.defaultSpace),
           child: TShimmerEffect(
-            width: TSizes.teamCardVerticalWidth,
+            width: double.infinity,
             height: TSizes.gridMainAxisExtent,
           ),
         );

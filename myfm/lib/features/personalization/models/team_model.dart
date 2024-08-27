@@ -3,9 +3,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class TeamModel {
   // final values  for those you don't want to update
   final String id, userId, dtCri;
-  String name, country, season, stadiumName, dtAct;
+  String name, country, season, dtAct;
+  String? stadiumName, stadiumImg, kit, logo;
   int? color, bankBalance, squadBudget, wageBudget;
-  String logo, kit, stadiumImg;
 
   // Constructor
   TeamModel({
@@ -32,14 +32,14 @@ class TeamModel {
         name: '',
         country: '',
         season: '',
-        stadiumName: '',
+        stadiumName: null,
         color: null,
         bankBalance: null,
         squadBudget: null,
         wageBudget: null,
-        logo: '',
-        kit: '',
-        stadiumImg: '',
+        logo: null,
+        kit: null,
+        stadiumImg: null,
         dtCri: '',
         dtAct: '',
       );
@@ -75,14 +75,14 @@ class TeamModel {
         name: data['name'] ?? '',
         country: data['country'] ?? '',
         season: data['season'] ?? '',
-        stadiumName: data['stadium_name'] ?? '',
+        stadiumName: data['stadium_name'],
         color: data['color'],
         bankBalance: data['bank_balance'],
         squadBudget: data['squad_budget'],
         wageBudget: data['wage_budget'],
-        logo: data['logo'] ?? '',
-        kit: data['kit'] ?? '',
-        stadiumImg: data['stadium_img'] ?? '',
+        logo: data['logo'],
+        kit: data['kit'],
+        stadiumImg: data['stadium_img'],
         dtCri: data['dt_cri'] ?? '',
         dtAct: data['dt_act'] ?? '',
       );
