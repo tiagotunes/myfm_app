@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
+import 'package:myfm/features/fm/controllers/players_controller.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_detail_slider.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_squad_tab.dart';
 import 'package:myfm/features/fm/screens/team_details/widgets/team_transfers_tab.dart';
@@ -17,6 +19,8 @@ class TeamDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final playersController = Get.put(PlayersController());
+    playersController.getTeamPlayers(team.id);
     return DefaultTabController(
       length: TTexts.teamTabbar.length,
       child: Scaffold(
@@ -34,7 +38,7 @@ class TeamDetailScreen extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              onPressed: () => TTeamAddPopup.selectOption(context),
+              onPressed: () => TTeamAddPopup.selectOption(context, team),
               icon: const Icon(Iconsax.add),
             ),
           ],

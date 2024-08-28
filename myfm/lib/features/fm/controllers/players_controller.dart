@@ -11,6 +11,7 @@ class PlayersController extends GetxController {
   final _playerRepository = Get.put(PlayerRepository());
   final userController = Get.put(UserController());
   RxList<PlayerModel> userPlayers = <PlayerModel>[].obs;
+  RxList<PlayerModel> teamPlayers = <PlayerModel>[].obs;
 
   // @override
   // void onInit() {
@@ -60,7 +61,7 @@ class PlayersController extends GetxController {
       var players = await _playerRepository.getTeamPlayers(teamId);
 
       // Update the players list
-      userPlayers.assignAll(players);
+      teamPlayers.assignAll(players);
     } catch (e) {
       TLoaders.errorSnackbar(title: 'Error', message: e.toString());
     } finally {

@@ -17,7 +17,6 @@ class TTeamSquadTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final playersController = Get.put(PlayersController());
-    playersController.getTeamPlayers(team.id);
     return Obx(() {
       if (playersController.isLoading.value) {
         return const Padding(
@@ -28,9 +27,6 @@ class TTeamSquadTab extends StatelessWidget {
           ),
         );
       }
-      var teamPlayers = playersController.userPlayers
-          .where((p) => p.teamId == team.id)
-          .toList();
       return ListView(
         shrinkWrap: true,
         // physics: const NeverScrollableScrollPhysics(),
@@ -39,25 +35,25 @@ class TTeamSquadTab extends StatelessWidget {
             children: [
               TTeamSquadListView(
                 position: 'Goalkeepers',
-                players: teamPlayers
+                players: playersController.teamPlayers
                     .where((p) => p.position == 'GK')
                     .toList(),
               ),
               TTeamSquadListView(
                 position: 'Defenders',
-                players: teamPlayers
+                players: playersController.teamPlayers
                     .where((p) => p.position == 'D')
                     .toList(),
               ),
               TTeamSquadListView(
                 position: 'Midfielders',
-                players: teamPlayers
+                players: playersController.teamPlayers
                     .where((p) => p.position == 'M')
                     .toList(),
               ),
               TTeamSquadListView(
                 position: 'Forwards',
-                players: teamPlayers
+                players: playersController.teamPlayers
                     .where((p) => p.position == 'F')
                     .toList(),
               ),

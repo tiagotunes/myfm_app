@@ -5,6 +5,7 @@ import 'package:myfm/data/repositories/player/player_repository.dart';
 import 'package:myfm/data/repositories/user/user_repository.dart';
 import 'package:myfm/features/personalization/controllers/country_controller.dart';
 import 'package:myfm/features/personalization/controllers/user_controller.dart';
+import 'package:myfm/features/personalization/models/team_model.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/helpers/network_manager.dart';
 import 'package:myfm/utils/popups/full_screen_loader.dart';
@@ -15,6 +16,7 @@ class EditPlayerController extends GetxController {
 
   // Variables
   final userController = Get.put(UserController());
+  var team = TeamModel.empty();
   final name = TextEditingController();
   final countryController = Get.put(CountryController());
   final nationality = TextEditingController();
@@ -27,7 +29,7 @@ class EditPlayerController extends GetxController {
   final roleEnable = false.obs;
   final height = TextEditingController();
   final foot = null;
-  final number= TextEditingController();
+  final number = TextEditingController();
   final freeAgent = 0;
   final value = TextEditingController();
   final wage = TextEditingController();
@@ -41,9 +43,9 @@ class EditPlayerController extends GetxController {
   GlobalKey<FormState> editPlayerFormKey = GlobalKey<FormState>();
   final teamID = "";
   final userRepository = Get.put(UserRepository());
-  final playerRepository = Get.put(PlayerRepository()); 
+  final playerRepository = Get.put(PlayerRepository());
 
-  Future<void> saveTeamData() async {
+  Future<void> savePlayerData() async {
     try {
       // Start Loading
       TFullScreenLoader.openLoadingDialog(
@@ -75,7 +77,7 @@ class EditPlayerController extends GetxController {
 
       // Save team in the Firebase Firestore
       // final newPlayer = PlayerModel(
-        
+
       // await teamRepository.saveTeamRecord(newPlayer);
 
       // Remove Loader

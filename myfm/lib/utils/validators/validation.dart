@@ -58,6 +58,19 @@ class TValidator {
     return null;
   }
 
+  static String? validatePlayerDateOfBirth(String? value, int season) {
+    if (value != null && value != "") {
+      final age = season - DateTime.parse(value).year;
+      if (age < 15) {
+        return 'Player must be 15+';
+      }
+    }
+    else {
+      return "Date of birth is required";
+    }
+    return null;
+  }
+
   static String? validatePhoneNumber(String? value) {
     if (value == null || value.isEmpty) {
       return 'Phone number is required';
