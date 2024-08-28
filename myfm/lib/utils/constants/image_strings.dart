@@ -27,10 +27,11 @@ class TImages {
   ];
 
   // Default Images
-  static const String defender = "assets/icons/default/defender.svg";
+  static const String attack = "assets/icons/default/attack.svg";
+  static const String defence = "assets/icons/default/defence.svg";
   static const String goalkeeper = "assets/icons/default/goalkeeper.svg";
-  static const String forward = "assets/icons/default/forward.svg";
-  static const String midfielder = "assets/icons/default/midfielder.svg";
+  static const String flank = "assets/icons/default/flank.svg";
+  static const String midfield = "assets/icons/default/midfield.svg";
   static const String player = "assets/images/default/player.png";
   static const String shield = "assets/icons/default/shield.svg";
   static const String shirt = "assets/icons/default/shirt.svg";

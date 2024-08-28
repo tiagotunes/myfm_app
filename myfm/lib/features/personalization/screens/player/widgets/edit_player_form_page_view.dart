@@ -71,29 +71,48 @@ class TEditPlayerFormPageView extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: TSizes.spaceBtwInputFields),
-                    // Position
+                    // Function
                     TTextFormField(
-                      label: "Role",
-                      controller: editPlayerController.role,
+                      label: "Function",
+                      controller: editPlayerController.function,
                       isRequired: true,
                       readOnly: true,
-                      onTap: () => TTextFormFieldPopup.selectRole(
+                      onTap: () => TTextFormFieldPopup.selectFunction(
                         context,
                         editPlayerController,
                       ),
                     ),
                     const SizedBox(height: TSizes.spaceBtwInputFields),
                     // Position
-                    TTextFormField(
-                      label: "Position",
-                      enabled: false,
-                      controller: editPlayerController.position,
-                      isRequired: true,
-                      readOnly: true,
-                      onTap: () => TTextFormFieldPopup.selectPosition(
-                        context,
-                        editPlayerController.role.text,
-                        editPlayerController,
+                    Obx(
+                      () => TTextFormField(
+                        label: "Position",
+                        enabled: editPlayerController.positionEnable.value,
+                        controller: editPlayerController.position,
+                        isRequired: true,
+                        readOnly: true,
+                        onTap: () => TTextFormFieldPopup.selectPosition(
+                          context,
+                          editPlayerController.function.text,
+                          editPlayerController,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: TSizes.spaceBtwInputFields),
+                    // Role
+                    Obx(
+                      () => TTextFormField(
+                        label: "Role",
+                        enabled: editPlayerController.roleEnable.value,
+                        controller: editPlayerController.role,
+                        isRequired: false,
+                        readOnly: true,
+                        onTap: ()=> TTextFormFieldPopup.selectRole(
+                          context,
+                          editPlayerController.function.text,
+                          editPlayerController.position.text,
+                          editPlayerController,
+                        ),
                       ),
                     ),
                   ],

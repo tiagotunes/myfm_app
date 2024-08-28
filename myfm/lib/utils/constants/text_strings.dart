@@ -147,19 +147,118 @@ class TTexts {
   static const positionsRoles = {
     "Goalkeeper": {
       "icon": TImages.goalkeeper,
-      "pos": ["Goalkeeper"],
+      "pos": {
+        "Goalkeeper": [
+          "Goalkeeper",
+          "Sweeper Keeper",
+        ],
+      },
     },
-    "Defender": {
-      "icon": TImages.defender,
-      "pos": ["Central Defender", "Full Back", "Wing Back"],
+    "Defence": {
+      "icon": TImages.defence,
+      "pos": {
+        "Central Defence": [
+          "Central Defender",
+          "Libero",
+          "Ball Playing Defender",
+          "No-Nonsense Centre Back",
+        ],
+        "Left Wing": [
+          "Full Back",
+          "Inverted Full Back",
+          "Wing Back",
+          "No-Nonsense Full Back",
+          "Complete Wing Back",
+          "Inverted Wing Back",
+        ],
+        "Right Wing": [
+          "Full Back",
+          "Inverted Full Back",
+          "Wing Back",
+          "No-Nonsense Full Back",
+          "Complete Wing Back",
+          "Inverted Wing Back",
+        ],
+      },
     },
-    "Midfielder": {
-      "icon": TImages.midfielder,
-      "pos": ["Defensive Midfielder", "Central Midfielder", "Attacking Midfielder", "Wide Midfielder", "Wide Playmaker"],
+    "Midfield": {
+      "icon": TImages.midfield,
+      "pos": {
+        "Defensive Midfield": [
+          "Defensive Midfielder",
+          "Deep Lying Playmaker",
+          "Ball Winning Midfielder",
+          "Anchor Man",
+          "Half Back",
+          "Regista",
+          "Roaming Playmaker",
+          "Segundo Volante",
+        ],
+        "Central Midfield": [
+          "Deep Lying Playmaker",
+          "Ball Winning Midfielder",
+          "Roaming Playmaker",
+          "Central Midfielder",
+          "Box To Box Midfielder",
+          "Advanced Playmaker",
+          "Mezzala",
+          "Carrilero",
+        ],
+        "Left Midfield": [
+          "Wide Midfielder",
+          "Winger",
+          "Defensive Winger",
+          "Wide Playmaker",
+          "Inverted Winger",
+        ],
+        "Right Midfield": [
+          "Wide Midfielder",
+          "Winger",
+          "Defensive Winger",
+          "Wide Playmaker",
+          "Inverted Winger",
+        ],
+        "Attacking Midfield": [
+          "Attacking Midfielder",
+          "Advanced Playmaker",
+          "Trequartista",
+          "Enganche",
+          "Shadow Striker",
+        ],
+      },
     },
-    "Forward": {
-      "icon": TImages.forward,
-      "pos": ["Winger", "Advanced Playmaker", "Striker"],
+    "Attack": {
+      "icon": TImages.attack,
+      "pos": {
+        "Left Wing": [
+          "Winger",
+          "Inverted Winger",
+          "Advanced Playmaker",
+          "Inside Forward",
+          "Trequartista",
+          "Wide Target Man",
+          "Raumdeuter",
+        ],
+        "Right Wing": [
+          "Winger",
+          "Inverted Winger",
+          "Advanced Playmaker",
+          "Inside Forward",
+          "Trequartista",
+          "Wide Target Man",
+          "Raumdeuter",
+        ],
+        "Forward": [
+          "Trequartista",
+          "Deep Lying Forward",
+          "Advanced Forward",
+          "Target Man",
+          "Poacher",
+          "Complete Forward",
+          "Pressing Forward",
+          "False 9",
+        ],
+      },
     },
   };
 }

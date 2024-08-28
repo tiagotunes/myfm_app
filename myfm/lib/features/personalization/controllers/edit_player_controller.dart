@@ -20,8 +20,11 @@ class EditPlayerController extends GetxController {
   final nationality = TextEditingController();
   final nationalityID = TextEditingController();
   final dateOfBirth = TextEditingController();
+  final function = TextEditingController();
   final position = TextEditingController();
+  final positionEnable = false.obs;
   final role = TextEditingController();
+  final roleEnable = false.obs;
   final height = TextEditingController();
   final foot = null;
   final number= TextEditingController();

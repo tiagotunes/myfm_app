@@ -38,7 +38,7 @@ class TTeamSquadListView extends StatelessWidget {
                       child: TPlayerCardVertical(
                         name: players[index].name,
                         age: 21 + index,
-                        position: players[index].role,
+                        position: players[index].position,
                         number: players[index].number,
                       ),
                     ),

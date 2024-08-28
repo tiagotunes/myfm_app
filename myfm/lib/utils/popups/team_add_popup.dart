@@ -20,7 +20,10 @@ class TTeamAddPopup {
             ListTile(
               leading: const Icon(Iconsax.user_add),
               title: const Text('Add Player'),
-              onTap: () => Get.to(() => const TEditPlayerScreen()),
+              onTap: () {
+                Navigator.pop(context);
+                Get.to(() => const TEditPlayerScreen());
+              },
             ),
           ],
         );

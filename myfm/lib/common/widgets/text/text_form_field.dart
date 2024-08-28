@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/theme/custom_themes/text_theme.dart';
 
@@ -15,7 +16,8 @@ class TTextFormField extends StatelessWidget {
     this.controller,
     this.validator,
     this.obscureText = false,
-    this.inputType, this.enabled = true,
+    this.inputType,
+    this.enabled = true,
   });
 
   final String label;
@@ -37,6 +39,7 @@ class TTextFormField extends StatelessWidget {
           style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                 fontFamily: TTextTheme.fontFamilyIBM,
                 fontWeight: FontWeight.bold,
+                color: enabled ? TColors.white : TColors.white.withOpacity(0.4),
               ),
         ),
         const SizedBox(height: TSizes.spaceBtwLabelInputField),
@@ -53,6 +56,12 @@ class TTextFormField extends StatelessWidget {
             suffixIcon: icon_,
             hintText: hintText,
             hintStyle: Theme.of(context).textTheme.bodySmall,
+            fillColor: enabled
+                ? Theme.of(context).inputDecorationTheme.fillColor
+                : Theme.of(context)
+                    .inputDecorationTheme
+                    .fillColor!
+                    .withOpacity(0.4),
           ),
         ),
       ],

@@ -7,6 +7,7 @@ import 'package:myfm/features/personalization/controllers/country_controller.dar
 import 'package:myfm/features/personalization/controllers/edit_player_controller.dart';
 import 'package:myfm/features/personalization/controllers/edit_team_controller.dart';
 import 'package:myfm/features/personalization/controllers/edit_user_controller.dart';
+import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
 
@@ -122,8 +123,10 @@ class TTextFormFieldPopup {
     }
   }
 
-  static Future<void> selectRole(
-      BuildContext context, EditPlayerController? editPlayerController) async {
+  static Future<void> selectFunction(
+    BuildContext context,
+    EditPlayerController editPlayerController,
+  ) async {
     await showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -145,7 +148,19 @@ class TTextFormFieldPopup {
               ),
               title: Text(e.key),
               onTap: () {
-                editPlayerController!.role.text = e.key;
+                if (editPlayerController.function.text != e.key) {
+                  editPlayerController.function.text = e.key;
+                  if (e.key == "Goalkeeper") {
+                    editPlayerController.positionEnable.value = false;
+                    editPlayerController.position.text = "Goalkeeper";
+                    editPlayerController.roleEnable.value = true;
+                  } else {
+                    editPlayerController.positionEnable.value = true;
+                    editPlayerController.position.text = "";
+                    editPlayerController.roleEnable.value = false;
+                  }
+                  editPlayerController.role.text = "";
+                }
                 Navigator.pop(context);
               },
             );
@@ -156,7 +171,15 @@ class TTextFormFieldPopup {
   }
 
   static Future<void> selectPosition(
-      BuildContext context, String role, EditPlayerController? editPlayerController) async {
+    BuildContext context,
+    String function,
+    EditPlayerController editPlayerController,
+  ) async {
+    List<String> positions =
+        (TTexts.positionsRoles[function]?['pos'] as Map<String, dynamic>?)
+                ?.keys
+                .toList() ??
+            [];
     await showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -164,25 +187,67 @@ class TTextFormFieldPopup {
         maxHeight: THelperFunctions.screenHeight() * 0.4,
       ),
       builder: (context) {
-        return Wrap(
-          children: TTexts.positionsRoles.entries.map((e) {
+        return ListView.builder(
+          shrinkWrap: true,
+          itemCount: positions.length,
+          itemBuilder: (context, index) {
             return ListTile(
-              leading: SvgPicture.asset(
-                height: 20,
-                width: 20,
-                colorFilter: const ColorFilter.mode(
-                  Colors.white,
-                  BlendMode.srcIn,
-                ),
-                e.value["icon"].toString(),
-              ),
-              title: Text(e.key),
+              title: Text(positions[index]),
               onTap: () {
-                editPlayerController!.role.text = e.key;
+                if (editPlayerController.position.text != positions[index]) {
+                  editPlayerController.position.text = positions[index];
+                  editPlayerController.roleEnable.value = true;
+                  editPlayerController.role.text = "";
+                }
                 Navigator.pop(context);
               },
             );
-          }).toList(),
+          },
+        );
+      },
+    );
+  }
+
+  static Future<void> selectRole(
+    BuildContext context,
+    String function,
+    String position,
+    EditPlayerController editPlayerController,
+  ) async {
+    Map<String, dynamic>? positions =
+        TTexts.positionsRoles[function]?['pos'] as Map<String, dynamic>?;
+    List<String> roles = positions?[position] ?? [];
+    roles = [...roles, "None"];
+    await showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      constraints: BoxConstraints(
+        maxHeight: THelperFunctions.screenHeight() * 0.4,
+      ),
+      builder: (context) {
+        return ListView.builder(
+          shrinkWrap: true,
+          itemCount: roles.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(
+                roles[index],
+                style: TextStyle(
+                  color: roles[index] == 'None'
+                      ? TColors.white.withOpacity(0.4)
+                      : TColors.white,
+                ),
+              ),
+              onTap: () {
+                if (roles[index] == 'None') {
+                  editPlayerController.role.text = "";
+                } else {
+                  editPlayerController.role.text = roles[index];
+                }
+                Navigator.pop(context);
+              },
+            );
+          },
         );
       },
     );

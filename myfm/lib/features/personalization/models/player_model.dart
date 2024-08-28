@@ -4,9 +4,9 @@ class PlayerModel {
   // final values  for those you don't want to update
   final String id, userId, teamId, dtCri;
   int value, wage, onLoan, loaned, freeAgent;
-  String? foot,loanFrom, loanedTo;
+  String? role, foot,loanFrom, loanedTo;
   int? releaseClause, height, ca, pa, number;
-  String name, nationality, dateOfBirth, position, role, dtAct;
+  String name, nationality, dateOfBirth, function, position, dtAct;
 
   // Constructor
   PlayerModel({
@@ -16,6 +16,7 @@ class PlayerModel {
     required this.name,
     required this.nationality,
     required this.dateOfBirth,
+    required this.function,
     required this.position,
     required this.role,
     required this.height,
@@ -42,8 +43,9 @@ class PlayerModel {
         name: '',
         nationality: '',
         dateOfBirth: '',
+        function: '',
         position: '',
-        role: '',
+        role: null,
         height: null,
         foot: null,
         number: null,
@@ -69,6 +71,7 @@ class PlayerModel {
       'name': name,
       'nationality': nationality,
       'date_of_birth': dateOfBirth,
+      'function': function,
       'position': position,
       'role': role,
       'height': height,
@@ -101,6 +104,7 @@ class PlayerModel {
         name: data['name'] ?? '',
         nationality: data['nationality'] ?? '',
         dateOfBirth: data['date_of_birth'] ?? '',
+        function: data['function'] ?? '',
         position: data['position'] ?? '',
         role: data['role'],
         height: data['height'],

@@ -30,7 +30,7 @@ class TEditPlayerScreen extends StatelessWidget {
           // Save
           ActionIcon(
             onPressed: () {},
-            icon: Iconsax.shield_tick,
+            icon: Iconsax.user_tick,
           ),
         ],
       ),

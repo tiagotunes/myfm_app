@@ -35,6 +35,13 @@ class TTextFormFieldTheme {
         color: TColors.inputFieldBackground,
       ),
     ),
+    disabledBorder: const OutlineInputBorder().copyWith(
+      borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
+      borderSide: BorderSide(
+        width: 1,
+        color: TColors.inputFieldBackground.withOpacity(0.4),
+      ),
+    ),
     focusedBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),
       borderSide: const BorderSide(width: 1, color: TColors.white),
