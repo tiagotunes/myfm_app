@@ -3,8 +3,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class PlayerModel {
   // final values  for those you don't want to update
   final String id, userId, teamId, dtCri;
-  int value, wage, onLoan, loaned, freeAgent;
-  String? role, foot,loanFrom, loanedTo;
+  int value, wage;
+  bool onLoan, loaned, footL, footR, freeAgent;
+  String? role,loanFrom, loanedTo;
   int? releaseClause, height, ca, pa, number;
   String name, nationality, dateOfBirth, function, position, dtAct;
 
@@ -20,7 +21,8 @@ class PlayerModel {
     required this.position,
     required this.role,
     required this.height,
-    required this.foot,
+    required this.footL,
+    required this.footR,
     required this.number,
     required this.freeAgent,
     required this.value,
@@ -47,15 +49,16 @@ class PlayerModel {
         position: '',
         role: null,
         height: null,
-        foot: null,
+        footL: false,
+        footR: false,
         number: null,
-        freeAgent: 1,
+        freeAgent: false,
         value: 0,
         wage: 0,
         releaseClause: null,
-        onLoan: 0,
+        onLoan: false,
         loanFrom: '',
-        loaned: 0,
+        loaned: false,
         loanedTo: '',
         ca: 0,
         pa: 0,
@@ -75,7 +78,8 @@ class PlayerModel {
       'position': position,
       'role': role,
       'height': height,
-      'foot': foot,
+      'foot_l': footL,
+      'foot_r': footR,
       'number': number,
       'free_agent': freeAgent,
       'value': value,
@@ -108,7 +112,8 @@ class PlayerModel {
         position: data['position'] ?? '',
         role: data['role'],
         height: data['height'],
-        foot: data['foot'],
+        footL: data['foot_l'],
+        footR: data['foot_r'],
         number: data['number'],
         freeAgent: data['free_agent'] ?? 0,
         value: data['value'] ?? 0,

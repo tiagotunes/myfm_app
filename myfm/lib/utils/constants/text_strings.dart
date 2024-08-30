@@ -163,7 +163,7 @@ class TTexts {
           "Ball Playing Defender",
           "No-Nonsense Centre Back",
         ],
-        "Left Wing": [
+        "Left": [
           "Full Back",
           "Inverted Full Back",
           "Wing Back",
@@ -171,7 +171,7 @@ class TTexts {
           "Complete Wing Back",
           "Inverted Wing Back",
         ],
-        "Right Wing": [
+        "Right": [
           "Full Back",
           "Inverted Full Back",
           "Wing Back",
@@ -184,7 +184,7 @@ class TTexts {
     "Midfield": {
       "icon": TImages.midfield,
       "pos": {
-        "Defensive Midfield": [
+        "Defensive": [
           "Defensive Midfielder",
           "Deep Lying Playmaker",
           "Ball Winning Midfielder",
@@ -194,7 +194,7 @@ class TTexts {
           "Roaming Playmaker",
           "Segundo Volante",
         ],
-        "Central Midfield": [
+        "Central": [
           "Deep Lying Playmaker",
           "Ball Winning Midfielder",
           "Roaming Playmaker",
@@ -204,21 +204,21 @@ class TTexts {
           "Mezzala",
           "Carrilero",
         ],
-        "Left Midfield": [
+        "Left": [
           "Wide Midfielder",
           "Winger",
           "Defensive Winger",
           "Wide Playmaker",
           "Inverted Winger",
         ],
-        "Right Midfield": [
+        "Right": [
           "Wide Midfielder",
           "Winger",
           "Defensive Winger",
           "Wide Playmaker",
           "Inverted Winger",
         ],
-        "Attacking Midfield": [
+        "Attacking": [
           "Attacking Midfielder",
           "Advanced Playmaker",
           "Trequartista",
@@ -230,7 +230,7 @@ class TTexts {
     "Attack": {
       "icon": TImages.attack,
       "pos": {
-        "Left Wing": [
+        "Left": [
           "Winger",
           "Inverted Winger",
           "Advanced Playmaker",
@@ -239,7 +239,7 @@ class TTexts {
           "Wide Target Man",
           "Raumdeuter",
         ],
-        "Right Wing": [
+        "Right": [
           "Winger",
           "Inverted Winger",
           "Advanced Playmaker",
@@ -248,7 +248,7 @@ class TTexts {
           "Wide Target Man",
           "Raumdeuter",
         ],
-        "Forward": [
+        "Central": [
           "Trequartista",
           "Deep Lying Forward",
           "Advanced Forward",

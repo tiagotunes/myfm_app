@@ -27,17 +27,21 @@ class TImages {
   ];
 
   // Default Images
+  static const String player = "assets/images/default/player.png";
+  static const String user = "assets/images/default/user.png";
+
+  // Default Icons
   static const String attack = "assets/icons/default/attack.svg";
   static const String defence = "assets/icons/default/defence.svg";
   static const String goalkeeper = "assets/icons/default/goalkeeper.svg";
   static const String flank = "assets/icons/default/flank.svg";
+  static const String foot = "assets/icons/default/foot.svg";
   static const String midfield = "assets/icons/default/midfield.svg";
-  static const String player = "assets/images/default/player.png";
   static const String shield = "assets/icons/default/shield.svg";
   static const String shirt = "assets/icons/default/shirt.svg";
   static const String stadium = "assets/icons/default/stadium.svg";
-  static const String user = "assets/images/default/user.png";
 
   // Background Images
   static const String clubOffice = "assets/images/backgrounds/club_office.jpg";
+  static const String dressingRoom = "assets/images/backgrounds/club_ressing_room.jpg";
 }

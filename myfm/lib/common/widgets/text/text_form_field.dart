@@ -18,12 +18,13 @@ class TTextFormField extends StatelessWidget {
     this.obscureText = false,
     this.inputType,
     this.enabled = true,
+    this.chip,
   });
 
   final String label;
   final String? hintText;
   final bool isRequired, readOnly, obscureText, enabled;
-  final Widget? icon, icon_;
+  final Widget? icon, icon_, chip;
   final VoidCallback? onTap;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
@@ -39,30 +40,40 @@ class TTextFormField extends StatelessWidget {
           style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                 fontFamily: TTextTheme.fontFamilyIBM,
                 fontWeight: FontWeight.bold,
-                color: enabled ? TColors.white : TColors.white.withOpacity(0.4),
+                color: enabled || chip != null
+                    ? TColors.white
+                    : TColors.white.withOpacity(0.4),
               ),
         ),
         const SizedBox(height: TSizes.spaceBtwLabelInputField),
-        TextFormField(
-          enabled: enabled,
-          readOnly: readOnly,
-          onTap: onTap,
-          controller: controller,
-          validator: validator,
-          keyboardType: inputType,
-          obscureText: obscureText,
-          decoration: InputDecoration(
-            prefixIcon: icon,
-            suffixIcon: icon_,
-            hintText: hintText,
-            hintStyle: Theme.of(context).textTheme.bodySmall,
-            fillColor: enabled
-                ? Theme.of(context).inputDecorationTheme.fillColor
-                : Theme.of(context)
-                    .inputDecorationTheme
-                    .fillColor!
-                    .withOpacity(0.4),
-          ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Expanded(
+              child: TextFormField(
+                enabled: enabled,
+                readOnly: readOnly,
+                onTap: onTap,
+                controller: controller,
+                validator: validator,
+                keyboardType: inputType,
+                obscureText: obscureText,
+                decoration: InputDecoration(
+                  prefixIcon: icon,
+                  suffixIcon: icon_,
+                  hintText: hintText,
+                  hintStyle: Theme.of(context).textTheme.bodySmall,
+                  fillColor: enabled
+                      ? Theme.of(context).inputDecorationTheme.fillColor
+                      : Theme.of(context)
+                          .inputDecorationTheme
+                          .fillColor!
+                          .withOpacity(0.4),
+                ),
+              ),
+            ),
+            chip ?? const SizedBox(),
+          ],
         ),
       ],
     );

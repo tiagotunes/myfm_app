@@ -44,7 +44,7 @@ class TEditPlayerScreen extends StatelessWidget {
         child: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(TImages.clubOffice),
+              image: AssetImage(TImages.dressingRoom),
               fit: BoxFit.fitHeight,
               opacity: 0.5,
             ),

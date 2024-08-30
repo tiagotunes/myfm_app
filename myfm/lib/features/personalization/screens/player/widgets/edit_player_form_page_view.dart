@@ -2,7 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myfm/features/personalization/controllers/edit_player_controller.dart';
-import 'package:myfm/features/personalization/screens/player/widgets/forms/edit_player_fom_basic.dart';
+import 'package:myfm/features/personalization/screens/player/widgets/forms/edit_player_form_basic.dart';
+import 'package:myfm/features/personalization/screens/player/widgets/forms/edit_player_form_contract.dart';
+import 'package:myfm/features/personalization/screens/player/widgets/forms/edit_player_form_extra.dart';
 import 'package:myfm/utils/device/device_utility.dart';
 import 'package:myfm/utils/helpers/helper_functions.dart';
 
@@ -18,6 +20,12 @@ class TEditPlayerFormPageView extends StatelessWidget {
         items: const [
           // Page 1 - Basic
           TEditPlayerFormBasic(),
+
+          // Page 2 - Contract
+          TEditPlayerFormContract(),
+
+          // Page 3 - Extra
+          TEditPlayerFormExtra(),
         ],
         options: CarouselOptions(
           enableInfiniteScroll: false,
