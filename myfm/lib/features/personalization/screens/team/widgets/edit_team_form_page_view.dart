@@ -19,15 +19,15 @@ class TEditTeamFormPageView extends StatelessWidget {
     return Form(
       key: editTeamController.editTeamFormKey,
       child: CarouselSlider(
-        items: [
+        items: const [
           // Page 1 - Basic
-          TEditTeamFormBasic(editTeamController: editTeamController),
+          TEditTeamFormBasic(),
 
           // Page 2 - Finances
-          TEditTeamFormFinances(editTeamController: editTeamController),
+          TEditTeamFormFinances(),
 
           // Page 3 - Images
-          TEditTeamFormImages(editTeamController: editTeamController),
+          TEditTeamFormImages(),
         ],
         options: CarouselOptions(
           enableInfiniteScroll: false,

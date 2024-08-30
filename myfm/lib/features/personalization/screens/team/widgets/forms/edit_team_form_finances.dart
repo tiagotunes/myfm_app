@@ -7,15 +7,11 @@ import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
 
 class TEditTeamFormFinances extends StatelessWidget {
-  const TEditTeamFormFinances({
-    super.key,
-    required this.editTeamController,
-  });
-
-  final EditTeamController editTeamController;
+  const TEditTeamFormFinances({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final editTeamController = Get.put(EditTeamController());
     return TEditTeamFormPage(
       bottomLabel: TTexts.finances.capitalize,
       formFields: SizedBox(

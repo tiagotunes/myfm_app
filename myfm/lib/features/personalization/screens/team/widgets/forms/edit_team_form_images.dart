@@ -7,15 +7,11 @@ import 'package:myfm/utils/constants/sizes.dart';
 import 'package:myfm/utils/constants/text_strings.dart';
 
 class TEditTeamFormImages extends StatelessWidget {
-  const TEditTeamFormImages({
-    super.key,
-    required this.editTeamController,
-  });
-
-  final EditTeamController editTeamController;
+  const TEditTeamFormImages({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final editTeamController = Get.put(EditTeamController());
     return TEditTeamFormPage(
       bottomLabel: TTexts.images.capitalize,
       formFields: SizedBox(

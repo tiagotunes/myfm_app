@@ -10,15 +10,11 @@ import 'package:myfm/utils/popups/text_form_field_popup.dart';
 import 'package:myfm/utils/validators/validation.dart';
 
 class TEditTeamFormBasic extends StatelessWidget {
-  const TEditTeamFormBasic({
-    super.key,
-    required this.editTeamController,
-  });
-
-  final EditTeamController editTeamController;
+  const TEditTeamFormBasic({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final editTeamController = Get.put(EditTeamController());
     return TEditTeamFormPage(
       bottomLabel: TTexts.basic.capitalize,
       formFields: SizedBox(
