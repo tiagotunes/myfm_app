@@ -27,12 +27,11 @@ class TEditTeamFormPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               formFields,
-              bottomLabel != null
-                  ? Text(
-                      bottomLabel!,
-                      style: Theme.of(context).textTheme.labelMedium,
-                    )
-                  : const SizedBox(),
+              if (bottomLabel != null)
+                Text(
+                  bottomLabel!,
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
             ],
           ),
         ),

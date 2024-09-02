@@ -40,29 +40,29 @@ class TTeamImageSlider extends StatelessWidget {
                         : controller.imageCurrentIndex.value == 1
                             ? buildTeamKit(controller)
                             : buildTeamStadium(controller),
-                    controller.imageCurrentIndex.value == 2
-                        ? Positioned(
-                            bottom: 0,
-                            child: Container(
-                              width: 300,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                  color: TColors.dark.withOpacity(0.6)),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Icon(
-                                    Iconsax.location,
-                                    color: TColors.darkGrey,
-                                  ),
-                                  const SizedBox(
-                                      width: TSizes.spaceBtwItems / 2),
-                                  Text(team.stadiumName != null ? team.stadiumName! : '${team.name} Stadium'),
-                                ],
+                    if (controller.imageCurrentIndex.value == 2)
+                      Positioned(
+                        bottom: 0,
+                        child: Container(
+                          width: 300,
+                          height: 30,
+                          decoration: BoxDecoration(
+                              color: TColors.dark.withOpacity(0.6)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Iconsax.location,
+                                color: TColors.darkGrey,
                               ),
-                            ),
-                          )
-                        : const SizedBox(),
+                              const SizedBox(width: TSizes.spaceBtwItems / 2),
+                              Text(team.stadiumName != null
+                                  ? team.stadiumName!
+                                  : '${team.name} Stadium'),
+                            ],
+                          ),
+                        ),
+                      ),
                   ],
                 ),
               ),

@@ -26,29 +26,28 @@ class TCounterIcon extends StatelessWidget {
             color: iconColor,
           ),
         ),
-        count != null
-            ? Positioned(
-                right: 0,
-                child: Container(
-                  width: 21,
-                  height: 21,
-                  decoration: BoxDecoration(
-                    color: TColors.primary,
-                    borderRadius: BorderRadius.circular(100),
-                  ),
-                  child: Center(
-                    child: Text(
-                      count!,
-                      style: Theme.of(context).textTheme.labelLarge!.apply(
-                            color: TColors.white,
-                            fontWeightDelta: 1,
-                            fontSizeFactor: 0.8,
-                          ),
-                    ),
-                  ),
+        if (count != null)
+          Positioned(
+            right: 0,
+            child: Container(
+              width: 21,
+              height: 21,
+              decoration: BoxDecoration(
+                color: TColors.primary,
+                borderRadius: BorderRadius.circular(100),
+              ),
+              child: Center(
+                child: Text(
+                  count!,
+                  style: Theme.of(context).textTheme.labelLarge!.apply(
+                        color: TColors.white,
+                        fontWeightDelta: 1,
+                        fontSizeFactor: 0.8,
+                      ),
                 ),
-              )
-            : const SizedBox(),
+              ),
+            ),
+          ),
       ],
     );
   }

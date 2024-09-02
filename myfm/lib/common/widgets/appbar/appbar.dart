@@ -29,22 +29,20 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        wDiagonalRect
-            ? TDiagonalRect(
-                height: TDeviceUtils.getAppBarHeight() * 3.5,
-                width: TSizes.defaultSpace * 3,
-                color: diagonalRectColor,
-                first: false,
-              )
-            : const SizedBox(),
-        wDiagonalRect
-            ? TDiagonalRect(
-                height: TDeviceUtils.getAppBarHeight() * 3.5,
-                width: TSizes.defaultSpace * 3,
-                color: diagonalRectColor,
-                first: true,
-              )
-            : const SizedBox(),
+        if (wDiagonalRect)
+          TDiagonalRect(
+            height: TDeviceUtils.getAppBarHeight() * 3.5,
+            width: TSizes.defaultSpace * 3,
+            color: diagonalRectColor,
+            first: false,
+          ),
+        if (wDiagonalRect)
+          TDiagonalRect(
+            height: TDeviceUtils.getAppBarHeight() * 3.5,
+            width: TSizes.defaultSpace * 3,
+            color: diagonalRectColor,
+            first: true,
+          ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: TSizes.sm),
           child: AppBar(
