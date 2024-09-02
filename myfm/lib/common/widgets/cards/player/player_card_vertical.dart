@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:myfm/common/widgets/images/rounded_image.dart';
-import 'package:myfm/common/widgets/text/card_team_title_text.dart';
+import 'package:myfm/common/widgets/text/card_title_text.dart';
 import 'package:myfm/common/widgets/text/label_text.dart';
+import 'package:myfm/common/widgets/text/label_text_with_icon.dart';
+import 'package:myfm/features/personalization/models/player_model.dart';
 import 'package:myfm/utils/constants/colors.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/constants/sizes.dart';
@@ -13,15 +14,12 @@ import 'package:myfm/utils/helpers/helper_functions.dart';
 class TPlayerCardVertical extends StatelessWidget {
   const TPlayerCardVertical({
     super.key,
-    required this.name,
-    required this.position,
-    required this.age,
-    this.number,
+    required this.season,
+    required this.player,
   });
 
-  final String name, position;
-  final int age;
-  final int? number;
+  final int season;
+  final PlayerModel player;
 
   @override
   Widget build(BuildContext context) {
@@ -60,26 +58,25 @@ class TPlayerCardVertical extends StatelessWidget {
                   ),
 
                   // Nation Flag
-                  const Positioned(
+                  Positioned(
                     top: TSizes.sm,
                     right: TSizes.sm,
-                    child: Icon(
-                      Iconsax.flag,
-                      color: TColors.darkGrey,
-                      size: TSizes.iconMd,
+                    child: TLabelWithIconText(
+                      country: false,
+                      countryId: int.parse(player.nationality),
                     ),
                   ),
 
                   // Shirt Number
                   Positioned(
-                    top: TSizes.sm + TSizes.spaceBtwSections,
+                    top: TSizes.sm + TSizes.defaultSpace,
                     right: TSizes.sm,
                     child: SizedBox(
                       height: TSizes.iconMd,
                       width: TSizes.iconMd,
                       child: Center(
                         child: Text(
-                          number == null ? '' : number.toString(),
+                          player.number == null ? '' : player.number.toString(),
                           style: const TextStyle(color: TColors.darkGrey),
                         ),
                       ),
@@ -88,9 +85,7 @@ class TPlayerCardVertical extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: TSizes.spaceBtwItems / 2,
-            ),
+            const SizedBox(height: TSizes.spaceBtwItems / 2),
 
             // Details
             Padding(
@@ -101,22 +96,22 @@ class TPlayerCardVertical extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Name
-                  TCardTeamTitleText(title: name),
-                  const SizedBox(
-                    height: TSizes.spaceBtwItems / 2,
+                  TCardTitleText(
+                    title: player.name,
+                    isName: true,
                   ),
+                  const SizedBox(height: TSizes.spaceBtwItems / 2),
 
                   // Age
                   TLabelText(
-                    label: '$age ${TTexts.years}',
+                    label:
+                        '${(season - DateTime.parse(player.dateOfBirth).year).toString()} ${TTexts.years}',
                   ),
-                  const SizedBox(
-                    height: TSizes.spaceBtwItems / 2,
-                  ),
+                  const SizedBox(height: TSizes.spaceBtwItems / 2),
 
                   // Position (later we can put ability stars here instead)
                   Text(
-                    position,
+                    player.role!,
                     maxLines: 1,
                     style: Theme.of(context).textTheme.labelSmall,
                   ),

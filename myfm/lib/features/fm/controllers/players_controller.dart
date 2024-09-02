@@ -13,19 +13,16 @@ class PlayersController extends GetxController {
   RxList<PlayerModel> userPlayers = <PlayerModel>[].obs;
   RxList<PlayerModel> teamPlayers = <PlayerModel>[].obs;
 
-  // @override
-  // void onInit() {
-  //   // fetchUserPlayers();
-  //   // fetchTeams();
-  //   super.onInit();
-  // }
+  @override
+  void refresh() {
+    fetchUserPlayers();
+    super.refresh();
+  }
 
-  // @override
-  // void refresh() {
-  //   // fetchUserPlayers();
-  //   // fetchTeams();
-  //   super.refresh();
-  // }
+  void refreshTeamPlayers(String teamId) async {
+    // refresh();
+    await getTeamPlayers(teamId);
+  }
 
   Future<void> fetchUserPlayers() async {
     try {
@@ -45,12 +42,6 @@ class PlayersController extends GetxController {
       isLoading.value = false;
     }
   }
-
-  // Future<List<PlayerModel>> getTeamPlayers(String teamId) async {
-  //   return userPlayers
-  //       .where((p) => p.teamId == teamId && p.freeAgent == 0)
-  //       .toList();
-  // }
 
   Future<void> getTeamPlayers(String teamId) async {
     try {

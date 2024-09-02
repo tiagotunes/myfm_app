@@ -34,9 +34,9 @@ class EditTeamController extends GetxController {
   final stadiumImg = TextEditingController();
   final stadiumImgPath = TextEditingController();
   GlobalKey<FormState> editTeamFormKey = GlobalKey<FormState>();
+  final teamsController = Get.put(TeamsController());
   final teamRepository = Get.put(TeamRepository());
   final userRepository = Get.put(UserRepository());
-  final teamsController = Get.put(TeamsController());
 
   Future<void> saveTeamData() async {
     try {

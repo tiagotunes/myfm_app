@@ -49,4 +49,17 @@ class PlayerRepository extends GetxController {
       throw 'Something went wrong. Please try again';
     }
   }
+
+  // Function to save player data to Firestore
+  Future<void> savePlayerRecord(PlayerModel player) async {
+    try {
+      await _db.collection("Player").doc().set(player.toJson());
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 }

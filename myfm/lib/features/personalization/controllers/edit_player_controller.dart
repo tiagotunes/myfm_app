@@ -3,8 +3,10 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:myfm/data/repositories/player/player_repository.dart';
 import 'package:myfm/data/repositories/user/user_repository.dart';
+import 'package:myfm/features/fm/controllers/players_controller.dart';
 import 'package:myfm/features/personalization/controllers/country_controller.dart';
 import 'package:myfm/features/personalization/controllers/user_controller.dart';
+import 'package:myfm/features/personalization/models/player_model.dart';
 import 'package:myfm/features/personalization/models/team_model.dart';
 import 'package:myfm/utils/constants/image_strings.dart';
 import 'package:myfm/utils/helpers/network_manager.dart';
@@ -44,8 +46,9 @@ class EditPlayerController extends GetxController {
   final pa = TextEditingController();
   GlobalKey<FormState> editPlayerFormKey = GlobalKey<FormState>();
   final teamID = "";
-  final userRepository = Get.put(UserRepository());
+  final playersController = Get.put(PlayersController());
   final playerRepository = Get.put(PlayerRepository());
+  final userRepository = Get.put(UserRepository());
 
   Future<void> savePlayerData() async {
     try {
@@ -77,22 +80,49 @@ class EditPlayerController extends GetxController {
         );
       }*/
 
-      // Save team in the Firebase Firestore
-      // final newPlayer = PlayerModel(
-
-      // await teamRepository.saveTeamRecord(newPlayer);
+      // Save player in the Firebase Firestore
+      final newPlayer = PlayerModel(
+        id: '',
+        userId: userController.user.value.id,
+        teamId: team.id,
+        name: name.text.trim(),
+        nationality: nationalityID.text.trim(),
+        dateOfBirth: dateOfBirth.text.trim(),
+        function: function.text.trim(),
+        position: position.text.trim(),
+        role: role.text.trim(),
+        height: height.text != "" ? int.parse(height.text.trim()) : null,
+        footL: footL.value,
+        footR: footR.value,
+        number: number.text != "" ? int.parse(number.text.trim()) : null,
+        freeAgent: false,
+        value: value.text != "" ? int.parse(value.text.trim()) : 0,
+        wage: wage.text != "" ? int.parse(wage.text.trim()) : 0,
+        releaseClause: releaseClause.text != ""
+            ? int.parse(releaseClause.text.trim())
+            : null,
+        onLoan: onLoan.value,
+        loanFrom: loanFrom.text.trim(),
+        loaned: loaned.value,
+        loanedTo: loanedTo.text.trim(),
+        ca: ca.text != "" ? int.parse(ca.text.trim()) : null,
+        pa: pa.text != "" ? int.parse(pa.text.trim()) : null,
+        dtCri: DateTime.now().toString().split('.')[0],
+        dtAct: '',
+      );
+      await playerRepository.savePlayerRecord(newPlayer);
 
       // Remove Loader
       TFullScreenLoader.stopLoading();
 
       // Move to previous screen
-      // Get.back();
-      // teamsController.refresh();
+      Get.back();
+      playersController.refreshTeamPlayers(team.id);
 
       // Show Success Message
       TLoaders.sucessSnackBar(
         title: 'Success',
-        message: 'Your team has been created.',
+        message: 'Your player has been created.',
       );
     } catch (e) {
       // Remove Loader

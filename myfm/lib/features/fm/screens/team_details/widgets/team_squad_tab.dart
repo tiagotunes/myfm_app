@@ -34,28 +34,32 @@ class TTeamSquadTab extends StatelessWidget {
           Column(
             children: [
               TTeamSquadListView(
-                position: 'Goalkeepers',
+                position: 'Goalkeeper',
                 players: playersController.teamPlayers
-                    .where((p) => p.position == 'GK')
+                    .where((p) => p.function == 'Goalkeeper')
                     .toList(),
+                team: team,
               ),
               TTeamSquadListView(
-                position: 'Defenders',
+                position: 'Defence',
                 players: playersController.teamPlayers
-                    .where((p) => p.position == 'D')
+                    .where((p) => p.function == 'Defence')
                     .toList(),
+                team: team,
               ),
               TTeamSquadListView(
-                position: 'Midfielders',
+                position: 'Midfield',
                 players: playersController.teamPlayers
-                    .where((p) => p.position == 'M')
+                    .where((p) => p.function == 'Midfield')
                     .toList(),
+                team: team,
               ),
               TTeamSquadListView(
-                position: 'Forwards',
+                position: 'Attack',
                 players: playersController.teamPlayers
-                    .where((p) => p.position == 'F')
+                    .where((p) => p.function == 'Attack')
                     .toList(),
+                team: team,
               ),
             ],
           ),
