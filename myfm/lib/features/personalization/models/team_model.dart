@@ -3,8 +3,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class TeamModel {
   // final values  for those you don't want to update
   final String id, userId, dtCri;
-  String name, country, season, dtAct;
-  String? stadiumName, stadiumImg, kit, logo;
+  String name, country;
+  int season;
+  String? stadiumName, stadiumImg, kit, logo, dtAct;
   int? color, bankBalance, squadBudget, wageBudget;
 
   // Constructor
@@ -31,7 +32,7 @@ class TeamModel {
         userId: '',
         name: '',
         country: '',
-        season: '',
+        season: 0,
         stadiumName: null,
         color: null,
         bankBalance: null,
@@ -41,7 +42,7 @@ class TeamModel {
         kit: null,
         stadiumImg: null,
         dtCri: '',
-        dtAct: '',
+        dtAct: null,
       );
 
   // Convert model to JSON structure for storing data in Firebase
@@ -74,7 +75,7 @@ class TeamModel {
         userId: data['user_id'] ?? '',
         name: data['name'] ?? '',
         country: data['country'] ?? '',
-        season: data['season'] ?? '',
+        season: data['season'] ?? 0,
         stadiumName: data['stadium_name'],
         color: data['color'],
         bankBalance: data['bank_balance'],
@@ -84,7 +85,7 @@ class TeamModel {
         kit: data['kit'],
         stadiumImg: data['stadium_img'],
         dtCri: data['dt_cri'] ?? '',
-        dtAct: data['dt_act'] ?? '',
+        dtAct: data['dt_act'],
       );
     }
     return empty();

@@ -57,7 +57,7 @@ class TEditPlayerFormBasic extends StatelessWidget {
                 controller: editPlayerController.dateOfBirth,
                 validator: (value) => TValidator.validatePlayerDateOfBirth(
                   value,
-                  int.parse(editPlayerController.team.season),
+                  editPlayerController.team.season,
                 ),
                 onTap: () => TTextFormFieldPopup.selectDate(
                   context,
@@ -73,7 +73,8 @@ class TEditPlayerFormBasic extends StatelessWidget {
                 isRequired: true,
                 readOnly: true,
                 controller: editPlayerController.function,
-                validator: (value) => TValidator.validateEmptyText("Function", value),
+                validator: (value) =>
+                    TValidator.validateEmptyText("Function", value),
                 onTap: () => TTextFormFieldPopup.selectFunction(
                   context,
                   editPlayerController,
@@ -88,7 +89,8 @@ class TEditPlayerFormBasic extends StatelessWidget {
                   isRequired: true,
                   readOnly: true,
                   controller: editPlayerController.position,
-                validator: (value) => TValidator.validateEmptyText("Position", value),
+                  validator: (value) =>
+                      TValidator.validateEmptyText("Position", value),
                   onTap: () => TTextFormFieldPopup.selectPosition(
                     context,
                     editPlayerController.function.text,

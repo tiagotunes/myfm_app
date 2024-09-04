@@ -85,7 +85,7 @@ class TTeamCardVertical extends StatelessWidget {
 
                   // Year
                   Text(
-                    team.season,
+                    team.season.toString(),
                     maxLines: 1,
                     style: Theme.of(context).textTheme.labelSmall,
                   ),

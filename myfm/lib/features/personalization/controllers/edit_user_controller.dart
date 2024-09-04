@@ -40,7 +40,7 @@ class EditUserController extends GetxController {
           .nationality;
       nationalityID.text = userController.user.value.nationality;
     }
-    dateOfBirth.text = userController.user.value.dateOfBirth;
+    dateOfBirth.text = userController.user.value.dateOfBirth ?? "";
   }
 
   Future<void> updateUserData() async {

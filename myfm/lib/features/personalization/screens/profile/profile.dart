@@ -38,8 +38,9 @@ class ProfileScreen extends StatelessWidget {
                     Obx(() {
                       final networkImage =
                           userController.user.value.profilePicture;
-                      final image =
-                          networkImage.isNotEmpty ? networkImage : TImages.user;
+                      final image = networkImage!.isNotEmpty
+                          ? networkImage
+                          : TImages.user;
                       return userController.imageUploading.value
                           ? const TShimmerEffect(
                               width: 120,
@@ -106,14 +107,18 @@ class ProfileScreen extends StatelessWidget {
                   onPressed: () {},
                 ),
               ),
+
               Obx(
-                () => TProfileMenu(
-                  title: 'Date of Birth',
-                  value: userController.user.value.dateOfBirth != ""
-                      ? userController.user.value.dateOfBirth
-                      : "...",
-                  onPressed: () {},
-                ),
+                () {
+                  if (userController.user.value.dateOfBirth != null) {
+                    return TProfileMenu(
+                      title: 'Date of Birth',
+                      value: userController.user.value.dateOfBirth!,
+                      onPressed: () {},
+                    );
+                  }
+                  return const SizedBox();
+                },
               ),
 
               const SizedBox(height: TSizes.spaceBtwItems),

@@ -41,7 +41,7 @@ class TTeamSquadListView extends StatelessWidget {
                     (index) => Padding(
                       padding: const EdgeInsets.only(right: TSizes.sm),
                       child: TPlayerCardVertical(
-                        season: int.parse(team.season),
+                        season: team.season,
                         player: players[index],
                       ),
                     ),

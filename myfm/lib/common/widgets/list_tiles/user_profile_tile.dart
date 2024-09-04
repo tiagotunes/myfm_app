@@ -21,7 +21,7 @@ class TUserProfileTile extends StatelessWidget {
     return Obx(
       () {
         final networkImage = controller.user.value.profilePicture;
-        final image = networkImage.isNotEmpty ? networkImage : TImages.user;
+        final image = networkImage ?? TImages.user;
         return ListTile(
           leading: controller.imageUploading.value
               ? const TShimmerEffect(
@@ -34,7 +34,7 @@ class TUserProfileTile extends StatelessWidget {
                   width: 50,
                   height: 50,
                   padding: 0,
-                  isNetworkImage: networkImage.isNotEmpty,
+                  isNetworkImage: networkImage != null,
                 ),
           title: Text(
             controller.user.value.name,

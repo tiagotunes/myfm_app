@@ -86,7 +86,7 @@ class EditTeamController extends GetxController {
         userId: userController.user.value.id,
         name: name.text.trim(),
         country: countryID.text.trim(),
-        season: season.text.trim(),
+        season: int.parse(season.text.trim()),
         stadiumName:
             stadiumName.text.trim() != "" ? stadiumName.text.trim() : null,
         color: color.value,
@@ -105,7 +105,7 @@ class EditTeamController extends GetxController {
             ? stadiumImgPath.text.trim()
             : null,
         dtCri: DateTime.now().toString().split('.')[0],
-        dtAct: '',
+        dtAct: null,
       );
       await teamRepository.saveTeamRecord(newTeam);
 
