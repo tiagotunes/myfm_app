@@ -34,11 +34,11 @@ class EditUserController extends GetxController {
   Future<void> initializeUserData() async {
     name.text = userController.user.value.name;
     username.text = userController.user.value.username;
-    if (userController.user.value.nationality != "") {
+    if (userController.user.value.nationality != null) {
       nationality.text = countryController
-          .allCountries[int.parse(userController.user.value.nationality) - 1]
+          .allCountries[int.parse(userController.user.value.nationality!) - 1]
           .nationality;
-      nationalityID.text = userController.user.value.nationality;
+      nationalityID.text = userController.user.value.nationality!;
     }
     dateOfBirth.text = userController.user.value.dateOfBirth ?? "";
   }
@@ -72,9 +72,10 @@ class EditUserController extends GetxController {
         name: name.text.trim(),
         username: username.text.trim(),
         email: userController.user.value.email,
-        // nationality: nationality.text.trim(),
-        nationality: nationalityID.text.trim(),
-        dateOfBirth: dateOfBirth.text.trim(),
+        nationality:
+            nationalityID.text.trim() != "" ? nationalityID.text.trim() : null,
+        dateOfBirth:
+            dateOfBirth.text.trim() != "" ? dateOfBirth.text.trim() : null,
         profilePicture: userController.user.value.profilePicture,
         dtCri: userController.user.value.dtCri,
         dtAct: DateTime.now().toString().split('.')[0],
@@ -84,8 +85,8 @@ class EditUserController extends GetxController {
       // Update the Rx User value
       userController.user.value.name = name.text.trim();
       userController.user.value.username = username.text.trim();
-      userController.user.value.nationality = nationalityID.text.trim();
-      userController.user.value.dateOfBirth = dateOfBirth.text.trim();
+      if (nationalityID.text.trim() != "") userController.user.value.nationality = nationalityID.text.trim();
+      if (dateOfBirth.text.trim() != "") userController.user.value.dateOfBirth = dateOfBirth.text.trim();
 
       // Remove Loader
       TFullScreenLoader.stopLoading();

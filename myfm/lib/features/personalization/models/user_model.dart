@@ -3,8 +3,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class UserModel {
   // final values  for those you don't want to update
   final String id, email, dtCri;
-  String name, username, nationality;
-  String? dateOfBirth, profilePicture, dtAct;
+  String name, username;
+  String? nationality, dateOfBirth, profilePicture, dtAct;
 
   // Constructor
   UserModel({
@@ -35,7 +35,7 @@ class UserModel {
         name: '',
         username: '',
         email: '',
-        nationality: '',
+        nationality: null,
         dateOfBirth: null,
         profilePicture: null,
         dtCri: '',
@@ -66,7 +66,7 @@ class UserModel {
         name: data['name'] ?? '',
         username: data['username'] ?? '',
         email: data['email'] ?? '',
-        nationality: data['nationality'] ?? '',
+        nationality: data['nationality'],
         dateOfBirth: data['date_of_birth'],
         profilePicture: data['profile_picture'],
         dtCri: data['dt_cri'] ?? '',

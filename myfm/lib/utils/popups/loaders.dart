@@ -43,7 +43,7 @@ class TLoaders {
       duration: Duration(seconds: duration),
       margin: const EdgeInsets.all(10),
       icon: const Icon(
-        Iconsax.check,
+        Iconsax.shield_tick,
         color: TColors.white,
       ),
     );
@@ -79,7 +79,7 @@ class TLoaders {
       duration: const Duration(seconds: 3),
       margin: const EdgeInsets.all(20),
       icon: const Icon(
-        Iconsax.warning_2,
+        Iconsax.shield_cross,
         color: TColors.white,
       ),
     );

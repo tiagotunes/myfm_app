@@ -17,8 +17,9 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userController = UserController.instance;
     final countryController = CountryController.instance;
+    final userController = UserController.instance;
+    final user = userController.user;
     return Scaffold(
       appBar: const TAppBar(
         showBackArrow: true,
@@ -36,8 +37,7 @@ class ProfileScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Obx(() {
-                      final networkImage =
-                          userController.user.value.profilePicture;
+                      final networkImage = user.value.profilePicture;
                       final image = networkImage!.isNotEmpty
                           ? networkImage
                           : TImages.user;
@@ -79,41 +79,48 @@ class ProfileScreen extends StatelessWidget {
               Obx(
                 () => TProfileMenu(
                   title: 'Name',
-                  value: userController.user.value.name != ""
-                      ? userController.user.value.name
-                      : "...",
+                  value: user.value.name != "" ? user.value.name : "...",
                   onPressed: () {},
                 ),
               ),
               Obx(
                 () => TProfileMenu(
                   title: 'Username',
-                  value: userController.user.value.username != ""
-                      ? userController.user.value.username
-                      : "...",
+                  value:
+                      user.value.username != "" ? user.value.username : "...",
                   onPressed: () {},
                 ),
               ),
               Obx(
-                () => TProfileMenu(
+                /*() => TProfileMenu(
                   title: 'Nationality',
-                  value: userController.user.value.nationality != ""
+                  value: user.value.nationality != null
                       ? countryController
-                          .allCountries[
-                              int.parse(userController.user.value.nationality) -
-                                  1]
+                          .allCountries[int.parse(user.value.nationality!) - 1]
                           .nationality
                       : "...",
                   onPressed: () {},
-                ),
+                ),*/
+                () {
+                  if (user.value.nationality != null) {
+                    return TProfileMenu(
+                      title: 'Nationality',
+                      value: countryController
+                          .allCountries[int.parse(user.value.nationality!) - 1]
+                          .nationality,
+                      onPressed: () {},
+                    );
+                  }
+                  return const SizedBox();
+                },
               ),
 
               Obx(
                 () {
-                  if (userController.user.value.dateOfBirth != null) {
+                  if (user.value.dateOfBirth != null) {
                     return TProfileMenu(
                       title: 'Date of Birth',
-                      value: userController.user.value.dateOfBirth!,
+                      value: user.value.dateOfBirth!,
                       onPressed: () {},
                     );
                   }
@@ -130,13 +137,13 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwItems),
               TProfileMenu(
                 title: 'User ID',
-                value: userController.user.value.id,
+                value: user.value.id,
                 icon: const Icon(Iconsax.copy),
                 onPressed: () {},
               ),
               TProfileMenu(
                 title: 'Email',
-                value: userController.user.value.email,
+                value: user.value.email,
                 onPressed: () {},
               ),
 

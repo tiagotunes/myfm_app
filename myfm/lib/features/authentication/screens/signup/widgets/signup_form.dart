@@ -81,8 +81,6 @@ class TSignUpForm extends StatelessWidget {
           TTextFormField(
             label: TTexts.nationality,
             controller: signupController.nationality,
-            // validator: (value) =>
-            //     TValidator.validateEmptyText(TTexts.nationality, value),
             isRequired: false,
             readOnly: true,
             onTap: () => TTextFormFieldPopup.selectNation(

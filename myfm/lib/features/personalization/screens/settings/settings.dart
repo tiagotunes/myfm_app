@@ -116,8 +116,8 @@ class SettingsScreen extends StatelessWidget {
                           AuthenticationRepository.instance.logout(),
                       style:
                           Theme.of(context).outlinedButtonTheme.style!.copyWith(
-                        side: MaterialStateProperty.resolveWith<BorderSide?>(
-                          (Set<MaterialState> states) {
+                        side: WidgetStateProperty.resolveWith<BorderSide?>(
+                          (Set<WidgetState> states) {
                             return const BorderSide(color: TColors.darkGrey);
                           },
                         ),
@@ -130,20 +130,25 @@ class SettingsScreen extends StatelessWidget {
                   // Close account Button
                   SizedBox(
                     width: double.infinity,
-                    child: OutlinedButton(
-                      onPressed: () => controller.deleteAccountWarningPopup(),
-                      style:
-                          Theme.of(context).outlinedButtonTheme.style!.copyWith(
-                        side: MaterialStateProperty.resolveWith<BorderSide?>(
-                          (Set<MaterialState> states) {
-                            return const BorderSide(color: Colors.red);
-                          },
+                    child: Row(
+                      children: [
+                        
+                        OutlinedButton(
+                          onPressed: () => controller.deleteAccountWarningPopup(),
+                          style:
+                              Theme.of(context).outlinedButtonTheme.style!.copyWith(
+                            side: WidgetStateProperty.resolveWith<BorderSide?>(
+                              (Set<WidgetState> states) {
+                                return const BorderSide(color: Colors.red);
+                              },
+                            ),
+                          ),
+                          child: const Text(
+                            TTexts.closeAccount,
+                            style: TextStyle(color: Colors.red),
+                          ),
                         ),
-                      ),
-                      child: const Text(
-                        TTexts.closeAccount,
-                        style: TextStyle(color: Colors.red),
-                      ),
+                      ],
                     ),
                   ),
                 ],

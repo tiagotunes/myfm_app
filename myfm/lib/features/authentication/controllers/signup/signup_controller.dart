@@ -74,9 +74,10 @@ class SignupController extends GetxController {
         name: name.text.trim(),
         username: username.text.trim(),
         email: email.text.trim(),
-        // nationality: nationality.text.trim(),
-        nationality: nationalityID.text.trim(),
-        dateOfBirth: dateOfBirth.text.trim(),
+        nationality:
+            nationalityID.text.trim() != "" ? nationalityID.text.trim() : null,
+        dateOfBirth:
+            dateOfBirth.text.trim() != "" ? dateOfBirth.text.trim() : null,
         profilePicture: '',
         dtCri: DateTime.now().toString().split('.')[0],
         dtAct: '',
