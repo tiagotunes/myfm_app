@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:myfm/common/widgets/appbar/appbar.dart';
-import 'package:myfm/common/widgets/icons/counter_icon.dart';
 import 'package:myfm/common/widgets/loaders/shimmer.dart';
 import 'package:myfm/common/widgets/text/appbar_title_text.dart';
 import 'package:myfm/features/personalization/controllers/user_controller.dart';
-import 'package:myfm/utils/constants/colors.dart';
 
 class THomeAppBar extends StatelessWidget {
   const THomeAppBar({
@@ -30,14 +27,14 @@ class THomeAppBar extends StatelessWidget {
           }
         },
       ),
-      actions: [
+      /*actions: [
         TCounterIcon(
           onPressed: () {},
           iconColor: TColors.white,
           icon: Iconsax.message_text_15,
           count: '2',
         )
-      ],
+      ],*/
     );
   }
 }
