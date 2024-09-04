@@ -99,6 +99,11 @@ class TPlayerCardVertical extends StatelessWidget {
                   TCardTitleText(
                     title: player.name,
                     isName: true,
+                    textColor: player.onLoan
+                        ? TColors.textPlayerOnLoan
+                        : player.loaned
+                            ? TColors.textPlayerLoaned
+                            : TColors.textWhite,
                   ),
                   const SizedBox(height: TSizes.spaceBtwItems / 2),
 

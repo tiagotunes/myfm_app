@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfm/utils/constants/colors.dart';
 
 class TCardTitleText extends StatelessWidget {
   const TCardTitleText({
@@ -8,12 +9,14 @@ class TCardTitleText extends StatelessWidget {
     this.isName = false,
     this.maxLines = 1,
     this.textAlign = TextAlign.left,
+    this.textColor = TColors.white,
   });
 
   final String title;
   final bool smallSize, isName;
   final int maxLines;
   final TextAlign? textAlign;
+  final Color textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,10 @@ class TCardTitleText extends StatelessWidget {
       isName ? buildAbbreviateName(title) : title,
       style: smallSize
           ? Theme.of(context).textTheme.labelLarge
-          : Theme.of(context).textTheme.titleSmall!.apply(fontWeightDelta: 2),
+          : Theme.of(context).textTheme.titleSmall!.apply(
+                fontWeightDelta: 2,
+                color: textColor,
+              ),
       maxLines: maxLines,
       overflow: TextOverflow.ellipsis,
       textAlign: textAlign,
