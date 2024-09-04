@@ -1,5 +1,7 @@
 # MyFM app
 
-<img src="myfm/assets/logos/myfm-logo-light.png" width="135">
-
-Your team, your decisions, anytime, anywhere.
+<img src="myfm/assets/logos/myfm-logo-light-removebg.png" width="135">
+<br>
+Your team, your decisions
+<br>
+Anytime, anywhere
